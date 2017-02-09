@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+.head-menu {
+	height: 5%;
+	background-color: #b31b1b;
+}
+
+.body-img {
+	background: url("../image/cut.png") no-repeat fixed center;
+	width: 100%;
+	height: 55%;
+}
+
+.body-bottom {
+	height: 40%;
+}
+@media screen and (max-width: 400px) {
+    body {
+        background-color: #b31b1b;
+    }
+}
