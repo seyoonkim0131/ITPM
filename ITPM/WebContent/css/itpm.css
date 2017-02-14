@@ -1,7 +1,37 @@
 @CHARSET "UTF-8";
+
 body {
 	padding: 0px;
 	margin: 0px;
+}
+
+table.bbs-list tbody td a:link, table.bbs-list tbody td a:visited, table.bbs-list tbody td  a:active {
+	color:#666666;
+}
+
+table.bbs-list tbody td a:hover {
+	color:#b31b1b;
+}
+
+table.bbs-list {
+	width: 100%;
+	border-top: solid 2px #b31b1b;
+	border-bottom: solid 1px #e3e3e3 !important;
+	table-layout: fixed;
+}
+
+table.bbs-list thead th,
+table.bbs-list tbody td {
+	padding:6px 0 5px 0;
+	line-height:16px;
+	border-bottom: solid 1px #e3e3e3;
+	font-size: 12px;
+	text-align: center;
+	color: #999999;
+}
+
+table.bbs-list thead th {
+	background: url('../image/bbs_header.gif') left top repeat-x;
 }
 
 .head-menu {
@@ -18,6 +48,7 @@ body {
 .body-bottom {
 	height: 40%;
 }
+
 @media screen and (max-width: 400px) {
     body {
         background-color: #b31b1b;
