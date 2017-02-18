@@ -15,7 +15,27 @@
 		<div class="head">
 		</div>
 		<div class="body">
-			
+			<div class="img-thumbnail">
+				<img class="thumbnail" alt="1" src="../image/1.jpg"><img class="thumbnail" alt="2" src="../image/2.jpg"><img class="thumbnail" alt="3" src="../image/3.jpg"><br>
+				<img class="thumbnail" alt="1" src="../image/1.jpg"><img class="thumbnail" alt="2" src="../image/2.jpg"><img class="thumbnail" alt="3" src="../image/3.jpg"><br>
+				<img class="thumbnail" alt="1" src="../image/1.jpg"><img class="thumbnail" alt="2" src="../image/2.jpg"><img class="thumbnail" alt="3" src="../image/3.jpg">
+			</div>
+			<div class="paginate">
+				<a href="#"><img style="vertical-align: middle;" alt="page prev more" src="../image/page_prev_more.gif"></a>
+				<a href="#"><img style="vertical-align: middle;" alt="page prev" src="../image/page_prev.gif"></a>
+				<a href="#" class="num">1</a>
+				<a href="#" class="num">2</a>
+				<a href="#" class="num">3</a>
+				<a href="#" class="num">4</a>
+				<a href="#" class="num">5</a>
+				<a href="#" class="num">6</a>
+				<a href="#" class="num">7</a>
+				<a href="#" class="num">8</a>
+				<a href="#" class="num">9</a>
+				<a href="#" class="num">10</a>
+				<a href="#"><img style="vertical-align: middle;" alt="page next" src="../image/page_next.gif"></a>
+				<a href="#"><img style="vertical-align: middle;" alt="page next more" src="../image/page_next_more.gif"></a>
+			</div>
 		</div>
 		<div class="footer">
 		</div>
