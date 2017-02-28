@@ -17,9 +17,9 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://ec2-52-78-195-244.ap-northeast-2.compute.amazonaws.com:3306/kdh?characterEncoding=UTF-8"/>
-				<property name="username" value="kdh" />
-				<property name="password" value="ksy1469" />
+				<property name="url" value="jdbc:mysql://ec2-13-124-44-27.ap-northeast-2.compute.amazonaws.com:3306/itpm?characterEncoding=UTF-8"/>
+				<property name="username" value="itpm" />
+				<property name="password" value="itpm1234" />
 			</dataSource>
 		</environment>
 
