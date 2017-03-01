@@ -1,8 +1,13 @@
 @CHARSET "UTF-8";
-
+@font-face {font-family: 'aGothic15'; src: url('../font/aGothic15.ttf')}
 body {
+	font-family: 'aGothic15';
 	padding: 0px;
 	margin: 0px;
+}
+
+a {
+	text-decoration: none;
 }
 
 table.bbs-list tbody td a:link, table.bbs-list tbody td a:visited, table.bbs-list tbody td  a:active {
@@ -35,8 +40,25 @@ table.bbs-list thead th {
 }
 
 .head-menu {
-	height: 10%;
+	height: 30px;
 	background-color: #b31b1b;
+	position: inherit;
+}
+
+.head-a {
+	color: #ffffff;
+	padding: 0 10px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.nav-div {
+	padding: 5px;
+	float: left;
+	width: auto;
+	height: 40px;
 }
 
 .body-img {
