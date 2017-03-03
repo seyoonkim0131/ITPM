@@ -10,6 +10,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 table.bbs-list tbody td a:link, table.bbs-list tbody td a:visited, table.bbs-list tbody td  a:active {
 	color:#666666;
 }
@@ -60,12 +64,6 @@ table.bbs-list thead th {
 	float: left;
 	width: auto;
 	height: 40px;
-}
-
-.body-img {
-	background: url("../image/cut.png") no-repeat fixed center;
-	width: 100%;
-	height: 50%;
 }
 
 .body {

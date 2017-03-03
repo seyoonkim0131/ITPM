@@ -11,20 +11,12 @@
 		<title>Home | IT정책경영학과</title>
 		<link rel="StyleSheet" href="css/itpm.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		
 	</head>
 	<body>
-		<div></div>
-	
-	
-		<div class="head-menu">
-			Hello.
-		</div>
+		<c:import url="header.html" />	
 		<div class="body-img">
 			<input type="text" />
 		</div>
-		<div class="body-bottom">
-			<input type="text" />
-		</div>
+		<c:import url="footer.jsp" />
 	</body>
 </html>
