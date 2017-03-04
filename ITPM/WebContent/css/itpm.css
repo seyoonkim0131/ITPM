@@ -1,17 +1,19 @@
 @CHARSET "UTF-8";
-@font-face {font-family: 'aGothic15'; src: url('../font/aGothic15.ttf')}
+@font-face {font-family: 'aGothic15'; src: url('../font/aGothic15.ttf') format('truetype');}
 body {
-	font-family: 'aGothic15';
-	padding: 0px;
-	margin: 0px;
+	font-family: aGothic15; padding: 0px; margin: 0px;
 }
 
 a {
-	text-decoration: none;
+	text-decoration: none; color: black;
 }
 
 a:hover {
 	text-decoration: none;
+}
+
+ul {
+	list-style: none;
 }
 
 table.bbs-list tbody td a:link, table.bbs-list tbody td a:visited, table.bbs-list tbody td  a:active {
@@ -23,20 +25,11 @@ table.bbs-list tbody td a:hover {
 }
 
 table.bbs-list {
-	width: 100%;
-	border-top: solid 2px #b31b1b;
-	border-bottom: solid 1px #e3e3e3 !important;
-	table-layout: fixed;
+	width: 100%;  border-top: solid 2px #b31b1b; border-bottom: solid 1px #e3e3e3 !important; table-layout: fixed;
 }
 
-table.bbs-list thead th,
-table.bbs-list tbody td {
-	padding:6px 0 5px 0;
-	line-height:16px;
-	border-bottom: solid 1px #e3e3e3;
-	font-size: 12px;
-	text-align: center;
-	color: #999999;
+table.bbs-list thead th, table.bbs-list tbody td {
+	padding:6px 0 5px 0; line-height:16px; border-bottom: solid 1px #e3e3e3; font-size: 12px; text-align: center; color: #999999;
 }
 
 table.bbs-list thead th {
@@ -44,107 +37,77 @@ table.bbs-list thead th {
 }
 
 .head-menu {
-	width: 100%;
-	height: 30px;
-	background-color: #b31b1b;
-	position: inherit;
+	width: 100%; height: 30px; background-color: #b31b1b; position: inherit;
 }
 
 .head-a {
-	color: #ffffff;
-	padding: 0 10px;
-	font-size: 12px;
-	letter-spacing: 1px;
-	margin-top: 2px;
-	margin-bottom: 2px;
+	color: #ffffff; padding: 0 10px; font-size: 12px; letter-spacing: 1px; margin-top: 2px; margin-bottom: 2px;
 }
 
 .nav-div {
-	padding: 5px;
-	float: left;
-	width: auto;
-	height: 40px;
+	padding: 5px; float: left; width: auto; height: 40px;
 }
 
 .body {
-	height: 50%;
-	width: 100%;
+	height: 50%; width: 100%;
+}
+
+.floating {
+	position: fixed; width: 190px; float: left; position: fixed; border-style: solid; border-color: #dcdcdc; border-width: 1px 1px 1px 1px;
+	margin-top: 50px; margin-left: 50px; margin-right: 50px;
+}
+
+.small-title {
+	float: left; position: absolute; margin-left: 20%; margin-top: 4%;
+}
+
+.content {
+	position: relative; margin-left: 22%; padding-top: 8%; padding-bottom: 8%;
 }
 
 .body-bottom {
-	height: 40%;
-	background-color: #313131;
+	height: 40%; background-color: #313131;
 }
 
 #footer {
-	clear: both;
-	height: 102px;
-	border-top: 1px #313131 solid;
-	background: #313131;
+	clear: both; height: 102px; border-top: 1px #313131 solid; background: #313131;
 }
 
 #footer div.inner {
-	position: relative;
-	z-index: 0;
-	padding-top: 25px;
-	padding-left: 30px;
-	width: 930px;
+	position: relative; z-index: 0; padding-top: 25px; padding-left: 30px; width: 930px;
 }
 
 #footer ul.links {
-	height: 20px;
-	color: #666;
+	height: 20px; color: #666;
 }
 
 #footer ul {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
+	list-style: none; margin: 0px; padding: 0px;
 }
 
 #footer ul li.first-child {
-	padding-left: 0px;
-	background: none;
+	padding-left: 0px; background: none;
 }
 
 #footer ul li {
-	float: left;
-	margin: 0px;
-	padding: 0 10px 0 10px;
-	font-size: 11px;
-	letter-spacing: -1px;
+	float: left; margin: 0px; padding: 0 10px 0 10px; font-size: 11px; letter-spacing: -1px;
 }
 
 .thumbnail {
-	width: 200px;
-	height: 150px;
+	width: 200px; height: 150px;
 }
 
 .paginate {
-	width: 100%;
-	height: 100%;
+	width: 80%; height: 100%; text-align: center;
 }
 
 .num {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
-	min-width: 14px;
-	_width: 14px; 
-	height: 14px;
-	padding: 2px;
-	text-decoration: none;
-	line-height: normal;
-	border: 1px solid #fff;
-	text-decoration: none;
-	text-align: center;
+	position: relative; display: inline-block; vertical-align: middle; min-width: 14px; _width: 14px; height: 14px; padding: 2px; text-decoration: none;
+	line-height: normal; border: 1px solid #fff; text-decoration: none; text-align: center;
 }
 
 .num:hover {
-	text-decoration: underline;
-	color: #00b2e0;
-	border: 1px solid #7fd8ef;
-	text-decoration: none;
+	text-decoration: underline; color: #00b2e0; border: 1px solid #7fd8ef; text-decoration: none;
 }
 
 @media screen and (max-width: 400px) {
