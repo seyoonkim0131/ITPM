@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
-@font-face {font-family: 'aGothic15'; src: url('../font/aGothic15.ttf') format('truetype');}
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 body {
-	font-family: aGothic15; padding: 0px; margin: 0px;
+	font-family: 'Nanum Gothic', sans-serif; padding: 0px; margin: 0px;
 }
 
 a {
@@ -29,7 +29,7 @@ table.bbs-list {
 }
 
 table.bbs-list thead th, table.bbs-list tbody td {
-	padding:6px 0 5px 0; line-height:16px; border-bottom: solid 1px #e3e3e3; font-size: 12px; text-align: center; color: #999999;
+	padding: 6px 0 5px 0; line-height: 16px; border-bottom: solid 1px #e3e3e3; font-size: 12px; text-align: center; color: #999999;
 }
 
 table.bbs-list thead th {
@@ -41,7 +41,7 @@ table.bbs-list thead th {
 }
 
 .head-a {
-	color: #ffffff; padding: 0 10px; font-size: 12px; letter-spacing: 1px; margin-top: 2px; margin-bottom: 2px;
+	color: #ffffff; padding: 0 10px; font-size: 9px; letter-spacing: 1px; margin-top: 2px; margin-bottom: 2px;
 }
 
 .nav-div {
@@ -53,12 +53,12 @@ table.bbs-list thead th {
 }
 
 .floating {
-	position: fixed; width: 190px; float: left; position: fixed; border-style: solid; border-color: #dcdcdc; border-width: 1px 1px 1px 1px;
+	width: 150px; float: left; border-style: solid; border-color: #dcdcdc; border-width: 1px 1px 1px 1px;
 	margin-top: 50px; margin-left: 50px; margin-right: 50px;
 }
 
 .small-title {
-	float: left; position: absolute; margin-left: 20%; margin-top: 4%;
+	float: left; position: absolute; margin-left: 25%; margin-top: 4%; width: 65%;
 }
 
 .content {
@@ -66,7 +66,7 @@ table.bbs-list thead th {
 }
 
 .body-bottom {
-	height: 40%; background-color: #313131;
+	height: 40%; background-color: #313131; position: inherit;
 }
 
 #footer {

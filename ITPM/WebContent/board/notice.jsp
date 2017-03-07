@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 		<link rel="Shortcut Icon" href="../image/favicon.ico" />
-		<title>질문과답변 | IT정책경영학과</title>
+		<title>학과 공지사항 | IT정책경영학과</title>
 		<link rel="stylesheet" href="../css/itpm.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript">
@@ -25,32 +25,32 @@
 	<body>
 		<c:import url="../import/header.jsp" />
 		<div class="body">
-			<div  class="floating">
+			<div class="floating">
 				<div style="height: 14px; background-color: #b31b1b;">&nbsp;</div>
-				<div style="padding: 10%; padding-left: 20%; font-size: 15pt; font-weight: 900;">커뮤니티</div>
+				<div style="padding: 10%; padding-left: 20%; font-size: 12pt; font-weight: 900;">커뮤니티</div>
 				<div style="height: 2px; background-color: #b6b6b6;"></div>
 				<div>
 					<nav>
-						<ul style="line-height: 200%;">
-							<li class="menu" onclick="submenu()"><a href="#">공지사항</a>
+						<ul style="line-height: 150%;">
+							<li class="menu" onclick="submenu()"><a href="#"><font size="2pt">공지사항</font></a>
 								<ul id="hide" class="hide" style="display: none;">
-									<li><a href="http://grad.ssu.ac.kr/web/grad/plaza_a" target="_blank">대학원 공지사항</a></li>
-									<li><a href="notice.jsp">학과 공지사항</a></li>
+									<li><a href="http://grad.ssu.ac.kr/web/grad/plaza_a" target="_blank"><font size="1pt">대학원 공지사항</font></a></li>
+									<li><a href="notice.jsp"><font size="1pt">학과 공지사항</font></a></li>
 								</ul>
 							</li>
-							<li><a href="freeboard.jsp">자유게시판</a></li>
-							<li><a href="qnaboard.jsp">Q&A</a></li>
-							<li><a href="gallery.jsp">갤러리</a></li>
+							<li><a href="freeboard.jsp"><font size="2pt">자유게시판</font></a></li>
+							<li><a href="qnaboard.jsp"><font size="2pt">Q&A</font></a></li>
+							<li><a href="gallery.jsp"><font size="2pt">갤러리</font></a></li>
 						</ul>
 					</nav>
 				</div>
 			</div>
 			<div class="small-title">
 				<p>
-					<span>Q&A</span>
-					<span style="padding-left: 70%;"><small>홈 > 커뮤니티 > Q&A</small></span>
+					<span><strong>학과 공지사항</strong></span>
+					<span style="padding-left: 60%;"><small><small>홈 > 커뮤니티 > 학과 공지사항</small></small></span>
 				</p>
-			</div>
+			</div><br/>
 			<div class="content">
 				<table class="bbs-list" style="width: 80%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
 					<colgroup>

@@ -24,15 +24,15 @@
 		</script>
 	</head>
 	<body>
-		<c:import url="../import/header.html" />
+		<c:import url="../import/header.jsp" />
 		<div class="body">
 			<div class="floating">
 				<div style="height: 14px; background-color: #b31b1b;">&nbsp;</div>
-				<div style="padding: 10%; padding-left: 20%;font-size: 15pt; font-weight: 900;">관리자 메뉴</div>
+				<div style="padding: 10%; padding-left: 20%; font-size: 15pt; font-weight: 900;">관리자 메뉴</div>
 				<div style="height: 2px; background-color: #b6b6b6;"></div>
 				<div>
 					<nav>
-						<ul>
+						<ul style="line-height: 200%;">
 							<li><a href="insertStudent.jsp">신입생 등록</a></li>
 							<li class="menu" onclick="submenu()"><a href="#">게시판 관리</a>
 								<ul id="hide" class="hide" style="display: none;">
@@ -46,7 +46,10 @@
 				</div>
 			</div>
 			<div class="small-title">
-				<p><span>신입생 등록</span></p>
+				<p>
+					<span>신입생 등록</span>
+					<span style="padding-left: 70%;"><small>홈 > 관리자 메뉴 > 신입생 등록</small></span>
+				</p>
 			</div>
 			<div class="content">
 				<table>

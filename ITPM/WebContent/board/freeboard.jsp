@@ -23,19 +23,19 @@
 		</script>
 	</head>
 	<body>
-		<c:import url="../import/header.html" />
+		<c:import url="../import/header.jsp" />
 		<div class="body">
-			<div  class="floating">
+			<div class="floating">
 				<div style="height: 14px; background-color: #b31b1b;">&nbsp;</div>
-				<div style="padding: 15px 15px 15px 15px; font-size: 15pt; font-weight: 900;">커뮤니티</div>
+				<div style="padding: 10%; padding-left: 20%; font-size: 15pt; font-weight: 900;">커뮤니티</div>
 				<div style="height: 2px; background-color: #b6b6b6;"></div>
 				<div>
 					<nav>
-						<ul>
+						<ul style="line-height: 200%;">
 							<li class="menu" onclick="submenu()"><a href="#">공지사항</a>
 								<ul id="hide" class="hide" style="display: none;">
-									<li><a href="#">대학원 공지사항</a></li>
-									<li><a href="#">학과 공지사항</a></li>
+									<li><a href="http://grad.ssu.ac.kr/web/grad/plaza_a" target="_blank">대학원 공지사항</a></li>
+									<li><a href="notice.jsp">학과 공지사항</a></li>
 								</ul>
 							</li>
 							<li><a href="freeboard.jsp">자유게시판</a></li>
@@ -46,7 +46,10 @@
 				</div>
 			</div>
 			<div class="small-title">
-				<p><span>자유게시판</span></p>
+				<p>
+					<span>자유게시판</span>
+					<span style="padding-left: 70%;"><small>홈 > 커뮤니티 > 자유게시판</small></span>
+				</p>
 			</div>
 			<div class="content">
 				<table class="bbs-list" style="width: 80%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
@@ -94,7 +97,7 @@
 							<td style="text-align: center;">5036</td>
 						</tr>
 					</tbody>
-				</table>
+				</table><br/>
 				<div class="paginate">
 					<a href="#"><img style="vertical-align: middle;" alt="page prev more" src="../image/page_prev_more.gif"></a>
 					<a href="#"><img style="vertical-align: middle;" alt="page prev" src="../image/page_prev.gif"></a>
