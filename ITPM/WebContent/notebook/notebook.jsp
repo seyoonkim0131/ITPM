@@ -50,24 +50,24 @@
             <p><span>원우수첩</span></p>
          </div>
          <div class="content">
-            <table class="bbs-list" style="width: 60%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
+            <table class="bbs-list" style="width: 80%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
                
                <tbody>                     
                   <tr align="center">
                      <td rowspan=5 style="padding-right"><img src="../image/1.jpg" WIDTH="155" HEIGHT="177" BORDER="1" style="vertical-align: middle;"></td>
-                     <td width="200" style="padding-right:50px">기수</td><td width="280" style="text-align:left">1기</td> 
+                     <td width="100" style="padding-right:50px">기수</td><td width="280" style="text-align:left">1기</td> 
                   </tr>
                   <tr align="left">
-                     <td width="200" style="padding-right:50px">이름</td><td width="280" style="text-align:left">류훈선</td>                        
+                     <td width="100" style="padding-right:50px">이름</td><td width="280" style="text-align:left">류훈선</td>                        
                   </tr>
                   <tr align="left">
-                     <td width="200" style="padding-right:50px">회사명</td><td width="280" style="text-align:left">숭실대학교</td>
+                     <td width="100" style="padding-right:50px">회사명</td><td width="280" style="text-align:left">숭실대학교</td>
                   </tr>
                   <tr align="left">
-                     <td width="200" style="padding-right:50px">핸드폰</td><td width="280" style="text-align:left">010-1234-1234</td>
+                     <td width="100" style="padding-right:50px">핸드폰</td><td width="280" style="text-align:left">010-1234-1234</td>
                   </tr>
                   <tr align="left">
-                     <td width="200" style="padding-right:50px">E-mail</td><td width="280" style="text-align:left">hoonseon@nate.com</td>
+                     <td width="100" style="padding-right:50px">E-mail</td><td width="280" style="text-align:left">hoonseon@nate.com</td>
                   </tr>                     
                </tbody>
             </table>
