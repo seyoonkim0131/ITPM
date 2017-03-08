@@ -49,6 +49,30 @@ table.bbs-list thead th {
 }
 
 .body {
+	width:100%;
+}
+
+.main-img{
+	position:absolute;
+	z-index:2;
+}
+
+.main-menu{
+	position:absolute;
+	color: white;
+	z-index:4;
+}
+
+.text{
+	position:absolute;
+	z-index:3;
+	color:white;
+}
+
+.main-content {
+	position:relative;
+	z-index:1;
+	background:green;
 	height: 50%; width: 100%;
 }
 
@@ -70,6 +94,11 @@ table.bbs-list thead th {
 }
 
 #footer {
+	clear: both;
+	height: 102px;
+	border-top: 1px #313131 solid;
+	background: #313131;
+	z-index:3
 	clear: both; height: 102px; border-top: 1px #313131 solid; background: #313131;
 }
 
