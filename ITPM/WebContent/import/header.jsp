@@ -45,7 +45,7 @@ $(document).ready(function(){
 		<div class="nav-div"><a class="head-a" href="#">CONTACT US</a></div>
 		<div class="nav-div"><a class="head-a" href="#">SITE MAP</a></div>
 		<div class="nav-div"><a class="head-a" href="../admin/insertStudent.jsp">STAFF</a></div>
-		<div class="nav-div"><a class="head-a" href="#"><img alt="question mark" src="../image/icon_search.png" width="18px" height="15px" style="margin-top: 2px;"></a></div>
+		<div class="nav-div"><a class="head-a" href="#"><img alt="question mark" src="../image/icon_search.png" width="18px" height="15px" style="margin-top: 2px;" onerror="this.src='image/icon_search.png'"></a></div>
 	</nav>
 </div>
 <div>
