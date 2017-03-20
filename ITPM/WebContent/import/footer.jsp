@@ -4,21 +4,19 @@
 <head>
 </head>
 <body>
-<div id="footer" class="body-bottom">
-	<div class="inner">
-		<ul class="links">
-			<li class="first-child"><a href="#" style="color: #00a4ca">개인정보처리방침</a></li>
-			<li><a href="#"><font color="#efefef">이메일무단수집거부</font></a></li>
+<footer class="container-fluid bg-4" style="padding: 0 0 0 0; background-color: #313131;">
+	<div class="footer_menu">
+		<ul style="margin: 0; padding: 20px 0 0 20px; text-align: center; list-style: none; font-size: 14px; clear: both;">
+			<li style="display: inline-block; float: left;"><a href="https://www.ssu.ac.kr/html/themes/kor/html/footer/privacy.html" target="_blank"><font color="#fff">개인정보처리방침</font></a></li>
+			<li style="display: inline-block; float: left; margin: 0 0 0 10px; padding: 0 0 0 12px; background: url('../image/bullet_foot_li.gif') no-repeat 0; list-style: none; list-style-type: noen;">
+				<a href="https://www.ssu.ac.kr/html/themes/kor/html/footer/email.html" target="_blank"><font color="#fff">이메일무단수집거부</font></a>
+			</li>
 		</ul>
-		<div id="copyrights">
-			<ul>
-				<li class="first-child"><font color="#efefef">서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실</font></li>
-				<li><font color="#efefef">Tel:02)828-7361</font></li>
-				<li><font color="#efefef">E-mail:gamsori@ssu.ac.kr</font></li>
-			</ul><br>
-			<div style="font-size: 11px;"><font color="#efefef">Copyright(c) 2017 Soongsil University. All rights reserved</font></div>
-		</div>
 	</div>
-</div>
+	<address class="address" style="padding: 21px 0 0 20px; font-size: 12px; color: #adadad; font-style: normal; margin-bottom: 20px; line-height: 20px;">
+		서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: gamsori@ssu.ac.kr
+		<span class="copyright" style="display: block;">Copyright(c) 2017 Soongsil University. All rights reserved</span>
+	</address>
+</footer>
 </body>
 </html>
