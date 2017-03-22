@@ -49,6 +49,7 @@ $(document).ready(function(){
 		document.getElementById('grayMenu').style.display = 'block';
 	}
 	if(document.location.href.split('ITPM/')[1] == 'index.jsp' || document.location.href.split('ITPM/')[1] == '') {
+		document.getElementById('space').style.display = 'none';
 		document.getElementById('headMenu').style.display = 'none';
 		document.getElementById('home').href = 'index.jsp';
 		document.getElementById('contact').href = '#';
@@ -74,14 +75,14 @@ $(document).ready(function(){
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav" style="float: right; font-size: 11px;">
 					<li style=" line-height: 30px;"><a id="home" href="../index.jsp">HOME</a></li>
+					<li><a id="siteMap" href="#">LOGIN</a></li>
 					<li><a id="contact" href="#">CONTACT US</a></li>
-					<li><a id="siteMap" href="#">SITE MAP</a></li>
 					<li><a id="staff" href="../admin/insertStudent.jsp">STAFF</a></li>
 					<li><a href="#"><img alt="search" src="../image/icon_search.png" onerror="this.src='image/icon_search.png'"></a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
-	</nav><br/><br/>&nbsp;
+	</nav><div id="space"><br/><br/>&nbsp;</div>
 	<div id="headMenu" class="container-fluid" >
 		<div class="row">
 			<div id="logo" class="col-lg-12">
@@ -91,32 +92,33 @@ $(document).ready(function(){
 			<div id="grayMenu" class="col-lg-12" style="background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
 				<div id="navbar" class="navbar-collapse collapse" style="font-size: 16px;">
 					<ul class="nav navbar-nav dropdown" style="float: inherit;" role="menu">
-						<li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="대학원정보" src="../image/manuimage_itpminfo.png"></a>
+						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#"><img alt="대학원정보" src="../image/manuimage_itpminfo.png"></a>
 							<ul class="dropdown-sub list-group">
 								<li class="list-group-item" role="presentation"><a href="#">학과소개</a></li>
 								<li class="list-group-item" role="presentation"><a href="../about/prof.jsp">교수소개</a></li>
-								<li class="list-group-item" role="presentation"><a href="#">비전&연혁</a></li>
+								<li class="list-group-item" role="presentation"><a href="#">비전</a></li>
 								<li class="list-group-item" role="presentation"><a href="#">방문안내</a></li>
 							</ul>
 						</li>
-						<li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="학사정보" src="../image/manuimage_schoolinfo.png"></a>
+						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#"><img alt="학사정보" src="../image/manuimage_schoolinfo.png"></a>
 							<ul class="dropdown-sub list-group">
 								<li class="list-group-item" role="presentation"><a href="#">개설과정</a></li>
 								<li class="list-group-item" role="presentation"><a href="#">규정</a></li>
 								<li class="list-group-item" role="presentation"><a href="../academic/calander.jsp">학사일정</a></li>
-								<li class="list-group-item" role="presentation"><a href="#">학사자료실</a></li>
+								<!-- <li class="list-group-item" role="presentation"><a href="#">학사자료실</a></li> -->
+								<li class="list-group-item" role="presentation"><a href="#">공지사항</a></li>
 							</ul>
 						</li>
-						<li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
-						<li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="커뮤니티" src="../image/manuimage_community.png"></a>
+						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
+						<!-- <li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="커뮤니티" src="../image/manuimage_community.png"></a>
 							<ul class="dropdown-sub list-group">
 								<li class="list-group-item" role="presentation"><a href="../board/notice.jsp">공지사항</a></li>
 								<li class="list-group-item" role="presentation"><a href="../board/freeboard.jsp">자유게시판</a></li>
 								<li class="list-group-item" role="presentation"><a href="../board/qnaboard.jsp">Q&A</a></li>
 								<li class="list-group-item" role="presentation"><a href="../board/gallery.jsp">갤러리</a></li>
 							</ul>
-						</li>
-						<li style="padding-left: 3%; width: 20%;"><a href="../notebook/notebook.jsp"><img alt="원우수첩" src="../image/manuimage_notebook.png"></a></li>
+						</li> -->
+						<li style="padding-left: 3%; width: 25%;"><a href="../notebook/notebook.jsp"><img alt="원우수첩" src="../image/manuimage_notebook.png"></a></li>
 					</ul>
 				</div>
 			</div>
