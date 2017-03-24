@@ -25,7 +25,7 @@ table.bbs-list tbody td a:hover {
 }
 
 table.bbs-list {
-	width: 100%;  border-top: solid 2px #b31b1b; border-bottom: solid 1px #e3e3e3 !important; table-layout: fixed;
+	border-top: solid 2px #b31b1b; border-bottom: solid 1px #e3e3e3 !important; table-layout: fixed; border-spacing: 0; margin: 100px 0 0 0; width: 80%;
 }
 
 table.bbs-list thead th, table.bbs-list tbody td {
@@ -76,15 +76,16 @@ table.bbs-list thead th {
 	height: 50%; width: 100%;
 }
 
+#side_menu {position: absolute; max-width:150px; border: 1px solid #dcdcdc; float: left; padding: 0 0 0 0; margin-top: 70px; margin-left: 30px; margin-right: 50px; text-align: left;}
+
 .floating {
 	width: 150px; float: left; border-style: solid; border-color: #dcdcdc; border-width: 1px 1px 1px 1px;
 	margin-top: 50px; margin-left: 50px; margin-right: 50px;
 }
 
-.small-title {
-	float: left; position: absolute; margin-left: 25%; margin-top: 4%; width: 65%;
-}
-
+.small-title {float: left; width: 80%;}
+.small-title img {padding: 0 10px 1px 2px;}
+.nav-title {font-size: 12px;}
 .content {
 	position: relative; margin-left: 22%; padding-top: 8%; padding-bottom: 8%;
 }
@@ -98,7 +99,7 @@ table.bbs-list thead th {
 	height: 102px;
 	border-top: 1px #313131 solid;
 	background: #313131;
-	z-index:3
+	z-index:3;
 	clear: both; height: 102px; border-top: 1px #313131 solid; background: #313131;
 }
 
@@ -122,12 +123,8 @@ table.bbs-list thead th {
 	float: left; margin: 0px; padding: 0 10px 0 10px; font-size: 11px; letter-spacing: -1px;
 }
 
-.thumbnail {
-	width: 200px; height: 150px;
-}
-
 .paginate {
-	width: 80%; height: 100%; text-align: center;
+	height: 100%; text-align: center; margin-bottom: 100px;
 }
 
 .num {
@@ -137,10 +134,4 @@ table.bbs-list thead th {
 
 .num:hover {
 	text-decoration: underline; color: #00b2e0; border: 1px solid #7fd8ef; text-decoration: none;
-}
-
-@media screen and (max-width: 400px) {
-    body {
-        background-color: #b31b1b;
-    }
 }

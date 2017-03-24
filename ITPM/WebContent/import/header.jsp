@@ -4,11 +4,10 @@
 <head>
 <script type="text/javascript">
 function submenu() {
-	var hide = document.getElementById("hide");
-	if(hide.style.display == "none") {
-		hide.style.display = "block";
+	if($('#hide').css('display') == 'none') {
+		$('#hide').css('display', 'block');
 	} else {
-		hide.style.display = "none";
+		$('#hide').css('display', 'none');
 	}
 }
 
@@ -43,10 +42,12 @@ $(document).ready(function(){
 		document.getElementById('whiteLogo').style.display = 'block';
 		document.getElementById('logo').style.display = 'none';
 		document.getElementById('grayMenu').style.display = 'none';
+		document.getElementById('logoSpace').style.display = 'none';
 	} else {
 		document.getElementById('whiteLogo').style.display = 'none';
 		document.getElementById('logo').style.display = 'block';
 		document.getElementById('grayMenu').style.display = 'block';
+		document.getElementById('logoSpace').style.display = 'block';
 	}
 	if(document.location.href.split('ITPM/')[1] == 'index.jsp' || document.location.href.split('ITPM/')[1] == '') {
 		document.getElementById('space').style.display = 'none';
@@ -88,7 +89,7 @@ $(document).ready(function(){
 			<div id="logo" class="col-lg-12">
 				<img alt="숭실대학교 대학원" src="../image/menu_ssu_logo.png" width="100px" height="40px" onerror="this.src='image/menu_ssu_logo.png'">
 				<img alt="IT정책경영학과" src="../image/menu_itpm_logo.png" width="220px" height="40px" onerror="this.src='image/menu_itpm_logo.png'">
-			</div><br/>&nbsp;
+			</div><div id="logoSpace"><br/>&nbsp;</div>
 			<div id="grayMenu" class="col-lg-12" style="background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
 				<div id="navbar" class="navbar-collapse collapse" style="font-size: 16px;">
 					<ul class="nav navbar-nav dropdown" style="float: inherit;" role="menu">
@@ -96,7 +97,7 @@ $(document).ready(function(){
 							<ul class="dropdown-sub list-group">
 								<li class="list-group-item" role="presentation"><a href="#">학과소개</a></li>
 								<li class="list-group-item" role="presentation"><a href="../about/prof.jsp">교수소개</a></li>
-								<li class="list-group-item" role="presentation"><a href="#">비전</a></li>
+								<li class="list-group-item" role="presentation"><a href="#">교육비전</a></li>
 								<li class="list-group-item" role="presentation"><a href="#">방문안내</a></li>
 							</ul>
 						</li>
