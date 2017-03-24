@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {font-family: 'Nanum Gothic', sans-serif;}
+.navbar {min-height: 40px;}
+.navbar-inverse .navbar-nav>li>a {color: #fff;}
+.navbar-brand>img {display: none;}
+.dropdown {padding: 0 100px 0 100px;}
+.dropdown .dropdown-sub {position: absolute; visibility: hidden; text-align: center;}
+.dropdown li:hover .dropdown-sub {visibility: visible;}
+.dropdown-sub {z-index: 3; background-color: #fff; padding: 0px;}
+.nav>li>a:focus, .nav>li>a:hover {background-color: transparent;}
+.dropdown-sub {white-space: nowrap;}

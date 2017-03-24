@@ -7,112 +7,145 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 		<link rel="Shortcut Icon" href="../image/favicon.ico" />
-		<title>학과 공지사항 | IT정책경영학과</title>
+		<title>공지사항 | IT정책경영학과</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/itpm.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/menu.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			function submenu() {
-				//$("#hide").display = "block";
-				var sub = document.getElementById("hide");
-				if(sub.style.display == 'none') {
-					sub.style.display = 'block';
+			$(window).resize(function(){
+				if(getWidth() <= '767') { //얘가 작을때얌
+					document.getElementById('side_menu').style.display = 'none';
+					$('.content-div').css('margin-left', '80px');
 				} else {
-					sub.style.display = 'none';
+					document.getElementById('side_menu').style.display = 'block';
+					$('.content-div').css('margin-left', '250px');
 				}
-			}
+			});
+			
+			$(document).ready(function() {
+				if(getWidth() <= '767') { //얘가 작다고
+					document.getElementById('side_menu').style.display = 'none';
+					$('.content-div').css('margin-left', '80px');
+				} else {
+					document.getElementById('side_menu').style.display = 'block';
+					$('.content-div').css('margin-left', '250px');
+				}
+			});
 		</script>
+		<style type="text/css">
+			.table_list>ul>li {position: relative; z-index: 0; padding: 10px 18px; border-bottom: 1px solid #d0d0d0; line-height: 20px; display: list-item;}
+			.table_list {color: #666; margin: 0;}
+			.table_list .top_area:after {display: block; clear: both; content: '';}
+			.pagination {display: inline-block;}
+			.pagination a {color: black; padding: 8px 16px; text-decoration: none;}
+			.pagination a.active {color: white; background-color: #b31b1b;}
+			.pagination a:hover:not(.active) {background-color: #ddd;}
+		</style>
 	</head>
 	<body>
 		<c:import url="../import/header.jsp" />
-		<div class="body">
-			<div class="floating">
-				<div style="height: 14px; background-color: #b31b1b;">&nbsp;</div>
-				<div style="padding: 10%; padding-left: 20%; font-size: 12pt; font-weight: 900;">커뮤니티</div>
-				<div style="height: 2px; background-color: #b6b6b6;"></div>
-				<div>
-					<nav>
-						<ul style="line-height: 150%;">
-							<li class="menu" onclick="submenu()"><a href="#"><font size="2pt">공지사항</font></a>
-								<ul id="hide" class="hide" style="display: none;">
-									<li><a href="http://grad.ssu.ac.kr/web/grad/plaza_a" target="_blank"><font size="1pt">대학원 공지사항</font></a></li>
-									<li><a href="notice.jsp"><font size="1pt">학과 공지사항</font></a></li>
-								</ul>
-							</li>
-							<li><a href="freeboard.jsp"><font size="2pt">자유게시판</font></a></li>
-							<li><a href="qnaboard.jsp"><font size="2pt">Q&A</font></a></li>
-							<li><a href="gallery.jsp"><font size="2pt">갤러리</font></a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-			<div class="small-title">
-				<p>
-					<span><strong>학과 공지사항</strong></span>
-					<span style="padding-left: 60%;"><small><small>홈 > 커뮤니티 > 학과 공지사항</small></small></span>
-				</p>
-			</div><br/>
-			<div class="content">
-				<table class="bbs-list" style="width: 80%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
-					<colgroup>
-						<col width="5%"/>
-						<col width="auto"/>
-						<col width="5%"/>
-						<col width="10%"/>
-						<col width="20%"/>
-						<col width="10%"/>
-					</colgroup>
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>파일</th>
-							<th>작성자</th>
-							<th>날짜</th>
-							<th>조회수</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td style="text-align: center;">3</td>
-							<td style="text-align: left;">2015년 3월 숭실대 PM연구소 "3월 PM정기세미나: 프로젝트관리방법론(PRINCE2)...</td>
-							<td style="text-align: center;"><img alt="file" src="../image/ico_file.gif" style="vertical-align: middle;"></td>
-							<td style="text-align: center;">남재덕</td>
-							<td style="text-align: center;">2015.03.19</td>
-							<td style="text-align: center;">5036</td>
-						</tr>
-						<tr>
-							<td style="text-align: center;">2</td>
-							<td style="text-align: left;">2015년 3월 숭실대 PM연구소 "3월 PM정기세미나: 프로젝트관리방법론(PRINCE2)...</td>
-							<td style="text-align: center;"><img alt="file" src="../image/ico_file.gif" style="vertical-align: middle;"></td>
-							<td style="text-align: center;">남재덕</td>
-							<td style="text-align: center;">2015.03.19</td>
-							<td style="text-align: center;">5036</td>
-						</tr>
-						<tr>
-							<td style="text-align: center;">1</td>
-							<td style="text-align: left;">2015년 3월 숭실대 PM연구소 "3월 PM정기세미나: 프로젝트관리방법론(PRINCE2)...</td>
-							<td style="text-align: center;"></td>
-							<td style="text-align: center;">남재덕</td>
-							<td style="text-align: center;">2015.03.19</td>
-							<td style="text-align: center;">5036</td>
-						</tr>
-					</tbody>
-				</table><br/>
-				<div class="paginate">
-					<a href="#"><img style="vertical-align: middle;" alt="page prev more" src="../image/page_prev_more.gif"></a>
-					<a href="#"><img style="vertical-align: middle;" alt="page prev" src="../image/page_prev.gif"></a>
-					<a href="#" class="num">1</a>
-					<a href="#" class="num">2</a>
-					<a href="#" class="num">3</a>
-					<a href="#" class="num">4</a>
-					<a href="#" class="num">5</a>
-					<a href="#" class="num">6</a>
-					<a href="#" class="num">7</a>
-					<a href="#" class="num">8</a>
-					<a href="#" class="num">9</a>
-					<a href="#" class="num">10</a>
-					<a href="#"><img style="vertical-align: middle;" alt="page next" src="../image/page_next.gif"></a>
-					<a href="#"><img style="vertical-align: middle;" alt="page next more" src="../image/page_next_more.gif"></a>
+		<div class="container" id="side_menu">
+            <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
+            <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">학사정보</div>
+            <div style="height: 2px; background-color: #b6b6b6;"></div>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
+                <li onclick="submenu()">
+                	<a href="#" style="color:gray; background-color:transparent;">규정</a>
+                	<ul id="hide" style="display: none;">
+                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank">학칙</a></li>
+                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank">시행세칙</a></li>
+                		<li><a href="#" target="_blank">학과내규</a></li>
+                		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
+                		<li><a href="#" target="_blank">장학금기준</a></li>
+                	</ul>
+                </li>
+                <li><a href="#" style="color:gray; background-color:transparent;">학사일정</a></li>
+                <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
+            </ul>
+        </div>
+        <div class="content-div">
+			<div class="small-title" style="margin: 80px 0 0 0;">
+	            <p>
+	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">공지사항</span>
+	                <span style="float:right;">
+	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 공지사항</small>
+	                </span>
+	            </p>
+		        <div class="list">
+		        	<div class="table_list" style="border-top: 2px solid #b31b1b;">
+		        		<ul style="display: block; padding: 0;">
+		        			<li style="color: #666;">
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						<img alt="중요공지" src="../image/notice.png" style="padding: 3px 3px 0 0;">
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        					</div>
+		        			</li>
+		        			<li style="color: #666;">
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.3
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        					</div>
+		        			</li>
+		        			<li style="color: #666;">
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.2
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        					</div>
+		        			</li>
+		        			<li style="color: #666;">
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.1
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        					</div>
+		        			</li>
+		        		</ul>
+		        	</div>
+		        </div>
+	        </div>
+			<div class="pagination-centered" style="text-align: center; width: 80%;">
+				<div class="pagination">
+					<a href="#" style="color: #666">&laquo;</a>
+					<a class="active" href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" style="color: #666">&raquo;</a>
 				</div>
 			</div>
 		</div>

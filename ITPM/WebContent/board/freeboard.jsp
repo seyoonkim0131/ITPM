@@ -8,8 +8,11 @@
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 		<link rel="Shortcut Icon" href="../image/favicon.ico" />
 		<title>자유게시판 | IT정책경영학과</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/itpm.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="../css/menu.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			function submenu() {
 				//$("#hide").display = "block";
@@ -117,5 +120,13 @@
 			</div>
 		</div>
 		<c:import url="../import/footer.jsp" />
+	    <!-- Bootstrap core JavaScript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	    <script src="../dist/js/bootstrap.min.js"></script>
+	    <!-- <script src="assets/js/docs.min.js"></script> -->
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	    <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
 	</body>
 </html>

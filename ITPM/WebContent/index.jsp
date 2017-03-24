@@ -13,7 +13,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	</head>
 	<body>
-		<c:import url="header.html" />
+		<c:import url="import/header.jsp" />
 	
 	
 		<div class="body" style="height:auto;">				
@@ -146,6 +146,6 @@
 	
 	
 	
-		<c:import url="footer.jsp" />
+		<c:import url="import/footer.jsp" />
 	</body>
 </html>
