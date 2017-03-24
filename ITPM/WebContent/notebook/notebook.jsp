@@ -27,27 +27,15 @@
       <div class="body">
          <div  class="floating">
             <div style="height: 14px; background-color: #b31b1b;">&nbsp;</div>
-            <div style="padding: 15px 15px 15px 15px; font-size: 15pt; font-weight: 900;">커뮤니티</div>
-            <div style="height: 2px; background-color: #b6b6b6;"></div>
-            <div>
-               <nav>
-                  <ul>
-                     <li class="menu" onclick="submenu()"><a href="#">공지사항</a>
-                        <ul id="hide" class="hide" style="display: none;">
-                           <li><a href="#">대학원 공지사항</a></li>
-                           <li><a href="#">학과 공지사항</a></li>
-                        </ul>
-                     </li>
-                     <li><a href="freeboard.jsp">자유게시판</a></li>
-                     <li><a href="qnaboard.jsp">Q&A</a></li>
-                     <li><a href="gallery.jsp">갤러리</a></li>
-                     <li><a href="notebook.jsp">원우수첩</a></li>
-                  </ul>
-               </nav>
-            </div>
+				<div style="padding: 10%; padding-left: 20%; font-size: 15pt; font-weight: 900;">원우수첩</div>
+				<div style="height: 2px; background-color: #b6b6b6;">
+			</div>            
          </div>
          <div class="small-title">
-            <p><span>원우수첩</span></p>
+            <p>
+            	<span>원우수첩</span>
+            	<span style="padding-left: 70%;"><small>홈 > 원우수첩</small></span>
+            </p>            
          </div>
          <div class="content">
             <table class="bbs-list" style="width: 80%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
@@ -57,18 +45,10 @@
                      <td rowspan=5 style="padding-right"><img src="../image/1.jpg" WIDTH="155" HEIGHT="177" BORDER="1" style="vertical-align: middle;"></td>
                      <td width="100" style="padding-right:50px">기수</td><td width="280" style="text-align:left">1기</td> 
                   </tr>
-                  <tr align="left">
-                     <td width="100" style="padding-right:50px">이름</td><td width="280" style="text-align:left">류훈선</td>                        
-                  </tr>
-                  <tr align="left">
-                     <td width="100" style="padding-right:50px">회사명</td><td width="280" style="text-align:left">숭실대학교</td>
-                  </tr>
-                  <tr align="left">
-                     <td width="100" style="padding-right:50px">핸드폰</td><td width="280" style="text-align:left">010-1234-1234</td>
-                  </tr>
-                  <tr align="left">
-                     <td width="100" style="padding-right:50px">E-mail</td><td width="280" style="text-align:left">hoonseon@nate.com</td>
-                  </tr>                     
+                  <tr align="left"><td width="100" style="padding-right:50px">이름</td><td width="280" style="text-align:left">류훈선</td></tr>
+                  <tr align="left"><td width="100" style="padding-right:50px">회사명</td><td width="280" style="text-align:left">숭실대학교</td></tr>
+                  <tr align="left"><td width="100" style="padding-right:50px">핸드폰</td><td width="280" style="text-align:left">010-1234-1234</td></tr>
+                  <tr align="left"><td width="100" style="padding-right:50px">E-mail</td><td width="280" style="text-align:left">hoonseon@nate.com</td></tr>                     
                </tbody>
             </table>
             <div class="paginate">
