@@ -57,9 +57,9 @@
                 	<ul id="hide" style="display: none;">
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank">학칙</a></li>
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank">시행세칙</a></li>
-                		<li><a href="#" target="_blank">학과내규</a></li>
+                		<li><a href="../regulation/regulation.jsp">학과내규</a></li>
                 		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
-                		<li><a href="#" target="_blank">장학금기준</a></li>
+                		<li><a href="#">장학금기준</a></li>
                 	</ul>
                 </li>
                 <li><a href="#" style="color:gray; background-color:transparent;">학사일정</a></li>

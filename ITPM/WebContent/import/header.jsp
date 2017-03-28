@@ -110,7 +110,7 @@ $(document).ready(function(){
 								<li class="list-group-item" role="presentation"><a href="#">공지사항</a></li>
 							</ul>
 						</li>
-						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
+						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
 						<!-- <li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="커뮤니티" src="../image/manuimage_community.png"></a>
 							<ul class="dropdown-sub list-group">
 								<li class="list-group-item" role="presentation"><a href="../board/notice.jsp">공지사항</a></li>
