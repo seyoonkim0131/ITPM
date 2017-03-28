@@ -87,8 +87,7 @@ $(document).ready(function(){
 	<div id="headMenu" class="container-fluid" >
 		<div class="row">
 			<div id="logo" class="col-lg-12">
-				<img alt="숭실대학교 대학원" src="../image/menu_ssu_logo.png" width="100px" height="40px" onerror="this.src='image/menu_ssu_logo.png'">
-				<img alt="IT정책경영학과" src="../image/menu_itpm_logo.png" width="220px" height="40px" onerror="this.src='image/menu_itpm_logo.png'">
+				<img alt="숭실대학교 대학원 IT정책경영학과" src="../image/menu_itpmlogo.png" width="400px" height="65px" onerror="this.src='image/menu_itpmlogo.png'">
 			</div><div id="logoSpace"><br/>&nbsp;</div>
 			<div id="grayMenu" class="col-lg-12" style="background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
 				<div id="navbar" class="navbar-collapse collapse" style="font-size: 16px;">
@@ -103,22 +102,13 @@ $(document).ready(function(){
 						</li>
 						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#"><img alt="학사정보" src="../image/manuimage_schoolinfo.png"></a>
 							<ul class="dropdown-sub list-group">
-								<li class="list-group-item" role="presentation"><a href="#">개설과정</a></li>
-								<li class="list-group-item" role="presentation"><a href="#">규정</a></li>
-								<li class="list-group-item" role="presentation"><a href="../academic/calander.jsp">학사일정</a></li>
-								<!-- <li class="list-group-item" role="presentation"><a href="#">학사자료실</a></li> -->
-								<li class="list-group-item" role="presentation"><a href="#">공지사항</a></li>
+								<li class="list-group-item" role="presentation"><a href="../academic/education.jsp">개설과정</a></li>
+								<li class="list-group-item" role="presentation"><a href="../regulation/regulation.jsp">규정</a></li>
+								<li class="list-group-item" role="presentation"><a href="../academic/calendar.jsp">학사일정</a></li>
+								<li class="list-group-item" role="presentation"><a href="../board/notice.jsp">공지사항</a></li>
 							</ul>
 						</li>
 						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
-						<!-- <li style="padding-left: 3%; padding-right: 3%; width: 20%;"><a href="#"><img alt="커뮤니티" src="../image/manuimage_community.png"></a>
-							<ul class="dropdown-sub list-group">
-								<li class="list-group-item" role="presentation"><a href="../board/notice.jsp">공지사항</a></li>
-								<li class="list-group-item" role="presentation"><a href="../board/freeboard.jsp">자유게시판</a></li>
-								<li class="list-group-item" role="presentation"><a href="../board/qnaboard.jsp">Q&A</a></li>
-								<li class="list-group-item" role="presentation"><a href="../board/gallery.jsp">갤러리</a></li>
-							</ul>
-						</li> -->
 						<li style="padding-left: 3%; width: 25%;"><a href="../notebook/notebook.jsp"><img alt="원우수첩" src="../image/manuimage_notebook.png"></a></li>
 					</ul>
 				</div>

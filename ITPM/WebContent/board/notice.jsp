@@ -51,7 +51,7 @@
             <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">학사정보</div>
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="#" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
+                <li><a href="../academic/education.jsp" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
                 <li onclick="submenu()">
                 	<a href="#" style="color:gray; background-color:transparent;">규정</a>
                 	<ul id="hide" style="display: none;">
@@ -59,10 +59,9 @@
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank">시행세칙</a></li>
                 		<li><a href="../regulation/regulation.jsp">학과내규</a></li>
                 		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
-                		<li><a href="#">장학금기준</a></li>
                 	</ul>
                 </li>
-                <li><a href="#" style="color:gray; background-color:transparent;">학사일정</a></li>
+                <li><a href="../academin/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
                 <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>
@@ -88,7 +87,7 @@
 		        					</div>
 		        				</div>
 	        					<div class="subject">
-	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        						<a href="noticeDetail.jsp" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
 	        					</div>
 		        			</li>
 		        			<li style="color: #666;">

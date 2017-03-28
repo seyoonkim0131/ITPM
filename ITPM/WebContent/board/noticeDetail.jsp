@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 		<link rel="Shortcut Icon" href="../image/favicon.ico" />
-		<title>학과내규 | IT정책경영학과</title>
+		<title>공지사항 | IT정책경영학과</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/itpm.css" />
 		<link rel="stylesheet" href="../css/menu.css">
@@ -53,23 +53,23 @@
                 <li><a href="#" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
                 <li onclick="submenu()">
                 	<a href="#" style="color:gray; background-color:transparent;">규정</a>
-                	<ul id="hide" style="display: block;">
+                	<ul id="hide" style="display: none;">
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank" style="color: gray;">학칙</a></li>
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank" style="color: gray;">시행세칙</a></li>
-                		<li class="active"><a href="../regulation/regulation.jsp" style="color: #b31b1b;">학과내규</a></li>
+                		<li><a href="../regulation/regulation.jsp" style="color: gray;">학과내규</a></li>
                 		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank" style="color: gray;">논문심사기준</a></li>
                 	</ul>
                 </li>
                 <li><a href="../academic/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
-                <li><a href="../board/notice.jsp" style="color: gray; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
+                <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b;background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>
         <div class="content-div">
 			<div class="small-title" style="margin: 80px 0 0 0;">
 	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">학과내규</span>
+	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">공지사항</span>
 	                <span style="float:right;">
-	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 규정 > 학과내규</small>
+	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 공지사항</small>
 	                </span>
 	            </p>
 	            <div class="view" style="position: relative; width: 100%;">
@@ -82,22 +82,22 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th colspan="2" class="title">2017년 IT정책경영학과 학과내규</th>
+									<th colspan="2" class="title">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</th>
 								</tr>
 								<tr>
-									<th>작성자</th>
+									<th style="white-space: nowrap;">작성자</th>
 									<td>관리자</td>
 								</tr>
 								<tr>
-									<th>작성일</th>
+									<th style="white-space: nowrap;">작성일</th>
 									<td>2017.03.03</td>
 								</tr>
 								<tr>
-									<th>조회수</th>
+									<th style="white-space: nowrap;">조회수</th>
 									<td>324</td>
 								</tr>
 								<tr>
-									<th>첨부파일</th>
+									<th style="white-space: nowrap;">첨부파일</th>
 									<td>
 										<ul class="file_list">
 											<li><a href="#" target="_blank">짜잔 이거봐라 첨부파일이당</a></li>
@@ -109,23 +109,11 @@
 										<div style="max-width: 840px;">
 											<div class="form-group">
 												<div class="col-lg-12">
-제14조(장학금의 정의) 대학원 IT정책경영학과의 장학금지급기준은 대학원규정에 의한다.<br>
-
-①정부 및 공공기관의 공직관료(사무관급/령관급 이상)가 박사과정에 입학할 경우에 재학기간 중의 매학기 등록금의 일정부분(최고 50%)을 공직관료 장학금으로 지급가능하다.<br>
-
-②성적이 우수한 학생에게는 일반장학금, 연구조교장학금, 교육조교장학금 등을 지급할 수 있다.<br>
-
-③기타 숭실대학교 발전기금 또는 비영리단체(학회 등)가 제공하는 기금이 가용할 경우에 등록금의 일정금액을 장학금으로 지급할 수 있다.<br>
-
-④장학생 선정은 교수들의 추천을 통해 운영위원회에서 결정한다.<br>
-
-제15조(장학금의 재원) IT정책경영학과의 우수한 신입생을 유치하고 최고 수준의 석박사과정을 운영하기 위하여 장학금재원을 다음과 같이 확보한다.<br>
-
-① IT정책경영학과 주임교수는 유수한 기업 등과 협약을 체결하여 필요한 재정적 지원을 받을 수 있다.<br>
-
-②장학금의 재원으로 다양한 기금을 활용할 수 있다.<br>
-
-③기타 재원에 대한 사안은 IT정책경영학과 운영위원회의 결정에 따른다.<br>
+공지사항 상세보기 페이지입니다.<br>
+ㅎㅎㅎㅎㅎㅎㅎ<br>
+이를 어쩐담<br>
+더이상 할 말이 없네유<br>
+구럼이만
 													<!-- <textarea class="form-control" cols="100%" rows="100%">
 제14조(장학금의 정의) 대학원 IT정책경영학과의 장학금지급기준은 대학원규정에 의한다.
 
@@ -172,6 +160,7 @@
 					</dl>
 				</div>
 	        </div>
+	        <div style="width: 80%;">&nbsp;</div>
 		</div>
 		<c:import url="../import/footer.jsp" />
 	</body>
