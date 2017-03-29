@@ -51,17 +51,17 @@
             <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">학사정보</div>
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked">
-                <li><a href="education.jsp" style="color: gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
+                <li><a href="../academic/education.jsp" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
                 <li onclick="submenu()">
                 	<a href="#" style="color:gray; background-color:transparent;">규정</a>
-                	<ul id="hide" style="display: none;">
+                	<ul id="hide" style="display: block;">
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank" style="color: gray;">학칙</a></li>
                 		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank" style="color: gray;">시행세칙</a></li>
                 		<li><a href="../regulation/regulation.jsp" style="color: gray;">학과내규</a></li>
                 		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank" style="color: gray;">논문심사기준</a></li>
                 	</ul>
                 </li>
-                <li class="active"><a href="calendar.jsp" style="color: #b31b1b; background-color:transparent;">학사일정</a></li>
+                <li class="active"><a href="../academic/calendar.jsp" style="color: #b31b1b; background-color:transparent;">학사일정</a></li>
                 <li><a href="../board/notice.jsp" style="color: gray; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>
@@ -77,25 +77,76 @@
 		        	<div class="table_list" style="border-top: 2px solid #b31b1b;">
 		        		<ul style="display: block; padding: 0;">
 		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						<img alt="중요일정" src="../image/notice.png" style="padding: 3px 3px 0 0;">
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.01</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="calendarDetail.jsp" style="vertical-align: top;">2017-1학기 IT정책경영학과 학사일정</a>
+	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.24 논문 서류 제출</div>
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.3
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2016.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">2016-2학기 IT정책경영학과 학사일정</a>
+	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.15 신나는 수요일</div>
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.2
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2015.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">2016-1학기 IT정책경영학과 학사일정</a>
+	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.13 남자친구의 생일</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.02 개강!</div>
+		        				<div class="top_area">
+		        					<div class="write_num" style="float: left; font-size: 11px;">
+		        						NO.1
+		        					</div>
+		        					<div class="num_area" style="float: right;">
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2014.03.03</strong></span>
+		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+		        					</div>
+		        				</div>
+	        					<div class="subject">
+	        						<a href="#" style="vertical-align: top;">2015-2학기 IT정책경영학과 학사일정</a>
+	        					</div>
 		        			</li>
 		        		</ul>
 		        	</div>
 		        </div>
 	        </div>
-	        <div style="width: 80%;">&nbsp;</div>
+			<div class="pagination-centered" style="text-align: center; width: 80%;">
+				<div class="pagination">
+					<a href="#" style="color: #666">&laquo;</a>
+					<a class="active" href="#">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+					<a href="#">5</a>
+					<a href="#" style="color: #666">&raquo;</a>
+				</div>
+			</div>
 		</div>
 		<c:import url="../import/footer.jsp" />
 	</body>

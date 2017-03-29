@@ -30,10 +30,12 @@ $(window).resize(function(){
 		document.getElementById('whiteLogo').style.display = 'block';
 		document.getElementById('logo').style.display = 'none';
 		document.getElementById('grayMenu').style.display = 'none';
+		document.getElementById('logoSpace').style.display = 'none';
 	} else {
 		document.getElementById('whiteLogo').style.display = 'none';
 		document.getElementById('logo').style.display = 'block';
 		document.getElementById('grayMenu').style.display = 'block';
+		document.getElementById('logoSpace').style.display = 'block';
 	}
 });
 
