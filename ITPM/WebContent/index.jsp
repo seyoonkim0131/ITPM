@@ -10,19 +10,23 @@
 		<link rel="Shortcut Icon" href="image/favicon.ico" />
 		<title>Home | IT정책경영학과</title>
 		<link rel="StyleSheet" href="css/itpm.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	</head>
-	<body>
-		<c:import url="import/header.jsp" />
-	
-	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		</head>
+	<body>	
 		<div class="body" style="height:auto;">				
 			<div class="main-img" style="width:100%; max-width:100%;">
 				<img src="image/main_img.png" style="margin:0%; width:100%; max-width:100%;"/></div>
 			<a href=# style="position: absolute; z-index:5; margin-top:4%; margin-left:7.5%; left:0; width:auto;">
 			<img class="main-logo" src="image/main_logo.png"/></a>
-			<ul class="main-menu" style="position:absolute; list-style-type:none; width:100%;
-				padding-top:4%; padding-left:31%; padding-right:17%; margin-top:0; z-index:4;">
+			<ul class="main-menu"http://localhost:8080/ITPM/image/main_img.png style="position:absolute; list-style-type:none; max-width:100%;
+				padding-top:4%; padding-left:31%; padding-right:50%; margin-top:0; z-index:4;">
 				<li class="main-menu-about" style="display: inline; padding-left:0%; font-size:10pt;">
 					<a class="menu-item" href=# style="color:#ffffff; letter-spacing:1px;">대학원 소개</a></li>
 				<li class="main-menu-academic" style="display: inline; padding-left:6%; font-size:10pt;">
