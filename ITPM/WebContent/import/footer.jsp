@@ -5,7 +5,6 @@
 </head>
 <body>
 <div class="footer container-fluid bg-4 col-lg-12" style="padding: 0; margin: 0 auto !important; background-color: #313131;">
-<!-- <footer class="container-fluid bg-4 col-lg-12" style="padding: 0 0 0 0; background-color: #313131;"> -->
 	<div class="footer_menu">
 		<ul style="margin: 0; padding: 20px 0 0 20px; text-align: center; list-style: none; font-size: 14px; clear: both;">
 			<li style="display: inline-block; float: left;"><a href="https://www.ssu.ac.kr/html/themes/kor/html/footer/privacy.html" target="_blank"><font color="#fff">개인정보처리방침</font></a></li>
@@ -18,7 +17,6 @@
 		서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: gamsori@ssu.ac.kr
 		<span class="copyright" style="display: block;">Copyright(c) 2017 Soongsil University. All rights reserved</span>
 	</address>
-<!-- </footer> -->
 </div>
 </body>
 </html>

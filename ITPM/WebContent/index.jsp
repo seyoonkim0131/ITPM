@@ -10,12 +10,16 @@
 		<link rel="Shortcut Icon" href="image/favicon.ico" />
 		<title>Home | IT정책경영학과</title>
 		<link rel="StyleSheet" href="css/itpm.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	</head>
-	<body>
-		<c:import url="import/header.jsp" />
-	
-	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		</head>
+	<body>	
 		<div class="body" style="height:auto;">				
 			<div class="main-img" style="width:100%; max-width:100%;">
 				<img src="image/main_img.png" style="margin:0%; width:100%; max-width:100%;"/></div>
