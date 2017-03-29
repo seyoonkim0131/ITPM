@@ -52,28 +52,30 @@ table.bbs-list thead th {
 	width:100%;
 }
 
-.main-img{
-	position:absolute;
-	z-index:2;
-}
 
 .main-menu{
-	position:absolute;
+	position:fixed;
 	color: white;
-	z-index:4;
 }
 
 .text{
 	position:absolute;
-	z-index:3;
+	z-index:6;
 	color:white;
 }
 
 .main-content {
 	position:relative;
-	z-index:1;
-	background:green;
 	height: 50%; width: 100%;
+}
+
+.list-grid{
+	padding-bottom: 1px;
+}
+
+.list {
+	font-size:9pt;
+	width:70%;
 }
 
 .floating {
@@ -82,11 +84,11 @@ table.bbs-list thead th {
 }
 
 .small-title {
-	float: left; position: absolute; margin-left: 25%; margin-top: 4%; width: 65%;
+	float: left; width: 80%;
 }
 
 .content {
-	position: relative; margin-left: 22%; padding-top: 8%; padding-bottom: 8%;
+	
 }
 
 .body-bottom {
@@ -139,8 +141,9 @@ table.bbs-list thead th {
 	text-decoration: underline; color: #00b2e0; border: 1px solid #7fd8ef; text-decoration: none;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
     body {
         background-color: #b31b1b;
     }
 }
+
