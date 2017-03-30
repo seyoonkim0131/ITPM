@@ -61,7 +61,7 @@
                 		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
                 	</ul>
                 </li>
-                <li><a href="../academic/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
+                <li><a href="../academin/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
                 <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>

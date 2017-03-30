@@ -8,4 +8,4 @@ body {font-family: 'Nanum Gothic', sans-serif;}
 .dropdown .dropdown-sub {position: absolute; visibility: hidden; text-align: center;}
 .dropdown li:hover .dropdown-sub {visibility: visible;}
 .nav>li>a:focus, .nav>li>a:hover {background-color: transparent;}
-.dropdown-sub {white-space: nowrap; z-index: 3; background-color: #fff; padding: 0px;}
+.dropdown-sub {z-index: 3; background-color: #fff; padding: 0px; white-space: nowrap;}
