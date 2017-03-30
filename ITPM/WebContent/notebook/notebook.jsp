@@ -59,46 +59,51 @@
 	                    <small><a href="../index.jsp">홈</a> > 원우수첩</small>
 	                </span>
 	            </p>
-	            <select style="float: right;">
+	            <select style="float: right; ">
    					<option value="volvo">Volvo</option>
    					<option value="saab">Saab</option>
    					<option value="mercedes">Mercedes</option>
    					<option value="audi">Audi</option>
 				</select>
-                <table
-                    class="bbs-list"
-                    style="width: 100%; border-top: solid 2px #b31b1b; table-layout: fixed; border-spacing: 0;">
+                <table 
+                	class="bbs-list"                  
+                    style="width: 100%; border-top: solid 2px #b31b1b;  border-spacing: 0; ">
                     <tbody>
+                    <colgroup>
+                    	<col width="30%">
+                    	<col width="20%">
+                    	<col width="50%">
+                    </colgroup>
                         <tr align="center">
-                            <td rowspan="6" style="padding-right">
-                            	<img border="1" height="177" width="155" 
-                            	 	 src="../image/1.jpg" style="vertical-align: middle;"></td>
-                            <td style="padding-right:50px" >기수</td>
+                            <td rowspan="6" style="padding-top: 3px;">
+                            	<img border="1" height="120" width="90" 
+                            	 	 src="../image/testimage.jpg" style="vertical-align: middle;"></td>
+                            <td style="text-align:center" >기수</td>
                             <td style="text-align:left" >1기</td>
                         </tr>
                         <tr align="left">
-                            <td style="padding-right:50px" >이름</td>
+                            <td style="text-align:center" >이름</td>
                             <td style="text-align:left">류훈선</td>
                         </tr>
                         <tr align="left">
-                            <td style="padding-right:50px" >회사명</td>
+                            <td style="text-align:center" >회사명</td>
                             <td style="text-align:left" >숭실대학교</td>
                         </tr>
                         <tr align="left">
-                            <td style="padding-right:50px" >직급</td>
+                            <td style="text-align:center" >직급</td>
                             <td style="text-align:left" >총장</td>
                         </tr>
                         <tr align="left">
-                            <td style="padding-right:50px" >핸드폰</td>
-                            <td style="text-align:left" >010-1234-1234</td>
+                            <td style="text-align:center" >핸드폰</td>
+                            <td style="text-align:left; letter-spacing:-2px;" >010-1234-1234</td>
                         </tr>
                         <tr align="left">
-                            <td style="padding-right:50px" >E-mail</td>
-                            <td style="text-align:left" >hoonseon@nate.com</td>
+                            <td style="text-align:center; letter-spacing: -1px;" >E-mail</td>
+                            <td style="text-align:left; letter-spacing:-1px;" >hoonseon@nate.com</td>
                         </tr>
                     </tbody>
                 </table>
-                <div class="pagination-centered" style="text-align: center; width: 80%;">
+                <div class="pagination-centered" style="text-align: center; width: 100%;">
 				<div class="pagination">
 					<a href="#" style="color: #666">&laquo;</a>
 					<a class="active" href="#">1</a>
@@ -110,7 +115,7 @@
 				</div>
 				</div>
 			</div>
-			<div style="width:80%;">&nbsp;</div>
+			<div style="width:10%;">&nbsp;</div>
 		</div>
 		<c:import url="../import/footer.jsp" />
 	</body>
