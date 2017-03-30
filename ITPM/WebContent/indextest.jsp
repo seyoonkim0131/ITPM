@@ -32,16 +32,16 @@
 		#line{display:block;}
 		#main_logo{display: none;}
 		#text{display: none;}
-		#main_content{padding-top: 150px;}
+		#main_content{padding-top: 150px; text-align:center;}
 		#main_img{display: block;}
 		#main_img1{display: none;}
 		#main_img2{display: none;}
 		#main_img3{display: none;}
 	}
 	
-	@media only screen and (min-width: 377px) and (max-width: 767px) { 
+	@media only screen and (min-width: 377px) and (max-width: 769px) { 
 		#line{display:block;}
-		#main_content{padding-top: 550px;}
+		#main_content{padding-top: 550px; text-align:center;}
 		#main_img{display: none;}
 		#main_img1{display: block;}
 		#main_img2{display: none;}
@@ -49,7 +49,7 @@
 	}
 
 	/* 중간 기기들 (데스크탑, 992px 이상) */
-	@media only screen and (min-width: 768px) and (max-width: 1020px) {
+	@media only screen and (min-width: 770px) and (max-width: 1020px) {
 		#line{display:none;}
 		#main_content{padding-top: 550px;}
 		#main_img{display: none;}
@@ -144,23 +144,23 @@
 					<td class="date" style="float:right; font-size:7pt;">10.07</td>
 				</tr>
 				<tr>
-					<td><a class="list" href="#" style="padding-right:3%; color:black;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
+					<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
 					<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
 				</tr>
 				<tr>
-					<td><a class="list" href="#" style="padding-right:3%; color:black;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
+					<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
 					<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
 				</tr>
 				<tr>
-					<td><a class="list" href="#" style="padding-right:3%; color:black;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
+					<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
 					<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
 				</tr>
 				<tr>
-					<td><a class="list" href="#" style="padding-right:3%; color:black;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
+					<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
 					<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
 				</tr>
 				<tr>
-					<td><a class="list" href="#" style="padding-right:3%; color:black;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
+					<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
 					<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
 				</tr>
 			</table>

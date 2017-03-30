@@ -7,6 +7,5 @@ body {font-family: 'Nanum Gothic', sans-serif;}
 .dropdown {padding: 0 100px 0 100px;}
 .dropdown .dropdown-sub {position: absolute; visibility: hidden; text-align: center;}
 .dropdown li:hover .dropdown-sub {visibility: visible;}
-.dropdown-sub {z-index: 3; background-color: #fff; padding: 0px;}
 .nav>li>a:focus, .nav>li>a:hover {background-color: transparent;}
-.dropdown-sub {white-space: nowrap;}
+.dropdown-sub {white-space: nowrap; z-index: 3; background-color: #fff; padding: 0px;}
