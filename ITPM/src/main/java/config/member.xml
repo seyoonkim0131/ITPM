@@ -3,17 +3,56 @@
 <mapper namespace="member">
 
 	<resultMap type="model.domain.Member" id="memberMap">
+		<result property="phoneNumber" column="phone_number"/>
+		<result property="name" column="name"/>
 		<result property="studentId" column="student_id"/>
 		<result property="pw" column="pw"/>
-		<result property="name" column="name"/>
-		<result property="phoneNumber" column="phone_number"/>
 		<result property="mailId" column="mail_id"/>
 		<result property="mailDomain" column="mail_domain"/>
 		<result property="job" column="job"/>
 		<result property="auth" column="auth"/>
-		<result property="group" column="group"/>
+		<result property="sGroup" column="s_group"/>
+		<result property="jobPosition" column="job_position"/>
+		<result property="jobPhone" column="job_phone"/>
 	</resultMap>
 	
+	<!-- 전체 리스트 조회 -->
+	<select id="getAllMemberList" resultMap="memberMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE
+		  FROM MEMBER
+		 ORDER BY STUDENT_ID
+		 LIMIT 0, 20
+	</select>
+	
+	<!-- 기수별 원우 리스트 조회 -->
+	<select id="getGroupMemberList" parameterType="member" resultMap="memberMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE
+		  FROM MEMBER
+		 WHERE S_GROUP = #{sGroup}
+	</select>
+	
+	<!-- 기수 리스트 조회 -->
+	<select id="getGroupList" parameterType="member" resultMap="memberMap">
+		SELECT DISTINCT S_GROUP
+		  FROM MEMBER
+	</select>
+	<!-- 
 	<insert id="insertMember" parameterType="member">
 		INSERT INTO MEMBER(STUDENT_ID,
 						   PW,
@@ -25,7 +64,7 @@
 						   AUTH,
 						   GROUP)
 					VALUES(#{studentId},
-						   #{studentId},<!-- 비밀번호를 학번으로 초기화한다. -->
+						   #{studentId},비밀번호를 학번으로 초기화한다.
 						   #{name},
 						   #{phoneNumber},
 						   #{mailId},
@@ -33,6 +72,6 @@
 						   #{job},
 						   #{auth},
 						   #{group})
-	</insert>
+	</insert> -->
 
 </mapper>

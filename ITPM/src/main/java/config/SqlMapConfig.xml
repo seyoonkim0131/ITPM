@@ -6,9 +6,6 @@
 	
 	<typeAliases>
 		<typeAlias type="model.domain.Member" alias="member"/>
-		<!-- <typeAlias type="model.domain.MemberInfo" alias="memberInfo"/>
-		<typeAlias type="model.domain.Project" alias="project"/>
-		<typeAlias type="model.domain.ProjectMenu" alias="projectMenu"/> -->
 	</typeAliases>
 
 	<environments default="env">			
@@ -17,9 +14,12 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://ec2-13-124-44-27.ap-northeast-2.compute.amazonaws.com:3306/itpm?characterEncoding=UTF-8"/>
+				<property name="url" value="jdbc:mysql://13.124.113.184:3306/itpm?characterEncoding=UTF-8"/>
 				<property name="username" value="itpm" />
 				<property name="password" value="itpm1234" />
+				<property name="poolPingQuery" value="select 1"/>
+				<property name="poolPingEnabled" value="true" />
+				<property name="poolPingConnectionsNotUsedFor" value="7200000" />
 			</dataSource>
 		</environment>
 
@@ -27,9 +27,6 @@
 
 	<mappers>
 		<mapper resource="config/member.xml" />
-		<!-- <mapper resource="config/memberInfo.xml" />
-		<mapper resource="config/project.xml"/>
-		<mapper resource="config/projectMenu.xml" /> -->
 	</mappers>
 
 </configuration>

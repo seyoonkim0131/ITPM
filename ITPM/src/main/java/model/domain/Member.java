@@ -3,36 +3,71 @@ package model.domain;
 /**
  * 회원정보
  * @author Seyoon Kim
- * @version 1.0
- * 2017.02.08
+ * @version 2.0
+ * 2017.03.29
  */
 public class Member {
-
+	
+	private String phoneNumber;
+	private String name;
 	private String studentId;
 	private String pw;
-	private String name;
-	private String phoneNumber;
 	private String mailId;
 	private String mailDomain;
 	private String job;
 	private String auth;
-	private String group;
+	private String sGroup;
+	private String jobPosition;
+	private String jobPhone;
+	private String photo;
 	
 	public Member() {
 		super();
 	}
 
-	public Member(String studentId, String pw, String name, String phoneNumber, String mailId, String mailDomain, String job, String auth, String group) {
+	public Member(String phoneNumber, String name, String studentId, String pw, String mailId, String mailDomain, String job, String auth, String sGroup, String jobPosition, String jobPhone, String photo) {
 		super();
+		this.phoneNumber = phoneNumber;
+		this.name = name;
 		this.studentId = studentId;
 		this.pw = pw;
-		this.name = name;
-		this.phoneNumber = phoneNumber;
 		this.mailId = mailId;
 		this.mailDomain = mailDomain;
 		this.job = job;
 		this.auth = auth;
-		this.group = group;
+		this.sGroup = sGroup;
+		this.jobPosition = jobPosition;
+		this.jobPhone = jobPhone;
+		this.photo = photo;
+	}
+	
+	public Member(String phoneNumber, String name, String studentId, String mailId, String mailDomain, String job, String sGroup, String jobPosition, String jobPhone) {
+		super();
+		this.phoneNumber = phoneNumber;
+		this.name = name;
+		this.studentId = studentId;
+		this.mailId = mailId;
+		this.mailDomain = mailDomain;
+		this.job = job;
+		this.sGroup = sGroup;
+		this.jobPosition = jobPosition;
+		this.jobPhone = jobPhone;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getStudentId() {
@@ -49,22 +84,6 @@ public class Member {
 
 	public void setPw(String pw) {
 		this.pw = pw;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 	public String getMailId() {
@@ -98,26 +117,50 @@ public class Member {
 	public void setAuth(String auth) {
 		this.auth = auth;
 	}
-	
-	public String getGroup() {
-		return group;
+
+	public String getsGroup() {
+		return sGroup;
 	}
 
-	public void setGroup(String group) {
-		this.group = group;
+	public void setsGroup(String sGroup) {
+		this.sGroup = sGroup;
+	}
+
+	public String getJobPosition() {
+		return jobPosition;
+	}
+
+	public void setJobPosition(String jobPosition) {
+		this.jobPosition = jobPosition;
+	}
+
+	public String getJobPhone() {
+		return jobPhone;
+	}
+
+	public void setJobPhone(String jobPhone) {
+		this.jobPhone = jobPhone;
+	}
+	
+	public String getPhoto() {
+		return photo;
+	}
+	
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Member [studentId=");
+		builder.append("Member [phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", studentId=");
 		builder.append(studentId);
 		builder.append(", pw=");
 		builder.append(pw);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", phoneNumber=");
-		builder.append(phoneNumber);
 		builder.append(", mailId=");
 		builder.append(mailId);
 		builder.append(", mailDomain=");
@@ -126,8 +169,14 @@ public class Member {
 		builder.append(job);
 		builder.append(", auth=");
 		builder.append(auth);
-		builder.append(", group=");
-		builder.append(group);
+		builder.append(", sGroup=");
+		builder.append(sGroup);
+		builder.append(", jobPosition=");
+		builder.append(jobPosition);
+		builder.append(", jobPhone=");
+		builder.append(jobPhone);
+		builder.append(", photo=");
+		builder.append(photo);
 		builder.append("]");
 		return builder.toString();
 	}
