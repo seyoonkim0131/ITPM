@@ -9,7 +9,7 @@
             name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
         <link href="../image/favicon.ico" rel="Shortcut Icon"/>
-        <title>교수소개 | IT정책경영학과</title>
+        <title>교육비전 | IT정책경영학과</title>
         <link href="../css/itpm.css" rel="stylesheet"/>
         <link href="../css/menu.css" rel="stylesheet">
         <link
@@ -80,21 +80,23 @@
             }
             /* 작은 기기들 (태블릿, 768px 이상) */
 			@media only screen and (max-width: 376px) { 
-				#prof_img{float:none;}
+				#major_image{display:none;}
+				#vision_list{margin-left:-50px;}
 			}
 	
 			@media only screen and (min-width: 377px) and (max-width: 767px) { 
-				#prof_img{float:left;}		
+				#major_image{display:none;}	
+				#vision_list{margin-left:-50px;}	
 			}
 
 			/* 중간 기기들 (데스크탑, 992px 이상) */
 			@media only screen and (min-width: 768px) and (max-width: 1020px) {
-				#prof_img{float:left;}
+				#major_image{display:block; max-width:80%;}
 			}
 		
 			/* 큰 기기들 (큰 데스크탑, 1200px 이상) */
 			@media only screen and (min-width: 1021px){
-				#prof_img{float:left;}
+				#major_image{display:block; max-width:80%;}
 			}
         </style>
     </head>
@@ -128,32 +130,24 @@
 		<div class="content-div" >
         <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
             <p>
-                <span>교수소개</span>
+                <span>교육비전</span>
                 <span style="float:right;">
-                    <small>홈 > 대학원소개 > 교수소개</small>
+                    <small>홈 > 대학원소개 > 교육비전</small>
                 </span>
             </p>
         </div>
-        <div class="content" style=" margin: 70px 0 60px 0; width:90%;">
-				<img id="prof_img" alt="" src="../image/1.jpg"
-                     style="padding: 0 20px 0 0; max-width:160px; width: auto; height: auto;">
-                <br>
-                <table>
-                    <tr>
-                        <td style="white-space: nowrap;">학 력 : Ph. D ( 경영학 박사 )</td>
-                    </tr>
-                    <tr>
-                        <td style="white-space: nowrap;">연 구 실 : 정보과학관 222호</td>
-                    </tr>
-                    <tr>
-                        <td style="white-space: nowrap;">이 메 일 : nylee@ssu.ac.kr</td>
-                    </tr>
-                    <tr>
-                        <td>연구분야 : 소프트웨어, 시스템 엔지니어링, 소프트웨어 엔지니어링, 전자상거래시스템, 경영정보시스템</td>
-                    </tr>
-                    <tr><td>&nbsp;</td></tr>
-                    <tr><td>&nbsp;</td></tr>
-                </table>
+        <div class="content" style="margin: 70px 0 60px 0; max-width:800px; width:90%; padding: 70px 0 0 0;">
+        	<ul id="vision_list" style="list-style-type:disc;">
+        	<li style="margin-bottom:11px;">대학원 IT정책경영학과는 IT를 기반으로 한 다중학문을 탐구하고, IT정책경영의 석박사급(고급인재)인력을 양성하는 최고의 교육기관으로 세게최고의 IT정책경영 전문대학원으로 우뚝 선다.</li>
+            <li style="margin-bottom:11px;">우수한 신입생을 유치하기 위하여 정부기관의 고급관료, 성적우수자 등에게 많은 장학금을 배려하고, 관산연학의 긴밀한 협력관계를 유지하며, 수요자 중심으로 선진화된 교육연구서비스를 제공한다.</li>
+            <li style="margin-bottom:11px;">우수한 교육연구서비스를 제공하기 위하여 세계적인 전임교수를 지속적으로 확보하고, 국내외의 저명인사를 석좌교수, 객원교수, 겸임교수로 활용한다.</li>
+            <li style="margin-bottom:11px;">IT정책경영학과의 세부전공은 9개 세부전공으로 운영하며, 공공부문과 민간부문이 균형발전하도록 하고 상호 긴밀히 공동협력할 수 있도록 한다.</li>
+        	</ul>
+        	
+			<img id="major_image" alt="" src="../image/majorinfo.png"
+                 style="padding: 0 20px 0 20%;  width: auto; height: auto;">
+            <br>
+                
         </div>
         </div>
         <c:import url="../import/footer.jsp"/>

@@ -71,6 +71,32 @@
             .navbar-inverse .navbar-nav > li > a {
                 color: #fff;
             }
+            /* 작은 기기들 (태블릿, 768px 이상) */
+			@media only screen and (max-width: 415px) { 
+				#nav_tab{display:none;}
+				#bus_image{margin-left:-5px; max-width:110%;}
+				#bus_text{display:none;}
+			}
+	
+			@media only screen and (min-width: 416px) and (max-width: 767px) { 
+				#nav_tab{display:block;}
+				#bus_image{max-width:80%;}
+				#bus_text{display:block; max-width:80%; margin:0 0 0 6%;}
+			}
+
+			/* 중간 기기들 (데스크탑, 992px 이상) */
+			@media only screen and (min-width: 768px) and (max-width: 1020px) {
+				#nav_tab{display:block;}
+				#bus_image{max-width:70%;}
+				#bus_text{display:block; max-width:70%; margin:0 0 0 11%;}
+			}
+		
+			/* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+			@media only screen and (min-width: 1021px){
+				#nav_tab{display:block;}
+				#bus_image{max-width:70%;}
+				#bus_text{display:block; max-width:70%; margin:0 0 0 11%;}
+			}
         </style>
     </head>
 
@@ -101,7 +127,7 @@
         </div>
 
 		<div class="content-div" >
-        <div class="small-title" style="margin: 70px 0 10px 0; width:80%;">
+        <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
             <p>
                 <span>방문안내</span>
                 <span style="float:right;">
@@ -109,13 +135,12 @@
                 </span>
             </p>
         </div>
-        <br>
-        <div class="content" style=" margin: 0 0 60px 0; width:80%;">
-        	<br>&nbsp;<br>
+        <div class="content" style=" margin: 70px 0 60px 0; width:90%; padding: 70px 0 0 0;">
         	<p>IT정책경영학과 위치</p>
 			<p>서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과</p>
-			<br>&nbsp;<br>  
-			<ul class="nav nav-tabs">
+			<br>&nbsp;<br>        	
+        	<p>학교 위치</p> 
+			<ul id="nav_tab" class="nav nav-tabs">
     			<li><a href="map.jsp">지하철</a></li>
     			<li class="active"><a href="map_02.jsp">버스</a></li>
    				<li><a href="map_03.jsp">자가용</a></li>
@@ -123,7 +148,8 @@
   			</ul>
   			<br>
   			<div style="text-align:center;">
-  				<img alt="" src="../image/map_bus.PNG" style="width:80%; height:auto;">
+  				<img id="bus_image" alt="" src="../image/map_bus_image.png" > 		
+  				<img id="bus_text" alt="" src="../image/map_bus_text.png"">
         	</div>
         	
         </div>
