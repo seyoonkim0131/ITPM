@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 		<link rel="Shortcut Icon" href="../image/favicon.ico" />
-		<title>공지사항 | IT정책경영학과</title>
+		<title>학과내규 | IT정책경영학과</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/itpm.css" />
 		<link rel="stylesheet" href="../css/menu.css">
@@ -54,23 +54,23 @@
                 <li><a href="../academic/education.jsp" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
                 <li onclick="submenu()">
                 	<a href="#" style="color:gray; background-color:transparent;">규정</a>
-                	<ul id="hide" style="display: none;">
-                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank">학칙</a></li>
-                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank">시행세칙</a></li>
-                		<li><a href="../regulation/regulation.jsp">학과내규</a></li>
-                		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
+                	<ul id="hide" style="display: block;">
+                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank" style="color: gray;">학칙</a></li>
+                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank" style="color: gray;">시행세칙</a></li>
+                		<li class="active"><a href="../regulation/regulation.jsp" style="color: #b31b1b;">학과내규</a></li>
+                		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank" style="color: gray;">논문심사기준</a></li>
                 	</ul>
                 </li>
-                <li><a href="../academin/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
-                <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
+                <li><a href="../academic/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
+                <li><a href="../board/notice.jsp" style="color: gray; background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>
         <div class="content-div">
 			<div class="small-title" style="margin: 80px 0 0 0;">
 	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">공지사항</span>
+	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">학과내규</span>
 	                <span style="float:right;">
-	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 공지사항</small>
+	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 규정 > 학과내규</small>
 	                </span>
 	            </p>
 		        <div class="list">
@@ -82,12 +82,12 @@
 		        						<img alt="중요공지" src="../image/notice.png" style="padding: 3px 3px 0 0;">
 		        					</div>
 		        					<div class="num_area" style="float: right;">
-		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.01</strong></span>
 		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
 		        					</div>
 		        				</div>
 	        					<div class="subject">
-	        						<a href="noticeDetail.jsp" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        						<a href="regulationDetail.jsp" style="vertical-align: top;">2017년 IT정책경영학과 학과내규</a>
 	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
@@ -96,12 +96,12 @@
 		        						NO.3
 		        					</div>
 		        					<div class="num_area" style="float: right;">
-		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2016.03.03</strong></span>
 		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
 		        					</div>
 		        				</div>
 	        					<div class="subject">
-	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        						<a href="#" style="vertical-align: top;">2016년 IT정책경영학과 학과내규</a>
 	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
@@ -110,12 +110,12 @@
 		        						NO.2
 		        					</div>
 		        					<div class="num_area" style="float: right;">
-		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2015.03.03</strong></span>
 		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
 		        					</div>
 		        				</div>
 	        					<div class="subject">
-	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        						<a href="#" style="vertical-align: top;">2015년 IT정책경영학과 학과내규</a>
 	        					</div>
 		        			</li>
 		        			<li style="color: #666;">
@@ -124,12 +124,12 @@
 		        						NO.1
 		        					</div>
 		        					<div class="num_area" style="float: right;">
-		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+		        						<span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2014.03.03</strong></span>
 		        						<span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
 		        					</div>
 		        				</div>
 	        					<div class="subject">
-	        						<a href="#" style="vertical-align: top;">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</a>
+	        						<a href="#" style="vertical-align: top;">2014년 IT정책경영학과 학과내규</a>
 	        					</div>
 		        			</li>
 		        		</ul>
