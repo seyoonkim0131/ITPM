@@ -109,7 +109,7 @@ $(document).ready(function(){
 							</ul>
 						</li>
 						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank"><img alt="입학정보" src="../image/manuimage_admission.png"></a></li>
-						<li style="padding-left: 3%; width: 25%;"><a href="../notebook/notebook.jsp"><img alt="원우수첩" src="../image/manuimage_notebook.png"></a></li>
+						<li style="padding-left: 3%; width: 25%;"><a href="../getAllMemberList.do"><img alt="원우수첩" src="../image/manuimage_notebook.png"></a></li>
 					</ul>
 				</div>
 			</div>
