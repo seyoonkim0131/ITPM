@@ -15,7 +15,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(window).resize(function(){
-				if(getWidth() <= '767') { //얘가 작을때얌
+				if(getWidth() <= '767') {
 					document.getElementById('side_menu').style.display = 'none';
 					$('.content-div').css('margin-left', '80px');
 				} else {
@@ -25,7 +25,7 @@
 			});
 			
 			$(document).ready(function() {
-				if(getWidth() <= '767') { //얘가 작다고
+				if(getWidth() <= '767') {
 					document.getElementById('side_menu').style.display = 'none';
 					$('.content-div').css('margin-left', '80px');
 				} else {
