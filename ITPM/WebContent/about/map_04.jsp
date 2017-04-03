@@ -112,16 +112,16 @@
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked" style="float:center;">
                 <li>
-                    <a href="#" style="color:gray; background-color:transparent; margin-top:6%; ">학과소개</a>
+                    <a href="itpm.jsp" style="color:gray; background-color:transparent; margin-top:6%; ">학과소개</a>
                 </li>
                 <li>
-                    <a href="#" style="color:gray; background-color:transparent;">교수소개</a>
-                </li>
-                <li class="active">
-                    <a href="#" style="color:gray; background-color:transparent;">교육비전</a>
+                    <a href="prof.jsp" style="color:gray; background-color:transparent;">교수소개</a>
                 </li>
                 <li>
-                    <a href="#" style="color:#b31b1b; background-color:transparent; margin-bottom:6%;">방문안내</a>
+                    <a href="vision.jsp" style="color:gray; background-color:transparent;">교육비전</a>
+                </li>
+                <li  class="active">
+                    <a href="map.jsp" style="color:#b31b1b;background-color:transparent; margin-bottom:6%;">방문안내</a>
                 </li>
             </ul>
         </div>
@@ -129,14 +129,14 @@
 		<div class="content-div" >
         <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
             <p>
-                <span>방문안내</span>
+                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">방문안내</span>
                 <span style="float:right;">
                     <small>홈 > 대학원소개 > 방문안내</small>
                 </span>
             </p>
         </div>
         <div class="content" style=" margin: 70px 0 60px 0; width:90%; padding: 70px 0 0 0;">
-        	<p>IT정책경영학과 위치</p>
+        	<p><strong>IT정책경영학과 위치</strong></p>
 			<p>서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과</p>
 			<br>&nbsp;<br>        	
         	<p>학교 위치</p> 

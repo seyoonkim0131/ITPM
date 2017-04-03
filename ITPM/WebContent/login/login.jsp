@@ -49,6 +49,29 @@
                         .display = 'block';
                     $('.content-div').css('margin-left', '250px');
                 }
+                
+                $('#loginSubmit').click(function() {
+	            	if($('#studentId').val() == '') {
+	            		alert("아이디를 입력해주세요.");
+	            		$('#studentId').focus();
+	            		return false;
+	            	}
+	            	if($('#pw').val() == '') {
+	            		alert("비밀번호를 입력해주세요.");
+	            		$('#pw').focus();
+	            		return false;
+	            	}
+	            	if(!$('#studentId').val()== '' && !$('#studentId').val() == '') {
+	            		if($('#studentId').val() =='itpm' && $('#pw').val() == 'itpm1234') {
+	            			console.log('dddd');
+	            			location.href = "../getAllMemberList.do";
+	            		} else {
+	            			alert('아이디/비밀번호를 확인해주세요.');
+	            			return false;
+	            		}
+	            	}
+	            });
+
             });
         </script>
         <style type="text/css">
@@ -89,82 +112,49 @@
     <body>
         <c:import url="../import/header.jsp"/>
         <div class="container" id="side_menu">
-            <div
-                style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
-            <div
-                style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">로그인</div>
-
+            <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
+            <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">로그인</div>
         </div>
         <div class="content-div">
             <div class="small-title" style="margin: 80px 0 0 0;">
                 <p>
                     <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">로그인</span>
                     <span style="float:right;">
-                        <small>
-                            <a href="../index.jsp">홈</a> > 로그인</small>
+                        <small><a href="../index.jsp">홈</a> > 로그인</small>
                     </span>
                 </p>
-            </div>
-            <div class="content">
-                <table 
-                    class="list"
-                    style="width: 60%; border-spacing: 0; margin-top: 5%; ">
-                    
-                    <tbody>
-                        <tr align="center" style="vertical-align:top; border-top: solid 4px #b31b1b; ">
-                        	
-                            <td colspan="2" style="padding-top: 20px; padding-bottom: 20px;">
-                            	<img height="67px" src="../image/login_firstline.png" width="250px" align="left"> 
-                            </td>
-                            
-                        </tr>
-                        <tr >
-                            <td>아이디&nbsp; &nbsp;
-                                <input
-                                    class="input"
-                                    name="Account"
-                                    onblur="if(this.value=='') this.style.backgroundImage='url(../image/login_id.png)';"
-                                    onfocus="this.style.backgroundImage='';"
-                                    onkeydown=""
-                                    style="width:200px;
-                    			  	   background-image: url('..image/login_id.png'); background-repeat: no-repeat"
-                                    tabindex="1"
-                                    type="text"
-                                    value=""/>
-                            </td>
-                            <td rowspan="2" style="padding-left: 20px; padding-bottom: 5px;" >                                                       	
-                                <input
-                                    class="img"
-                                    height="54"
-                                    src="../image/login_button.png"
-                                    type="image"
-                                    width="71"
-                                    align="left">
-                                   
-                            </td>
-                        </tr>
-                        <tr>
-                            <td  style="padding-bottom: 10px;">비밀번호
-                                <input
-                                    class="input"
-                                    name="Password"
-                                    onblur="if(this.value=='') this.style.backgroundImage='url(../image/login_password.png)';"
-                                    onkeydown=""
-                                    style="width:200px;
-                    			   	   background-image: url('..image/login_password.png'); background-repeat: no-repeat"
-                                    type="password"
-                                    value=""/>
-                            </td>
-                        </tr>
-                        <tr>
-                        	<td colspan="2" align="center" style="padding-bottom: 20px; border-bottom: solid 4px #b31b1b;">
-                        		<img height="17px" width="409px" src="../image/login_passwordreset.png">
-                        	</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                	<!-- <form id="loginForm" name="loginForm" method="post"> -->
+		                <table class="bbs-list" style="width: 100%; border-spacing: 0; margin-top: 5%; margin-bottom: 5%;"> 
+		                    <tbody>
+		                        <tr align="center" style="vertical-align:top; border-top: solid 4px #b31b1b;">                           
+		                            <td colspan="3" style="padding-top: 20px; padding-bottom: 20px;">
+		                               <img height="67px" src="../image/login_firstline.png" width="250px" align="center"> 
+		                            </td>                            
+		                        </tr>
+		                        <tr>
+		                            <td style="white-space: nowrap; text-align: right;">아이디</td>
+		                            <td><input type="text" class="form-control" name="studentId" id="studentId" style="width: 100%;" tabindex="1" value=""/></td>
+		                            <td rowspan="2" style="padding-left: 20px; padding-bottom: 5px;" >                                                          
+		                                <input type="image" class="img" id="loginSubmit" height="54px" src="../image/login_login_button.png" width="71px" align="left" style="text-align: left; ">
+		                            </td>
+		                        </tr>
+		                        <tr>
+		                            <td style="padding-bottom: 10px; white-space: nowrap; text-align: right;">비밀번호</td>
+		                            <td><input type="password" class="form-control" name="pw" id="pw" style="width: 100%;" value=""/></td>
+		                        </tr>
+		                        <tr>
+		                           <td colspan="3" align="center" style="padding-bottom: 20px; border-bottom: solid 4px #b31b1b;">
+		                              <img height="17px" width="409px" src="../image/login_passwordreset.png">
+		                           </td>
+		                        </tr>
+		                    </tbody>
+		                </table>
+	                <!-- </form> -->
+                </div>
             </div>
         </div>
+        <div style="width: 80%">&nbsp;</div>
         <c:import url="../import/footer.jsp"/>
     </body>
 </html>

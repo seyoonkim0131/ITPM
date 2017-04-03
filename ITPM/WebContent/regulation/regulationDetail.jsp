@@ -100,7 +100,7 @@
 									<th>첨부파일</th>
 									<td>
 										<ul class="file_list">
-											<li><a href="#" target="_blank">짜잔 이거봐라 첨부파일이당</a></li>
+											<li><a href="#" target="_blank">첨부파일</a></li>
 										</ul>
 									</td>
 								</tr><!-- 여기까지가 헤더 -->
@@ -164,11 +164,11 @@
 				<div style="margin: 20px 0; border-top: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7;">
 					<dl style="list-style: none; position: relative; margin: 10px 0!important;">
 						<dt style="list-style: none; background-position: 95% 0; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">다음글</dt>
-						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></dd>
+						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">2016년 IT정책경영학과 학과내규</a></dd>
 					</dl>
 					<dl style="list-style: none; position: relative; margin: 10px 0!important;">
 						<dt style="list-style: none; background-position: 95% -36px; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">이전글</dt>
-						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">ㅎㅎㅎㅎㅎㅎㅎㅎㅎ</a></dd>
+						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">2015년 IT정책경영학과 학과내규</a></dd>
 					</dl>
 				</div>
 	        </div>

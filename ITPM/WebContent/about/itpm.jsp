@@ -111,16 +111,16 @@
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked" style="float:center;">
                 <li class="active">
-                    <a href="#" style="color:#b31b1b; background-color:transparent; margin-top:6%; ">학과소개</a>
+                    <a href="itpm.jsp" style="color:#b31b1b; background-color:transparent; margin-top:6%; ">학과소개</a>
                 </li>
                 <li>
-                    <a href="#" style="color:gray; background-color:transparent;">교수소개</a>
+                    <a href="prof.jsp" style="color:gray; background-color:transparent;">교수소개</a>
                 </li>
                 <li>
-                    <a href="#" style="color:gray; background-color:transparent;">교육비전</a>
+                    <a href="vision.jsp" style="color:gray; background-color:transparent;">교육비전</a>
                 </li>
                 <li>
-                    <a href="#" style="color:gray; background-color:transparent; margin-bottom:6%;">방문안내</a>
+                    <a href="map.jsp" style="color:gray; background-color:transparent; margin-bottom:6%;">방문안내</a>
                 </li>
             </ul>
         </div>
@@ -128,7 +128,7 @@
 		<div class="content-div" >
         <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
             <p>
-                <span>학과소개</span>
+                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">학과소개</span>
                 <span style="float:right;">
                     <small>홈 > 대학원소개 > 학과소개</small>
                 </span>

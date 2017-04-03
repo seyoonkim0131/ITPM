@@ -2,119 +2,128 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
-		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
-		<link rel="Shortcut Icon" href="../image/favicon.ico" />
-		<title>공지사항 | IT정책경영학과</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/itpm.css" />
-		<link rel="stylesheet" href="../css/menu.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			$(window).resize(function(){
-				if(getWidth() <= '767') { //얘가 작을때얌
-					document.getElementById('side_menu').style.display = 'none';
-					$('.content-div').css('margin-left', '80px');
-				} else {
-					document.getElementById('side_menu').style.display = 'block';
-					$('.content-div').css('margin-left', '250px');
-				}
-			});
-			
-			$(document).ready(function() {
-				if(getWidth() <= '767') { //얘가 작다고
-					document.getElementById('side_menu').style.display = 'none';
-					$('.content-div').css('margin-left', '80px');
-				} else {
-					document.getElementById('side_menu').style.display = 'block';
-					$('.content-div').css('margin-left', '250px');
-				}
-				
-			});
-		</script>
-		<style type="text/css">
-			.view>fieldset>table th {height: 30px; padding-left: 25px; border-top: 0; background: #f9f1f2; line-height: 30px; color: #333; text-align: left; border-bottom: 1px solid #e7e7e7; font-weight: bold; display: table-cell; vertical-align: inherit;}
-			.view>fieldset>table>tbody>tr>td {height: 30px; padding-left: 25px; border-top: 0; background: #fff; line-height: 30px; color: #333; text-align: left; border-bottom: 1px solid #e7e7e7;}
-			.view>fieldset>table .title {width: 100%; height: 40px; padding-left: 25px; background: #f7f7f7; line-height: 40px; font-size: 19px;}
-			.view ul.file_list {padding: 5px 3px !important; margin: 0 !important;}
-			.view>fieldset>table td.content {width: 100%; height: auto; margin: 0; padding: 30px 25px; line-height: 17px;}
-		</style>
-	</head>
-	<body>
-		<c:import url="../import/header.jsp" />
-		<div class="container" id="side_menu">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
+      <meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
+      <link rel="Shortcut Icon" href="../image/favicon.ico" />
+      <title>공지사항 | IT정책경영학과</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/itpm.css" />
+      <link rel="stylesheet" href="../css/menu.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+         $(window).resize(function(){
+            if(getWidth() <= '767') { //얘가 작을때얌
+               document.getElementById('side_menu').style.display = 'none';
+               $('.content-div').css('margin-left', '80px');
+            } else {
+               document.getElementById('side_menu').style.display = 'block';
+               $('.content-div').css('margin-left', '250px');
+            }
+         });
+         
+         $(document).ready(function() {
+            if(getWidth() <= '767') { //얘가 작다고
+               document.getElementById('side_menu').style.display = 'none';
+               $('.content-div').css('margin-left', '80px');
+            } else {
+               document.getElementById('side_menu').style.display = 'block';
+               $('.content-div').css('margin-left', '250px');
+            }
+            
+         });
+      </script>
+      <style type="text/css">
+         .view>fieldset>table th {height: 30px; padding-left: 25px; border-top: 0; background: #f9f1f2; line-height: 30px; color: #333; text-align: left; border-bottom: 1px solid #e7e7e7; font-weight: bold; display: table-cell; vertical-align: inherit;}
+         .view>fieldset>table>tbody>tr>td {height: 30px; padding-left: 25px; border-top: 0; background: #fff; line-height: 30px; color: #333; text-align: left; border-bottom: 1px solid #e7e7e7;}
+         .view>fieldset>table .title {width: 100%; height: 40px; padding-left: 25px; background: #f7f7f7; line-height: 40px; font-size: 19px;}
+         .view ul.file_list {padding: 5px 3px !important; margin: 0 !important;}
+         .view>fieldset>table td.content {width: 100%; height: auto; margin: 0; padding: 30px 25px; line-height: 17px;}
+      </style>
+   </head>
+   <body>
+      <c:import url="../import/header.jsp" />
+      <div class="container" id="side_menu">
             <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
             <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">학사정보</div>
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="#" style="color:gray; background-color:transparent; margin-top:6%;">개설과정</a></li>
                 <li onclick="submenu()">
-                	<a href="#" style="color:gray; background-color:transparent;">규정</a>
-                	<ul id="hide" style="display: none;">
-                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank" style="color: gray;">학칙</a></li>
-                		<li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank" style="color: gray;">시행세칙</a></li>
-                		<li><a href="../regulation/regulation.jsp" style="color: gray;">학과내규</a></li>
-                		<li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank" style="color: gray;">논문심사기준</a></li>
-                	</ul>
+                   <a href="#" style="color:gray; background-color:transparent;">규정</a>
+                   <ul id="hide" style="display: none;">
+                      <li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank" style="color: gray;">학칙</a></li>
+                      <li><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank" style="color: gray;">시행세칙</a></li>
+                      <li><a href="../regulation/regulation.jsp" style="color: gray;">학과내규</a></li>
+                      <li><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank" style="color: gray;">논문심사기준</a></li>
+                   </ul>
                 </li>
                 <li><a href="../academic/calendar.jsp" style="color:gray; background-color:transparent;">학사일정</a></li>
                 <li class="active"><a href="../board/notice.jsp" style="color: #b31b1b;background-color:transparent; margin-bottom:6%;">공지사항</a></li>
             </ul>
         </div>
         <div class="content-div">
-			<div class="small-title" style="margin: 80px 0 0 0;">
-	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">공지사항</span>
-	                <span style="float:right;">
-	                    <small><a href="../index.jsp">홈</a> > 학사정보 > 공지사항</small>
-	                </span>
-	            </p>
-	            <div class="view" style="position: relative; width: 100%;">
-	            	<fieldset style="position: relative; width: 100%; padding: 0; margin: 0; border: 0; min-width: 0;">
-	            		<legend style="display: block; width: 100%; padding: 0; margin-bottom: 20px; font-size: 21px; line-height: 40px; color: #333; border: 0; border-bottom: 1px solid #e5e5e5; visibility: hidden; overflow: hidden; position: absolute; top: -50px; left: -50px;">게시판 상세보기</legend>
-						<table style="clear: both; width: 100%; margin: 0 auto; border-top: 2px solid #b3b1b1; border-collapse: inherit; max-width: 100%; background-color: transparent; border-spacing: 0; display: table;"><!-- .view>fieldset>table -->
-							<colgroup>
-								<col width="22%">
-								<col>
-							</colgroup>
-							<tbody>
-								<tr>
-									<th colspan="2" class="title">제목 제몾ㄱ 제ㅗㅁㄱ니ㅏ얼;ㅣ마니아ㅓㅣ그처;ㅣㅏ;ㅓ미ㅏㄴ어;ㅣㅏㄹㅁ나ㅓ하ㅣ덕;ㅣㅏㅇ거니;미나</th>
-								</tr>
-								<tr>
-									<th style="white-space: nowrap;">작성자</th>
-									<td>관리자</td>
-								</tr>
-								<tr>
-									<th style="white-space: nowrap;">작성일</th>
-									<td>2017.03.03</td>
-								</tr>
-								<tr>
-									<th style="white-space: nowrap;">조회수</th>
-									<td>324</td>
-								</tr>
-								<tr>
-									<th style="white-space: nowrap;">첨부파일</th>
-									<td>
-										<ul class="file_list">
-											<li><a href="#" target="_blank">짜잔 이거봐라 첨부파일이당</a></li>
-										</ul>
-									</td>
-								</tr><!-- 여기까지가 헤더 -->
-								<tr>
-									<td colspan="2" class="content">
-										<div style="max-width: 840px;">
-											<div class="form-group">
-												<div class="col-lg-12">
-공지사항 상세보기 페이지입니다.<br>
-ㅎㅎㅎㅎㅎㅎㅎ<br>
-이를 어쩐담<br>
-더이상 할 말이 없네유<br>
-구럼이만
-													<!-- <textarea class="form-control" cols="100%" rows="100%">
+         <div class="small-title" style="margin: 80px 0 0 0;">
+               <p>
+                   <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">공지사항</span>
+                   <span style="float:right;">
+                       <small><a href="../index.jsp">홈</a> > 학사정보 > 공지사항</small>
+                   </span>
+               </p>
+               <div class="view" style="position: relative; width: 100%;">
+                  <fieldset style="position: relative; width: 100%; padding: 0; margin: 0; border: 0; min-width: 0;">
+                     <legend style="display: block; width: 100%; padding: 0; margin-bottom: 20px; font-size: 21px; line-height: 40px; color: #333; border: 0; border-bottom: 1px solid #e5e5e5; visibility: hidden; overflow: hidden; position: absolute; top: -50px; left: -50px;">게시판 상세보기</legend>
+                  <table style="clear: both; width: 100%; margin: 0 auto; border-top: 2px solid #b3b1b1; border-collapse: inherit; max-width: 100%; background-color: transparent; border-spacing: 0; display: table;"><!-- .view>fieldset>table -->
+                     <colgroup>
+                        <col width="22%">
+                        <col>
+                     </colgroup>
+                     <tbody>
+                        <tr>
+                           <th colspan="2" class="title">2016-2 성적확인 및 정정기간 안내</th>
+                        </tr>
+                        <tr>
+                           <th style="white-space: nowrap;">작성자</th>
+                           <td>관리자</td>
+                        </tr>
+                        <tr>
+                           <th style="white-space: nowrap;">작성일</th>
+                           <td>2017.03.03</td>
+                        </tr>
+                        <tr>
+                           <th style="white-space: nowrap;">조회수</th>
+                           <td>324</td>
+                        </tr>
+                        <tr>
+                           <th style="white-space: nowrap;">첨부파일</th>
+                           <td>
+                              <ul class="file_list">
+                                 <li><a href="#" target="_blank">첨부파일</a></li>
+                              </ul>
+                           </td>
+                        </tr><!-- 여기까지가 헤더 -->
+                        <tr>
+                           <td colspan="2" class="content">
+                              <div style="max-width: 840px;">
+                                 <div class="form-group">
+                                    <div class="col-lg-12">
+1. 성적평가기간 :  2016. 12. 15. (목) 09:00 ~ 12. 27. (화) 17:00<br>
+   => 과목 담당 교수님꼐서 직접 성적을 입력하시는 기간입니다.<br>
+ <br>
+2. 성적확인기간 및 정정기간 : 2016. 12. 28. (수) 10:00 ~ 12. 30. (금) 17:00<br>
+   => U-SAINT 로그인 후 -> 성적 / 졸업 -> 학기별 성적 조회<br>
+       (강의만족도 조사 기간에는 강의만족도 화면에서 만족도 조사 후 확인 가능)<br>
+ <br>
+3. 강의만족도 조사 기간 : 2016. 12. 6. (화) 09:00 ~ 12. 21. (수) 24:00<br>
+   => 별도 메일 공지 확인하시기 바랍니다.<br>
+ <br>
+※ 강의만족도 조사를 하지 않은 학생은 성적 열람이 제한됨.<br>
+※ 성적 확인 후 이의가 있을 경우, 정정기간 내에 과목담당 교수에게 정정 요청 하여야 하며,<br>
+   이 기간이 지나면 성적 정정이 불가함.<br>
+※ 성적평가 기간 중에는 조회한 성적이 변동될 수 있음.<br>
+                                       <!-- <textarea class="form-control" cols="100%" rows="100%">
 제14조(장학금의 정의) 대학원 IT정책경영학과의 장학금지급기준은 대학원규정에 의한다.
 
 ①정부 및 공공기관의 공직관료(사무관급/령관급 이상)가 박사과정에 입학할 경우에 재학기간 중의 매학기 등록금의 일정부분(최고 50%)을 공직관료 장학금으로 지급가능하다.
@@ -132,36 +141,36 @@
 ②장학금의 재원으로 다양한 기금을 활용할 수 있다.
 
 ③기타 재원에 대한 사안은 IT정책경영학과 운영위원회의 결정에 따른다.
-													</textarea> -->
-												</div>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-	            	</fieldset>
-	            </div>
-				<div class="button-list" style="position: relative; width: 100%; height: 100%; padding: 10px 0;">
-					<ul class="right" style="float: right; margin: 0; padding: 2px;">
-						<li style="float: left; margin-left: 5px; line-height: 20px; margin: 0; padding: 0;">
-							<a href="regulation.jsp" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;">목록</a>
-						</li>
-					</ul>
-				</div><br>
-				<div style="margin: 20px 0; border-top: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7;">
-					<dl style="list-style: none; position: relative; margin: 10px 0!important;">
-						<dt style="list-style: none; background-position: 95% 0; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">다음글</dt>
-						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></dd>
-					</dl>
-					<dl style="list-style: none; position: relative; margin: 10px 0!important;">
-						<dt style="list-style: none; background-position: 95% -36px; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">이전글</dt>
-						<dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#">ㅎㅎㅎㅎㅎㅎㅎㅎㅎ</a></dd>
-					</dl>
-				</div>
-	        </div>
-	        <div style="width: 80%;">&nbsp;</div>
-		</div>
-		<c:import url="../import/footer.jsp" />
-	</body>
+                                       </textarea> -->
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </fieldset>
+               </div>
+            <div class="button-list" style="position: relative; width: 100%; height: 100%; padding: 10px 0;">
+               <ul class="right" style="float: right; margin: 0; padding: 2px;">
+                  <li style="float: left; margin-left: 5px; line-height: 20px; margin: 0; padding: 0;">
+                     <a href="notice.jsp" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;">목록</a>
+                  </li>
+               </ul>
+            </div><br>
+            <div style="margin: 20px 0; border-top: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7;">
+               <dl style="list-style: none; position: relative; margin: 10px 0!important;">
+                  <dt style="list-style: none; background-position: 95% 0; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">다음글</dt>
+                  <dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#" onclick="alert('준비중입니다.'); return false;">2016년도 석사논문 최종심사 준비서류 안내</a></dd>
+               </dl>
+               <dl style="list-style: none; position: relative; margin: 10px 0!important;">
+                  <dt style="list-style: none; background-position: 95% -36px; position: absolute; z-index: 10; left: 0; top: 0; padding-right: 30px!important; font-weight: bold; line-height: 20px; ">이전글</dt>
+                  <dd style="padding-left: 90px!important; margin-left: 10px; line-height: 20px; margin: 0; padding: 0;"><a href="#" onclick="alert('준비중입니다.'); return false;">2016-2 신입생 수시모집</a></dd>
+               </dl>
+            </div>
+           </div>
+           <div style="width: 80%;">&nbsp;</div>
+      </div>
+      <c:import url="../import/footer.jsp" />
+   </body>
 </html>

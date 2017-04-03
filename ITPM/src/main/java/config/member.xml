@@ -29,11 +29,10 @@
 			   JOB_PHONE
 		  FROM MEMBER
 		 ORDER BY STUDENT_ID
-		 LIMIT 0, 20
 	</select>
 	
 	<!-- 기수별 원우 리스트 조회 -->
-	<select id="getGroupMemberList" parameterType="member" resultMap="memberMap">
+	<select id="getGroupMemberList" parameterType="String" resultMap="memberMap">
 		SELECT PHONE_NUMBER,
 			   NAME,
 			   STUDENT_ID,
@@ -45,12 +44,14 @@
 			   JOB_PHONE
 		  FROM MEMBER
 		 WHERE S_GROUP = #{sGroup}
+		 ORDER BY STUDENT_ID
 	</select>
 	
 	<!-- 기수 리스트 조회 -->
 	<select id="getGroupList" parameterType="member" resultMap="memberMap">
 		SELECT DISTINCT S_GROUP
 		  FROM MEMBER
+		 ORDER BY ABS(S_GROUP)
 	</select>
 	<!-- 
 	<insert id="insertMember" parameterType="member">

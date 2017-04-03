@@ -80,16 +80,16 @@
 	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
 		        			</li>
 		        			<li style="color: #666;">
+	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
+		        			</li>
+		        			<li style="color: #666;">
+	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
+		        			</li>
+		        			<li style="color: #666;">
 	        					<div class="subject">2017.03.24 논문 서류 제출</div>
 		        			</li>
 		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.15 신나는 수요일</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.13 남자친구의 생일</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.02 개강!</div>
+	        					<div class="subject">2017.03.02 개강</div>
 		        			</li>
 		        		</ul>
 		        	</div>

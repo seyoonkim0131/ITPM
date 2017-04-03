@@ -35,16 +35,38 @@ public class MemberDAO {
 		SqlSession session = DAOFactory.getSqlSession(false);
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		try {
-			System.out.println("=========================test=============================hello=============");
-			System.out.println(session);
-			System.out.println(allMemberList);
 			allMemberList = (ArrayList)session.selectList("member.getAllMemberList");
-			System.out.println(allMemberList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			session.close();
 		}
 		return allMemberList;
+	}
+	
+	public static ArrayList<Member> getGroupList() {
+		SqlSession session = DAOFactory.getSqlSession(false);
+		ArrayList<Member> groupList = new ArrayList<Member>();
+		try {
+			groupList = (ArrayList)session.selectList("member.getGroupList");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return groupList;
+	}
+	
+	public static ArrayList<Member> getGroupMemberList(String sGroup) {
+		SqlSession session = DAOFactory.getSqlSession(false);
+		ArrayList<Member> groupMemberList = new ArrayList<Member>();
+		try {
+			groupMemberList = (ArrayList)session.selectList("member.getGroupMemberList", sGroup);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return groupMemberList;
 	}
 }
