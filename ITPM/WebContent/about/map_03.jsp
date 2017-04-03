@@ -4,9 +4,7 @@
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta
-            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"
-            name="viewport"/>
+        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
         <link href="../image/favicon.ico" rel="Shortcut Icon"/>
         <title>방문안내 | IT정책경영학과</title>
@@ -16,16 +14,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
-
-            function submenu() {
-                //$("#hide").display = "block";
-                var sub = document.getElementById("hide");
-                if (sub.style.display == 'none') {
-                    sub.style.display = 'block';
-                } else {
-                    sub.style.display = 'none';
-                }
-            }
             function getWidth() {
                 if (self.innerWidth) {
                     return self.innerWidth;
@@ -40,7 +28,7 @@
                 }
             }
             $(window).resize(function () {
-                if (getWidth() >= '767') { //큰화면
+                if (getWidth() >= '767') {
                     document.getElementById('side_menu').style.display = 'block';
                     $('.content-div').css('padding-left', '250px');
                 } else {
@@ -49,7 +37,7 @@
                 }
             });
             $(document).ready(function () {
-                if (getWidth() >= '767') { //큰화면
+                if (getWidth() >= '767') {
                     document.getElementById('side_menu').style.display = 'block';
                     $('.content-div').css('padding-left', '250px');
                 } else {
@@ -60,10 +48,6 @@
             
         </script>
         <style type="text/css">
-            @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-            body {
-                font-family: 'Nanum Gothic', sans-serif;
-            }
             .navbar {
                 min-height: 40px;
                 font-size: 11px;
@@ -99,16 +83,11 @@
 			}
         </style>
     </head>
-
-    <body role="document" style="overflow-x:hidden;">
-    <c:import url="../import/header.jsp" />
-       <div
-            class="container"
-            id="side_menu"
-            style="text-align:left; position:absolute; max-width:150px; border: 1px solid #dcdcdc; float: left; padding:0 0 0 0; margin: 70px 50px 0 30px;">
+	<body role="document" style="overflow-x:hidden;">
+	<c:import url="../import/header.jsp" />
+		<div class="container" id="side_menu" style="text-align:left; position:absolute; max-width:150px; border: 1px solid #dcdcdc; float: left; padding:0 0 0 0; margin: 70px 50px 0 30px;">
             <div style="height: 14px; width:100%; background-color: #b31b1b;"></div>
-            <div
-                style="font-size: 15pt; padding-top:10%; padding-left:15px; padding-bottom:10%; font-weight: 900;">대학원소개</div>
+            <div style="font-size: 15pt; padding-top:10%; padding-left:15px; padding-bottom:10%; font-weight: 900;">대학원소개</div>
             <div style="height: 2px; background-color: #b6b6b6;"></div>
             <ul class="nav nav-pills nav-stacked" style="float:center;">
                 <li>
@@ -125,35 +104,32 @@
                 </li>
             </ul>
         </div>
-
 		<div class="content-div" >
-        <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
-            <p>
-                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">방문안내</span>
-                <span style="float:right;">
-                    <small>홈 > 대학원소개 > 방문안내</small>
-                </span>
-            </p>
-        </div>
-        <div class="content" style=" margin: 70px 0 60px 0; width:90%; padding: 70px 0 0 0;">
-        	<p><strong>IT정책경영학과 위치</strong></p>
-			<p>서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과</p>
-			<br>&nbsp;<br>        	
-        	<p>학교 위치</p>  
-			<ul id="nav_tab" class="nav nav-tabs" style="width:100%;">
-    			<li><a href="map.jsp" style="white-space: nowrap;">지하철</a></li>
-    			<li><a href="map_02.jsp" style="white-space: nowrap;">버스</a></li>
-   				<li class="active"><a href="map_03.jsp" style="white-space: nowrap;">자가용</a></li>
-    			<li><a href="map_04.jsp" style="white-space: nowrap;">고속도로</a></li>
-  			</ul>
-  			
-  			<br>
-  			<div style="text-align:center;">
-  				<img id="car_image" alt="" src="../image/map_car_image.png" > 		
-  				<img id="car_text" alt="" src="../image/map_car_text.png"">
-        	</div>
-        	
-        </div>
+	        <div class="small-title" style="margin: 0 0 10px 0; width:100%; padding: 0 10% 0 0;">
+	            <p>
+	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">방문안내</span>
+	                <span style="float:right;">
+	                    <small><a href="../index.jsp">홈</a> > 대학원소개 > 방문안내</small>
+	                </span>
+	            </p>
+	        </div>
+	        <div class="content" style=" margin: 70px 0 60px 0; width:90%; padding: 70px 0 0 0;">
+	        	<p><strong>IT정책경영학과 위치</strong></p>
+				<p>서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과</p>
+				<br>&nbsp;<br>        	
+	        	<p>학교 위치</p>  
+				<ul id="nav_tab" class="nav nav-tabs" style="width:100%;">
+	    			<li><a href="map.jsp" style="white-space: nowrap;">지하철</a></li>
+	    			<li><a href="map_02.jsp" style="white-space: nowrap;">버스</a></li>
+	   				<li class="active"><a href="map_03.jsp" style="white-space: nowrap;">자가용</a></li>
+	    			<li><a href="map_04.jsp" style="white-space: nowrap;">고속도로</a></li>
+	  			</ul>
+	  			<br>
+	  			<div style="text-align:center;">
+	  				<img id="car_image" alt="" src="../image/map_car_image.png" > 		
+	  				<img id="car_text" alt="" src="../image/map_car_text.png"">
+	        	</div>
+	        </div>
         </div>
         <c:import url="../import/footer.jsp"/>
     </body>
