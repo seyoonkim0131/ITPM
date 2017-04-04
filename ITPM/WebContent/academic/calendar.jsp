@@ -74,26 +74,96 @@
 	                </span>
 	            </p>
 		        <div class="list">
-		        	<div class="table_list" style="border-top: 2px solid #b31b1b;">
-		        		<ul style="display: block; padding: 0;">
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.31 실증연구방법론 휴강</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.24 논문 서류 제출</div>
-		        			</li>
-		        			<li style="color: #666;">
-	        					<div class="subject">2017.03.02 개강</div>
-		        			</li>
-		        		</ul>
-		        	</div>
-		        </div>
+                 <div class="table_list" style="border-top: 2px solid #b31b1b;">
+                    <ul style="display: block; padding: 0;">
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                <img alt="중요일정" src="../image/calendar.png" style="padding: 3px 3px 0 0;">
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="calendarDetail.jsp" style="vertical-align: top;">2017-1 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                NO.5
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="#" style="vertical-align: top;">2016-2 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                NO.4
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="#" style="vertical-align: top;">2016-1 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                NO.3
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="#" style="vertical-align: top;">2015-2 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                NO.2
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="#" style="vertical-align: top;">2015-1 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       <li style="color: #666;">
+                          <div class="top_area">
+                             <div class="write_num" style="float: left; font-size: 11px;">
+                                NO.1
+                             </div>
+                             <div class="num_area" style="float: right;">
+                                <span class="table_date" style="display: inline-block; width: 100px; height: 13px; padding: 0 5px 0 17px; background: url(../image/icon_date.jpg) no-repeat 0 0; line-height: 13px;"><strong>2017.03.03</strong></span>
+                                <span class="table_hit" style="display: inline-block; width: 45px; height: 13px; margin: 0; padding: 0 5px 0 19px; background: url(../image/icon_view.gif) no-repeat 0 3px; line-height: 13px;"><strong>342</strong></span>
+                             </div>
+                          </div>
+                          <div class="subject">
+                             <a href="#" style="vertical-align: top;">2014-2 IT정책경영학과 주요 일정</a>
+                          </div>
+                       </li>
+                       
+                    </ul>
+                 </div>
+              </div>
 	        </div>
 	        <div style="width: 80%;">&nbsp;</div>
 		</div>

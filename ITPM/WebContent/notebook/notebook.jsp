@@ -15,7 +15,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 			$(window).resize(function(){
-				if(getWidth() <= '767') { //얘가 작을때얌
+				if(getWidth() <= '767') {
 					document.getElementById('side_menu').style.display = 'none';
 					$('.content-div').css('margin-left', '80px');
 				} else {
@@ -25,7 +25,7 @@
 			});
 			
 			$(document).ready(function() {
-				if(getWidth() <= '767') { //얘가 작다고
+				if(getWidth() <= '767') {
 					document.getElementById('side_menu').style.display = 'none';
 					$('.content-div').css('margin-left', '80px');
 				} else {
@@ -34,7 +34,6 @@
 				}
 				
 				$('#group').change(function() {
-					//alert($('#group option:selected').val());
 					document.getElementById('sGroup').value = $('#group option:selected').val();
 					document.getElementById('groupForm').submit();
 				});
@@ -48,11 +47,14 @@
 			.pagination a {color: black; padding: 8px 16px; text-decoration: none;}
 			.pagination a.active {color: white; background-color: #b31b1b;}
 			.pagination a:hover:not(.active) {background-color: #ddd;}
+			@media only screen and (max-width: 376px) { 
+				.memberImg {width: 60px; height: 80px;}
+				table.bbs-list thead th, table.bbs-list tbody td {font-size: 13px;}
+			}
 		</style>
 	</head>
 	<body>
 		<c:import url="../import/header.jsp" />
-		 
 		<div class="container" id="side_menu">
             <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
             <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">원우수첩</div>            
@@ -61,9 +63,7 @@
 			<div class="small-title" style="margin: 80px 0 0 0;">
 	            <p>
 	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우수첩</span>
-	                <span style="float:right;">
-	                    <small><a href="index.jsp">홈</a> > 원우수첩</small>
-	                </span>
+	                <span style="float:right;"><small><a href="index.jsp">홈</a> > 원우수첩</small></span>
 	            </p>
 	            <form id="groupForm" action="getAllMemberList.do" method="get" style="display: none;">
 	            	<input type="text" id="sGroup" name="sGroup" value="" />
@@ -74,69 +74,57 @@
 	            	</c:forEach>
 				</select>
                 <table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
-	                    <colgroup>
-	                    	<col width="30%">
-	                    	<col width="20%">
-	                    	<col width="50%">
-	                    </colgroup>
-	                    <c:forEach items="${requestScope.allMemberList}" var="result">
-	                        <tr align="center">
-	                            <td rowspan="6" style="padding-top: 3px;">
-	                            	<c:choose>
-	                            		<c:when test="${result.photo eq '' || result.photo eq null}">
-			                            	<img border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
-	                            		</c:when>
-	                            		<c:otherwise>
-			                            	<img border="1" height="120px" width="90px" src="image/member/${result.photo}" style="vertical-align: middle;">
-	                            		</c:otherwise>
-	                            	</c:choose>
-	                            </td>
-	                            <td style="text-align:center">기수</td>
-	                            <td style="text-align:left"><c:out value="${result.sGroup}" /></td>
-	                        </tr>
-	                        <tr align="left">
-	                            <td style="text-align:center">이름</td>
-	                            <td style="text-align:left"><c:out value="${result.name}" /></td>
-	                        </tr>
-	                        <tr align="left">
-	                            <td style="text-align:center">회사명</td>
-	                            <td style="text-align:left">${result.job}</td>
-	                        </tr>
-	                        <tr align="left">
-	                            <td style="text-align:center">직급</td>
-	                            <td style="text-align:left">${result.jobPosition}</td>
-	                        </tr>
-	                        <tr align="left">
-	                            <td style="text-align:center">핸드폰</td>
-	                            <td style="text-align:left; letter-spacing:-2px;">${result.phoneNumber}</td>
-	                        </tr>
-	                        <tr align="left" style="border-bottom: solid 2px black;">
-	                            <td style="text-align:center; letter-spacing: -1px;">E-mail</td>
-	                            <td style="text-align:left; letter-spacing:-1px;">
-	                            	<c:choose>
-	                            		<c:when test="${result.mailId eq null || result.mailId == ''}">
-	                            			&nbsp;-
-	                            		</c:when>
-	                            		<c:otherwise>
-				                            ${result.mailId}@${result.mailDomain}
-	                            		</c:otherwise>
-	                            	</c:choose>
-	                            </td>
-	                        </tr>
-	                    </c:forEach>
-                    </tbody>
+                    <colgroup>
+                    	<col width="30%">
+                    	<col width="20%">
+                    	<col width="50%">
+                    </colgroup>
+                    <c:forEach items="${requestScope.allMemberList}" var="result">
+                        <tr align="center">
+                            <td rowspan="6" style="padding-top: 3px;">
+                            	<c:choose>
+                            		<c:when test="${result.photo eq '' || result.photo eq null}">
+		                            	<img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
+                            		</c:when>
+                            		<c:otherwise>
+		                            	<img class="memberImg" border="1" height="120px" width="90px" src="image/member/${result.photo}" style="vertical-align: middle;">
+                            		</c:otherwise>
+                            	</c:choose>
+                            </td>
+                            <td style="text-align:center">기수</td>
+                            <td style="text-align:left"><c:out value="${result.sGroup}" /></td>
+                        </tr>
+                        <tr align="left">
+                            <td style="text-align:center">이름</td>
+                            <td style="text-align:left"><c:out value="${result.name}" /></td>
+                        </tr>
+                        <tr align="left">
+                            <td style="text-align:center">회사명</td>
+                            <td style="text-align:left">${result.job}</td>
+                        </tr>
+                        <tr align="left">
+                            <td style="text-align:center">직급</td>
+                            <td style="text-align:left">${result.jobPosition}</td>
+                        </tr>
+                        <tr align="left">
+                            <td style="text-align:center">핸드폰</td>
+                            <td style="text-align:left; letter-spacing:-2px;">${result.phoneNumber}</td>
+                        </tr>
+                        <tr align="left" style="border-bottom: solid 2px #a1a4a8;">
+                            <td style="text-align:center; letter-spacing: -1px;">E-mail</td>
+                            <td style="text-align:left; letter-spacing:-1px;">
+                            	<c:choose>
+                            		<c:when test="${result.mailId eq null || result.mailId == ''}">
+                            			&nbsp;-
+                            		</c:when>
+                            		<c:otherwise>
+			                            ${result.mailId}@${result.mailDomain}
+                            		</c:otherwise>
+                            	</c:choose>
+                            </td>
+                        </tr>
+                   </c:forEach>
                 </table>
-                <!-- <div class="pagination-centered" style="text-align: center; width: 100%;">
-				<div class="pagination">
-					<a href="#" style="color: #666">&laquo;</a>
-					<a class="active" href="#">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a href="#">5</a>
-					<a href="#" style="color: #666">&raquo;</a>
-				</div>
-				</div> -->
 			</div>
 			<div style="width:10%;">&nbsp;</div>
 		</div>

@@ -4,49 +4,32 @@
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta
-            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"
-            name="viewport"/>
+        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
         <link href="../image/favicon.ico" rel="Shortcut Icon"/>
         <title>로그인 | IT정책경영학과</title>
-        <link
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-            rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/itpm.css" rel="stylesheet"/>
         <link href="../css/menu.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(window).resize(function () {
-                if (getWidth() <= '767') { //얘가 작을때얌
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'none';
+                if (getWidth() <= '767') {
+                    document.getElementById('side_menu').style.display = 'none';
                     $('.content-div').css('margin-left', '80px');
                 } else {
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'block';
+                    document.getElementById('side_menu').style.display = 'block';
                     $('.content-div').css('margin-left', '250px');
                 }
             });
 
             $(document).ready(function () {
-                if (getWidth() <= '767') { //얘가 작다고
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'none';
+                if (getWidth() <= '767') {
+                    document.getElementById('side_menu').style.display = 'none';
                     $('.content-div').css('margin-left', '80px');
                 } else {
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'block';
+                    document.getElementById('side_menu').style.display = 'block';
                     $('.content-div').css('margin-left', '250px');
                 }
                 

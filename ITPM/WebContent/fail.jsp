@@ -4,20 +4,15 @@
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta
-            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"
-            name="viewport"/>
+        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
         <link href="../image/favicon.ico" rel="Shortcut Icon"/>
         <title>실패 | IT정책경영학과</title>
-        <link
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-            rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/itpm.css" rel="stylesheet"/>
         <link href="../css/menu.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(window).resize(function () {
                 if (getWidth() <= '767') { //얘가 작을때얌
@@ -87,27 +82,18 @@
         </style>
     </head>
     <body>    
-        <table
-           align="center"            
-            style="max-width: 80%; border-spacing: 0; margin-top: 15%; margin-bottom: 5%;">
+        <table style="text-align: center; max-width: 80%; border-spacing: 0; margin-top: 15%; margin-bottom: 5%;">
             <tbody>
-                <tr align="center" style="vertical-align:top; border-top: solid 4px #b31b1b; border-bottom: solid 4px #b31b1b; ">
+                <tr align="center" style="vertical-align:top; border-top: solid 4px #b31b1b; border-bottom: solid 4px #b31b1b;">
                     <td colspan="2" style="padding-top: 20px; padding-bottom: 20px;">
-                        <img
-                            align="left"
-                            height="60px"
-                            src="image/fail_image.png"
-                            width="69px">
+                        <img align="left" height="60px" src="image/fail_image.png" width="69px">
                     </td>
                     <td style="vertical-align: middle;">
                        <strong>페이지를 표시할 수 없습니다.</strong><br>
                        잠시 후 다시 시도해 주시기 바랍니다.
-                       
                     </td>
                 </tr>
-                
             </tbody>
         </table>
-        
     </body>
 </html>
