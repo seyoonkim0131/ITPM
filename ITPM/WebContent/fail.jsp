@@ -11,6 +11,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/itpm.css" rel="stylesheet"/>
         <link href="../css/menu.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/jiwon.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
@@ -46,46 +47,13 @@
                 }
             });
         </script>
-        <style type="text/css">
-            .table_list > ul > li {
-                position: relative;
-                z-index: 0;
-                padding: 10px 18px;
-                border-bottom: 1px solid #d0d0d0;
-                line-height: 20px;
-                display: list-item;
-            }
-            .table_list {
-                color: #666;
-                margin: 0;
-            }
-            .table_list .top_area:after {
-                display: block;
-                clear: both;
-                content: '';
-            }
-            .pagination {
-                display: inline-block;
-            }
-            .pagination a {
-                color: black;
-                padding: 8px 16px;
-                text-decoration: none;
-            }
-            .pagination a.active {
-                color: white;
-                background-color: #b31b1b;
-            }
-            .pagination a:hover:not(.active) {
-                background-color: #ddd;
-            }
-        </style>
+        
     </head>
     <body>    
-        <table style="text-align: center; max-width: 80%; border-spacing: 0; margin-top: 15%; margin-bottom: 5%;">
+        <table class="fail">
             <tbody>
-                <tr align="center" style="vertical-align:top; border-top: solid 4px #b31b1b; border-bottom: solid 4px #b31b1b;">
-                    <td colspan="2" style="padding-top: 20px; padding-bottom: 20px;">
+                <tr align="center">
+                    <td colspan="2">
                         <img align="left" height="60px" src="image/fail_image.png" width="69px">
                     </td>
                     <td style="vertical-align: middle;">

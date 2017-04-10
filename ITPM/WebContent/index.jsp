@@ -9,15 +9,11 @@
 	<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
 	<link rel="Shortcut Icon" href="image/favicon.ico" />
 	<title>Home | IT정책경영학과</title>
-	<link rel="StyleSheet" href="css/itpm.css" />
-	<link rel="stylesheet" href="css/menu.css">
+	<link rel="StyleSheet" href="css/itpm.css" /> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 	<style type="text/css">
-	.navbar {min-height: 40px; font-size: 11px;}
-	.navbar-inverse .navbar-nav>li>a {color: #fff;}
-	
 	/* 작은 기기들 (태블릿, 768px 이상) */
 	@media only screen and (max-width: 376px) { 
 		#line{display:block;}
@@ -60,29 +56,31 @@
 	
 	</style>
 </head>
-<body role="document" style="overflow-x:hidden;">
+<body role="document">
 	<c:import url="import/header.jsp" /><br>&nbsp;
-	<div id="grayMenu" class="col-lg-12" style="z-index:100; background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
+	<div id="grayMenu" class="grayMenu col-lg-12">
 		<div id="navbar" class="navbar-collapse collapse" style="font-size: 16px;">
-			<ul class="nav navbar-nav dropdown" style="float: inherit;" role="menu">
-				<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#"><img alt="대학원정보" src="image/menuimage_itpminfo.png"></a>
-					<ul class="dropdown-sub list-group">
+			<ul class="nav navbar-nav dropdown" style="max-height:50px; padding: 0 0 0 0; float: inherit;" role="menu">
+				<li style="padding-left: 1.5%; width: 25%;">
+					<a style="padding:19px 15px 11px 15px; "href="#"><img style="display:inherit; margin:0 auto;" alt="대학원정보" src="image/menuimage_itpminfo.png"></a>
+					<ul class="dropdown-sub list-group" style="width:94%">
 						<li class="list-group-item" role="presentation"><a href="about/itpm.jsp">학과소개</a></li>
 						<li class="list-group-item" role="presentation"><a href="about/prof.jsp">교수소개</a></li>
 						<li class="list-group-item" role="presentation"><a href="about/vision.jsp">비전</a></li>
 						<li class="list-group-item" role="presentation"><a href="about/map.jsp">방문안내</a></li>
 					</ul>
 				</li>
-				<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#"><img alt="학사정보" src="image/menuimage_schoolinfo.png"></a>
-					<ul class="dropdown-sub list-group">
+				<li style="padding-right: 1.5%; width: 25%;">
+					<a style="padding:19px 15px 11px 15px; "href="#"><img style="display:inherit; margin:0 auto;" alt="학사정보" src="image/menuimage_schoolinfo.png"></a>
+					<ul class="dropdown-sub list-group" style="width:94%">
 						<li class="list-group-item" role="presentation"><a href="academic/education.jsp">개설과정</a></li>
 						<li class="list-group-item" role="presentation"><a href="regulation/regulation.jsp">규정</a></li>
 						<li class="list-group-item" role="presentation"><a href="academic/calendar.jsp">학사일정</a></li>
 						<li class="list-group-item" role="presentation"><a href="board/notice.jsp">공지사항</a></li>
 					</ul>
 				</li>
-				<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a"><img alt="입학정보" src="image/menuimage_admission.png"></a></li>
-				<li style="padding-left: 3%; width: 25%;"><a href="login/login.jsp"><img alt="원우수첩" src="image/menuimage_notebook.png"></a></li>
+				<li style="padding-left: 1.5%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;"  alt="입학정보" src="image/menuimage_admission.png"></a></li>
+				<li style="padding-right: 3%; width: 25%;"><a href="login/login.jsp"style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>
 			</ul>
 		</div>
 	</div>

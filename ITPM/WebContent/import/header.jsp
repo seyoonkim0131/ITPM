@@ -10,7 +10,6 @@ function submenu() {
 		$('#hide').css('display', 'none');
 	}
 }
-
 function getWidth() {
 	if (self.innerWidth) {
 		return self.innerWidth;
@@ -24,32 +23,34 @@ function getWidth() {
 		return document.body.clientWidth;
 	}
 }
-
 $(window).resize(function(){
 	if(getWidth() <= '767') {
 		document.getElementById('whiteLogo').style.display = 'block';
 		document.getElementById('logo').style.display = 'none';
 		document.getElementById('grayMenu').style.display = 'none';
 		document.getElementById('logoSpace').style.display = 'none';
+		$('#redMenu').css('min-height', '55px');
 	} else {
 		document.getElementById('whiteLogo').style.display = 'none';
 		document.getElementById('logo').style.display = 'block';
 		document.getElementById('grayMenu').style.display = 'block';
 		document.getElementById('logoSpace').style.display = 'block';
+		$('#redMenu').css('min-height', '40px');
 	}
 });
-
 $(document).ready(function(){
 	if(getWidth() <= '767') {
 		document.getElementById('whiteLogo').style.display = 'block';
 		document.getElementById('logo').style.display = 'none';
 		document.getElementById('grayMenu').style.display = 'none';
 		document.getElementById('logoSpace').style.display = 'none';
+		$('#redMenu').css('min-height', '55px');
 	} else {
 		document.getElementById('whiteLogo').style.display = 'none';
 		document.getElementById('logo').style.display = 'block';
 		document.getElementById('grayMenu').style.display = 'block';
 		document.getElementById('logoSpace').style.display = 'block';
+		$('#redMenu').css('min-height', '40px');
 	}
 	console.log(document.location.href.indexOf('.do'));
 	if(document.location.href.indexOf('.do') != -1) {
@@ -77,9 +78,9 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body role="document">
-	<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #b31b1b; border-style: none; letter-spacing: 2px;">
-		<div class="container">
+<body role="document-header">
+	<nav id="redMenu" class="navbar navbar-inverse navbar-fixed-top" style="background-color: #b31b1b; border-style: none; letter-spacing: 2px;">
+		<div class="container-header">
 			<a class="navbar-brand" href="#"><img id="whiteLogo" alt="white logo" src="../image/main_logo.png" style="disply: none;" onerror="this.src='image/main_logo.png'"></a>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -89,12 +90,11 @@ $(document).ready(function(){
 					<span class="icon-bar"></span>
 				</button>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav" style="float: right; font-size: 11px;">
-					<li style="line-height: 30px;"><a id="home" href="../index.jsp">HOME</a></li>
-					<li><a id="login" href="../login/login.jsp">LOGIN</a></li>
-					<li><a id="staff" href="../admin/insertStudent.jsp" onclick="alert('준비중입니다.'); return false;">STAFF</a></li>
-					<li><a href="#"><img alt="search" src="../image/icon_search.png" onerror="this.src='image/icon_search.png'" onclick="alert('준비중입니다.'); return false;"></a></li>
+			<div id="navbar" class="navbar-collapse collapse" style=" font-size: 11px;">
+				<ul class="nav navbar-nav" style="padding:0; float: right; font-size: 11px;">
+					<li style="line-height: 30px; top:0;"><a id="home" href="../index.jsp" style="padding:10px; color: #fff;">HOME</a></li>
+					<li><a id="login" href="../login/login.jsp" style="padding:10px; color: #fff;">LOGIN</a></li>
+					<li><a id="staff" href="../admin/insertStudent.jsp" onclick="alert('준비중입니다.'); return false;" style="padding:10px; color: #fff;">ADMIN</a></li>
 				</ul>
 			</div>
 		</div>
@@ -104,7 +104,7 @@ $(document).ready(function(){
 			<div id="logo" class="col-lg-12">
 				<img alt="숭실대학교 대학원 IT정책경영학과" src="../image/menu_itpmlogo.png" width="400px" height="65px" onerror="this.src='image/menu_itpmlogo.png'">
 			</div><div id="logoSpace"><br/>&nbsp;</div>
-			<div id="grayMenu" class="col-lg-12" style="background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
+			<div id="grayMenu" class="grayMenu col-lg-12" style="background-color: #f7f7f7; border-style: solid; border-color: #ececec; border-left-style: none; border-right-style: none; border-width: 1px;">
 				<div id="navbar" class="navbar-collapse collapse" style="font-size: 16px;">
 					<ul class="nav navbar-nav dropdown" style="float: inherit;" role="menu">
 						<li style="padding-left: 3%; padding-right: 3%; width: 25%;"><a href="#" style="background-color: transparent;"><img alt="대학원정보" src="../image/menuimage_itpminfo.png" onerror="this.src='image/menuimage_itpminfo.png'"></a>

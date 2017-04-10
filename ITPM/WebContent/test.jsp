@@ -2,66 +2,67 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
-		<link rel="Shortcut Icon" href="image/favicon.ico" />
-		<title>Home | IT정책경영학과</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/itpm.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<style type="text/css">
-			@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
-			body {font-family: 'Nanum Gothic', sans-serif;}
-			.navbar {min-height: 40px; font-size: 11px;}
-			.navbar-inverse .navbar-nav>li>a {color: #fff;}
-		</style>
-	</head>
-	<body role="document">
-		<!-- Fixed navbar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #b31b1b; border-style: none; letter-spacing: 2px;">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Bootstrap theme</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav" style="float: right;">
-						<li><a href="#">HOME</a></li>
-						<li><a href="#">CONTACT US</a></li>
-						<li><a href="#">SITE MAP</a></li>
-						<li><a href="#">STAFF</a></li>
-						<li><a href="#"><img alt="search" src="image/icon_search.png"></a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav><!-- 상단 빨간메뉴 -->
-		<!-- <div class="container-fluid" style="padding:0 0 0 0;">
-			<img alt="main" src="image/main_img.png" width="100%" height="100%" style="padding:0 0 0 0;">
-		</div> -->
-		<a href=# style="position: absolute; z-index:5; margin-top:4%; margin-left:7.5%; left:0; width:auto;">
-			<img class="main-logo" src="image/main_logo.png"/>
-		</a>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
+      <link rel="Shortcut Icon" href="image/favicon.ico" />
+      <title>Home | IT정책경영학과</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/itpm.css">
+      <link rel="stylesheet" href="css/jiwon.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style type="text/css">
+         @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+         body {font-family: 'Nanum Gothic', sans-serif;}
+         .navbar {min-height: 40px; font-size: 11px;}
+         .navbar-inverse .navbar-nav>li>a {color: #fff;}
+      </style>
+   </head>
+   <body role="document">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="#">Bootstrap theme</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+               <ul class="nav navbar-nav" style="float: right;">
+                  <li><a href="#">HOME</a></li>
+                  <li><a href="#">CONTACT US</a></li>
+                  <li><a href="#">SITE MAP</a></li>
+                  <li><a href="#">STAFF</a></li>
+                  <li><a href="#"><img alt="search" src="image/icon_search.png"></a></li>
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">Action</a></li>
+                     <li><a href="#">Another action</a></li>
+                     <li><a href="#">Something else here</a></li>
+                     <li class="divider"></li>
+                     <li class="dropdown-header">Nav header</li>
+                     <li><a href="#">Separated link</a></li>
+                     <li><a href="#">One more separated link</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div><!--/.nav-collapse -->
+         </div>
+      </nav><!-- 상단 빨간메뉴 -->
+      <!-- <div class="container-fluid" style="padding:0 0 0 0;">
+         <img alt="main" src="image/main_img.png" width="100%" height="100%" style="padding:0 0 0 0;">
+      </div> -->
+      <a href=# style="position: absolute; z-index:5; margin-top:4%; margin-left:7.5%; left:0; width:auto;">
+         <img class="main-logo" src="image/main_logo.png"/>
+      </a>
 
     <div class="container theme-showcase" role="main">
 
@@ -456,27 +457,27 @@
         <h1>Progress bars</h1>
       </div>
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="sr-only">60% Complete</span></div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">60% Complete</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div>
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete (success)</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"><span class="sr-only">20% Complete</span></div>
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">20% Complete</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete (warning)</span></div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ><span class="sr-only">60% Complete (warning)</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"><span class="sr-only">80% Complete (danger)</span></div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">80% Complete (danger)</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div>
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">60% Complete</span></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" style="width: 35%"><span class="sr-only">35% Complete (success)</span></div>
-        <div class="progress-bar progress-bar-warning" style="width: 20%"><span class="sr-only">20% Complete (warning)</span></div>
-        <div class="progress-bar progress-bar-danger" style="width: 10%"><span class='sr-only'>10% Complete (danger)</span></div>
+        <div class="progress-bar progress-bar-successA"><span class="sr-only">35% Complete (success)</span></div>
+        <div class="progress-bar progress-bar-warningB"><span class="sr-only">20% Complete (warning)</span></div>
+        <div class="progress-bar progress-bar-dangerC"><span class='sr-only'>10% Complete (danger)</span></div>
       </div>
 
 
@@ -605,5 +606,5 @@
     <!-- <script src="assets/js/docs.min.js"></script> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-	</body>
+   </body>
 </html>
