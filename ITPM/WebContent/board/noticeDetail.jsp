@@ -66,7 +66,7 @@
                    </span>
                </p>
          </div>
-         <div class="content">
+         <div class="content-board">
                <div class="view">
                   <fieldset>
                      <legend>게시판 상세보기</legend>

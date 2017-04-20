@@ -36,7 +36,7 @@
       </script>
      
    </head>
-   <body>
+   <body class="document" role="document">
       <c:import url="../import/header.jsp" />
       <div class="container" id="side_menu">
             <div class="redline"></div>
@@ -66,9 +66,14 @@
                    </span>
                </p>
           </div>
-          <div class="content">
+          <div class="content-board">
                  <div class="table_list">
-                    <ul>
+                 	<ul>
+                 		<li>
+                 			내용이 없습니다.
+                 		</li>
+                 	</ul>
+                    <!-- <ul>
                        <li>
                           <div class="top_area">
                              <div class="write_num">
@@ -350,9 +355,14 @@
                           </div>
                        </li>
                        
-                    </ul>
+                    </ul> -->
                  </div>
-         <div class="pagination-centered">
+                 
+                 <div><p>&nbsp;</p></div>
+                 <div><p>&nbsp;</p></div>
+                 <div><p>&nbsp;</p></div>
+                 <div><p>&nbsp;</p></div>
+         <!-- <div class="pagination-centered">
 						<div class="pagination">
 							<a class="laquo" href="#">&laquo;</a>
 							<a class="active" href="#">1</a>
@@ -362,7 +372,7 @@
 							<a href="#">5</a>
 							<a class="raquo" href="#">&raquo;</a>
 						</div>
-			  </div>
+			  </div> -->
          </div>
       </div>
       <c:import url="../import/footer.jsp" />

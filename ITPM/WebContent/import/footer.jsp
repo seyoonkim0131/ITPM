@@ -14,7 +14,7 @@
 		</ul>
 	</div>
 	<address class="address" style="padding: 21px 0 0 20px; font-size: 12px; color: #adadad; font-style: normal; margin-bottom: 20px; line-height: 20px;">
-		서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: gamsori@ssu.ac.kr
+		서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: yrbak@ssu.ac.kr
 		<span class="copyright" style="display: block;">Copyright(c) 2017 Soongsil University. All rights reserved</span>
 	</address>
 </div>

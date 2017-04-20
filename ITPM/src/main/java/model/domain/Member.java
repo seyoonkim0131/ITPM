@@ -1,5 +1,7 @@
 package model.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 /**
  * 회원정보
  * @author Seyoon Kim
@@ -19,13 +21,15 @@ public class Member {
 	private String sGroup;
 	private String jobPosition;
 	private String jobPhone;
+	private MultipartFile photoFile;
 	private String photo;
+	private String newPw;
 	
 	public Member() {
 		super();
 	}
 
-	public Member(String phoneNumber, String name, String studentId, String pw, String mailId, String mailDomain, String job, String auth, String sGroup, String jobPosition, String jobPhone, String photo) {
+	public Member(String phoneNumber, String name, String studentId, String pw, String mailId, String mailDomain, String job, String auth, String sGroup, String jobPosition, String jobPhone, MultipartFile photoFile, String photo, String newPw) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.name = name;
@@ -38,20 +42,33 @@ public class Member {
 		this.sGroup = sGroup;
 		this.jobPosition = jobPosition;
 		this.jobPhone = jobPhone;
+		this.photoFile = photoFile;
 		this.photo = photo;
+		this.newPw = newPw;
 	}
 	
-	public Member(String phoneNumber, String name, String studentId, String mailId, String mailDomain, String job, String sGroup, String jobPosition, String jobPhone) {
+	public Member(String phoneNumber, String mailId, String mailDomain, String job, String jobPosition, String photo, String studentId) {
 		super();
 		this.phoneNumber = phoneNumber;
-		this.name = name;
-		this.studentId = studentId;
 		this.mailId = mailId;
 		this.mailDomain = mailDomain;
 		this.job = job;
-		this.sGroup = sGroup;
 		this.jobPosition = jobPosition;
-		this.jobPhone = jobPhone;
+		this.photo = photo;
+		this.studentId = studentId;
+	}
+	
+	public Member(String pw, String studentId) {
+		super();
+		this.pw = pw;
+		this.studentId = studentId;
+	}
+
+	public Member(String studentId, String auth, String sGroup) {
+		super();
+		this.studentId = studentId;
+		this.auth = auth;
+		this.sGroup = sGroup;
 	}
 
 	public String getPhoneNumber() {
@@ -142,12 +159,28 @@ public class Member {
 		this.jobPhone = jobPhone;
 	}
 	
+	public MultipartFile getPhotoFile() {
+		return photoFile;
+	}
+
+	public void setPhotoFile(MultipartFile photoFile) {
+		this.photoFile = photoFile;
+	}
+
 	public String getPhoto() {
 		return photo;
 	}
 	
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+
+	public String getNewPw() {
+		return newPw;
+	}
+
+	public void setNewPw(String newPw) {
+		this.newPw = newPw;
 	}
 
 	@Override
@@ -175,8 +208,12 @@ public class Member {
 		builder.append(jobPosition);
 		builder.append(", jobPhone=");
 		builder.append(jobPhone);
+		builder.append(", photoFile=");
+		builder.append(photoFile);
 		builder.append(", photo=");
 		builder.append(photo);
+		builder.append(", newPw=");
+		builder.append(newPw);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -66,9 +66,10 @@
 	                </span>
 	            </p>
 	        </div>
-		        <div class="content">
+		        <div class="content-board">
 		        	<div class="table_list">
-		        		<ul>
+		        		<ul><li>내용이 없습니다.</li></ul>
+		        		<!-- <ul>
 		        			<li>
 		        				<div class="top_area">
 		        					<div class="write_num">
@@ -125,9 +126,16 @@
 	        						<a href="#">2015년 IT정책경영학과 학과내규</a>
 	        					</div>
 		        			</li>
-		        		</ul>
+		        		</ul> -->
 		        	</div>
-		        	<div class="pagination-centered">
+		        	<div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+	                <div><p>&nbsp;</p></div>
+		        	<!-- <div class="pagination-centered">
 						<div class="pagination">
 							<a class="laquo" href="#">&laquo;</a>
 							<a class="active" href="#">1</a>
@@ -137,7 +145,7 @@
 							<a href="#">5</a>
 							<a class="raquo" href="#">&raquo;</a>
 						</div>
-					</div>
+					</div> -->
 		        </div>
 		        
 	        </div>

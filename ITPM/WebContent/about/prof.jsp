@@ -78,10 +78,10 @@
             <div class="menutitle">대학원소개</div>
             <div class="grayline"></div>
             <ul class="nav nav-pills nav-stacked">
-                <li class="active1">
+                <li class="inactive">
                     <a href="itpm.jsp">학과소개</a>
                 </li>
-                <li class="inactive">
+                <li class="active1">
                     <a href="prof.jsp">교수소개</a>
                 </li>
                 <li class="inactive">
@@ -108,7 +108,7 @@
 						<col width="80%">
 					</colgroup>
 					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/namyonglee.png"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 이남용 (Lee, NamYong)</td>
@@ -128,7 +128,7 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/shin.jpg"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 신용태 (Shin, YongTae)</td>
@@ -137,30 +137,30 @@
 						<td>학 력 : Ph. D ( Univ. of lowa )</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 정보과학관 422호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : shin@ssu.ac.kr</td>
 					</tr>
 					<tr>
-						<td>연구분야 : Computer Networks</td>
+						<td>연구분야 : 컴퓨터 네트워크, 그룹통신, 분산 컴퓨팅, 인터넷 프로토콜, 초고속 통신망, 전자상거래 기술</td>
 					</tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/han.jpg"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 한경석 (Han, KyeongSeok)</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Purdue Univ. )</td>
+						<td>학 력 : Ph.D. (Purdue Univ.)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 벤처관 513호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : kshan@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Electronic Business</td>
@@ -168,19 +168,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/chulho.jpg"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 오철호 ( Oh, ChulHo )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Univ. of Illinois-Urbana )</td>
+						<td>학 력 : Ph.D. (Univ. of Illinois-Urbana)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 조만식기념관 707호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : coh@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Policy Making</td>
@@ -188,19 +188,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/kimgwangyong.png"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 김광용 ( Kim, KwangYong )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Georgia State Univ. )</td>
+						<td>학 력 : Ph. D (Georgia State Univ.)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 경상관 104호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : gygim@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Digital Business</td>
@@ -208,19 +208,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/junsamhyun.png"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 전삼현 ( Jun, SamHyun )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Dr. Jur. ( Frankfurt Univ. )</td>
+						<td>학 력 : Dr. Jur. (Frankfurt Univ.)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 진리관 507호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : shchun@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Business Laws</td>
@@ -228,19 +228,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 		            <tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/junghyunlee.png"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 이정현 ( Yi, JungHyun )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Univ. of California )</td>
+						<td>학 력 : Ph. D (Univ. of California)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 정보과학관 327호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : jhyi@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Network Security</td>
@@ -248,19 +248,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/jungillchoi.png"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 최정일 ( Choi, JeongIl )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Univ. of Nebraska-Lincoln )</td>
+						<td>학 력 : Ph. D (Univ. of Nebraska-Lincoln)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 벤처중소기업센터 508호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : jichoi@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Electronic Business</td>
@@ -268,19 +268,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/choiyong.jpg"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 최용락 ( Choi, YongRak )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Univ. of Soongsil )</td>
+						<td>학 력 : Ph. D (Univ. of Soongsil)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 전산관 319호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : ylchoi58@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Data Base</td>
@@ -288,19 +288,19 @@
 					<tr><td>&nbsp;</td></tr>
 					<tr><td>&nbsp;</td></tr>
 					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/nophoto.png"></td>
+						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/kimjongbae.jpg"></td>
 					</tr>
 					<tr>
 						<td>성 명(영문) : 김종배 ( Kim, JongBae )</td>
 					</tr>
 					<tr>
-						<td>학 력 : Ph. D ( Univ. of Soongsil )</td>
+						<td>학 력 : Ph. D (Univ. of Soongsil)</td>
 					</tr>
 					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
+						<td>연 구 실 : 전산관 318호</td>
 					</tr>
 					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
+						<td>이 메 일 : kjb123@ssu.ac.kr</td>
 					</tr>
 					<tr>
 						<td>연구분야 : Software Engineering</td>

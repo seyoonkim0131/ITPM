@@ -11,7 +11,6 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/itpm.css" rel="stylesheet"/>
         <link href="../css/menu.css" rel="stylesheet">
-        <link href="../css/jiwon.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
@@ -39,27 +38,78 @@
                 }
                 
                 $('#loginSubmit').click(function() {
-	            	if($('#studentId').val() == '') {
-	            		alert("아이디를 입력해주세요.");
-	            		$('#studentId').focus();
-	            		return false;
-	            	}
-	            	if($('#pw').val() == '') {
-	            		alert("비밀번호를 입력해주세요.");
-	            		$('#pw').focus();
-	            		return false;
-	            	}
-	            	if(!$('#studentId').val()== '' && !$('#studentId').val() == '') {
-	            		if($('#studentId').val() =='itpm' && $('#pw').val() == 'itpm1234') {
-	            			console.log('dddd');
-	            			location.href = "../getAllMemberList.do";
-	            		} else {
-	            			alert('아이디/비밀번호를 확인해주세요.');
-	            			return false;
-	            		}
-	            	}
-	            });
-
+                	if($('#studentId').val() == '') {
+						alert("아이디를 입력해주세요.");
+						$('#studentId').focus();
+						return false;
+					}
+                	if($('#pw').val() == '') {
+                		alert("비밀번호를 입력해주세요.");
+                		$('#pw').focus();
+                		return false;
+                	}
+                	if(!$('#studentId').val() == '' && !$('#pw').val() == '') {
+        				$.ajax({
+        					url:"../checkPw.do",
+        					method: "GET",
+        					contentType: "application/json",
+        					data: "studentId="+document.getElementById("studentId").value,
+        					dataType: "json",
+        					success: function(data){
+        						if(data.data == 'Y') {
+        							if(confirm('초기화된 비밀번호 입니다.\n비밀번호를 변경하세요.') == true) {
+        								document.getElementById('loginForm').action = '../loginReset.do';
+        								document.getElementById('loginForm').submit();
+        							} else {
+	        							return false;
+        							}
+        						} else if(data.data == 'N'){
+			                		document.getElementById('loginForm').action = '../login.do';
+			                		document.getElementById('loginForm').submit();
+        						} else if(data.data == '') {
+        							alert('비밀번호 초기화 후 로그인해주세요.');
+        						}
+        					}
+        				});
+                	}
+                });
+                $('#updatePw').click(function() {
+                	if($('#studentId').val() == '') {
+						alert("학번을 입력해주세요.");
+						$('#studentId').focus();
+						return false;
+					}
+                	
+                	if(!$('#studentId').val()== '') {
+        				$.ajax({
+        					url:"../checkId.do",
+        					method: "GET",
+        					contentType: "application/json",
+        					data: "studentId="+document.getElementById("studentId").value,
+        					dataType: "json",
+        					success: function(data){
+        						if(data.data == '0') {
+        							alert('존재하지 않는 학번입니다.\n다시입력해주세요.');
+        							$('#studentId').focus();
+        							return false;
+        						} else if(data.data == '1') {
+			        				$.ajax({
+			        					url:"../updatePw.do",
+			        					method: "GET",
+			        					contentType: "application/json",
+			        					data: "studentId="+document.getElementById("studentId").value,
+			        					dataType: "json",
+			        					success: function(data){
+			        						if(data.message == 'success') {
+			        							alert('비밀번호가 학번으로 초기화되었습니다.\n비밀번호 변경해주세요.');
+			        						}
+			        					}
+			        				});
+        						}
+        					}
+        				});
+                	}
+                });
             });
         </script>        
     </head>
@@ -77,38 +127,38 @@
                         <small><a href="../index.jsp">홈</a> > 로그인</small>
                     </span>
                 </p>
-                </div>
-                <div class="login-content">
-                	<!-- <form id="loginForm" name="loginForm" method="post"> -->
-		                <table class="bbs-list"> 
-		                    <tbody>
-		                        <tr class="login-redline" align="center">                           
-		                            <td class="login-logo" colspan="3">
-		                               <img height="67px" src="../image/login_firstline.png" width="250px" align="center"> 
-		                            </td>
-		                        </tr>
-		                        <tr>
-		                            <td class="login-id">아이디</td>
-		                            <td class="input-id"><input type="text" class="form-control" name="studentId" id="studentId" tabindex="1" value=""/></td>
-		                            <td class="input-button" rowspan="2" >                                                          
-		                                <input type="image" class="img" id="loginSubmit" height="54px" src="../image/login_login_button.png" width="71px" align="left">
-		                            </td>
-		                        </tr>
-		                        <tr>
-		                            <td class="login-pw">비밀번호</td>
-		                            <td class="input-pw"><input type="password" class="form-control" name="pw" id="pw" value=""/></td>
-		                        </tr>
-		                        <tr>
-		                           <td class="login-remakepw" colspan="3" align="center">
-		                              <img height="17px" width="409px" src="../image/login_passwordreset.png">
-		                           </td>
-		                        </tr>
-		                    </tbody>
-		                </table>
-	                <!-- </form> -->
-                </div>
-            
-        </div>
+			</div>
+			<div class="login-content">
+				<form id="loginForm" name="loginForm" method="post" onsubmit="return false;">
+					<table class="bbs-list" style="table-layout: fixed; "> 
+						<tbody>
+							<tr class="login-redline" align="center">                           
+								<td class="login-logo" colspan="3" align="center">
+									<img height="67px" src="../image/login_firstline.png" width="250px"> 
+								</td>
+							</tr>
+							<tr>
+								<td class="login-id">아이디</td>
+								<td class="input-id"><input type="text" class="form-control" name="studentId" id="studentId" tabindex="1" value=""/></td>
+								<td class="input-button" rowspan="2" style="text-align: left;">
+									<input type="image" class="img" id="loginSubmit" height="54px" src="../image/login_login_button.png" width="71px">
+								</td>
+							</tr>
+							<tr>
+								<td class="login-pw">비밀번호</td>
+								<td class="input-pw"><input type="password" class="form-control" tabindex="2" name="pw" id="pw" value=""/></td>
+							</tr>
+							<tr>
+								<td class="login-remakepw" colspan="3" align="center">
+									<input type="image" class="img" height="17px" width="254px" src="../image/login_forget.png">
+									<input type="image" class="img" id="updatePw" height="17px" width="128ps" src="../image/login_reset.png">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
         <div class="login-footerdiv">&nbsp;</div>
         <c:import url="../import/footer.jsp"/>
     </body>

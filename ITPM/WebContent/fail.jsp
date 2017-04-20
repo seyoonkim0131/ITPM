@@ -2,66 +2,59 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-        <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
-        <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
-        <title>실패 | IT정책경영학과</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/itpm.css" rel="stylesheet"/>
-        <link href="../css/menu.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/jiwon.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            $(window).resize(function () {
-                if (getWidth() <= '767') { //얘가 작을때얌
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'none';
-                    $('.content-div').css('margin-left', '80px');
-                } else {
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'block';
-                    $('.content-div').css('margin-left', '250px');
-                }
-            });
-
-            $(document).ready(function () {
-                if (getWidth() <= '767') { //얘가 작다고
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'none';
-                    $('.content-div').css('margin-left', '80px');
-                } else {
-                    document
-                        .getElementById('side_menu')
-                        .style
-                        .display = 'block';
-                    $('.content-div').css('margin-left', '250px');
-                }
-            });
-        </script>
-        
-    </head>
-    <body>    
-        <table class="fail">
-            <tbody>
-                <tr align="center">
-                    <td colspan="2">
-                        <img align="left" height="60px" src="image/fail_image.png" width="69px">
-                    </td>
-                    <td style="vertical-align: middle;">
-                       <strong>페이지를 표시할 수 없습니다.</strong><br>
-                       잠시 후 다시 시도해 주시기 바랍니다.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
+		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
+		<link rel="Shortcut Icon" href="../image/favicon.ico" />
+		<title>학과내규 | IT정책경영학과</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/itpm.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+        $(window).resize(function () {
+            if (getWidth() >= '767') {
+                document.getElementById('side_menu').style.display = 'block';
+                $('.content-div').css('padding-left', '250px');
+            } else {
+                document.getElementById('side_menu').style.display = 'none';
+                $('.content-div').css('padding-left', '10px');
+                $('.content-div').css('padding-right', '10px');
+            }
+        });
+        $(document).ready(function () {
+            if (getWidth() >= '767') {
+                document.getElementById('side_menu').style.display = 'block';
+                $('.content-div').css('padding-left', '250px');
+            } else {
+                document.getElementById('side_menu').style.display = 'none';
+                $('.content-div').css('padding-left', '10px');
+                $('.content-div').css('padding-right', '10px');
+            }
+        });
+		</script>
+		
+	</head>
+	<body>
+		<c:import url="import/header.jsp" />
+		<div class="container" id="side_menu">
+			<div class="redline"></div>
+			<div class="menutitle">로그인 실패</div>
+			<div class="grayline"></div>
+		</div>
+		<div class="content-div">
+			<div class="small-title">
+				<p>
+					<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">로그인 실패</span>
+					<span class="small-title-right"><small><a href="index.jsp">홈</a> > 로그인실패</small></span>
+				</p>
+			</div>
+			<div class="content-board">
+				<img align="left" height="60px" src="image/fail_image.png" width="69px"><br/>
+				<strong>로그인에 실패했습니다.</strong><br>아이디와 비밀번호를 확인해주세요.
+			</div>
+		</div>
+		<c:import url="import/footer.jsp" />
+	</body>
 </html>

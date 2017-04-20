@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="rule">
+
+	<resultMap type="model.domain.Rule" id="ruleMap">
+		<result property="no" column="no"/>
+		<result property="createId" column="create_id"/>
+		<result property="createDate" column="crate_date"/>
+		<result property="updateId" column="update_id"/>
+		<result property="updateDate" column="update_date"/>
+		<result property="view" column="view"/>
+		<result property="fileAdd1" column="file_add1"/>
+		<result property="point" column="point"/>
+		<result property="title" column="title"/>
+		<result property="body" column="body"/>
+	</resultMap>
+	
+	<!-- Paging처리를 위한 글 개수 조회 -->
+	<select id="getListCnt" resultType="Integer">
+		SELECT COUNT(*) FROM RULE
+	</select>
+	
+	<!-- 규정 목록 조회 여기서부터 수정 시작 -->
+	<select id="getAllRule" parameterType="java.util.HashMap" resultMap="ruleMap">
+		SELECT NO,
+			   UPDATE_ID,
+			   UPDATE_DATE,
+			   VIEW,
+			   FILE_ADD1,
+			   POINT,
+			   TITLE
+		  FROM RULE
+		 WHERE 1=1
+		 ORDER BY POINT, NO
+	</select>
+	
+	<!-- 기수별 원우 리스트 조회 -->
+	<select id="getGroupMemberList" parameterType="String" resultMap="ruleMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE
+		  FROM MEMBER
+		 WHERE S_GROUP = #{sGroup}
+		 ORDER BY STUDENT_ID
+	</select>
+	
+	<!-- 기수 리스트 조회 -->
+	<select id="getGroupList" parameterType="member" resultMap="ruleMap">
+		SELECT DISTINCT S_GROUP
+		  FROM MEMBER
+		 ORDER BY ABS(S_GROUP)
+	</select>
+	
+	<!-- 내정보 조회 -->
+	<select id="getMyInfo" parameterType="String" resultMap="ruleMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
+	<!-- 원우 정보 수정 -->
+	<update id="updateMember" parameterType="member">
+		UPDATE MEMBER
+		   SET PHONE_NUMBER = #{phoneNumber},
+		   	   MAIL_ID = #{mailId},
+		   	   MAIL_DOMAIN = #{mailDomain},
+		   	   JOB = #{job},
+		   	   JOB_POSITION = #{jobPosition},
+		   	   JOB_PHONE = #{jobPhone}
+		 WHERE STUDENT_ID = #{studentId}
+	</update>
+	
+	
+	<!-- <insert id="insertMember" parameterType="member">
+		INSERT INTO MEMBER(STUDENT_ID,
+						   PW,
+						   NAME,
+						   PHONE_NUMBER,
+						   MAIL_ID,
+						   MAIL_DOMAIN,
+						   JOB,
+						   AUTH,
+						   S_GROUP)
+					VALUES(#{studentId},
+						   #{studentId},비밀번호를 학번으로 초기화한다.
+						   #{name},
+						   #{phoneNumber},
+						   #{mailId},
+						   #{mailDomain},
+						   #{job},
+						   #{auth},
+						   #{sGroup})
+	</insert> -->
+
+</mapper>

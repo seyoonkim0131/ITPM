@@ -14,7 +14,44 @@
 		<result property="sGroup" column="s_group"/>
 		<result property="jobPosition" column="job_position"/>
 		<result property="jobPhone" column="job_phone"/>
+		<result property="newPw" column="new_pw"/>
+		<result property="photo" column="photo"/>
 	</resultMap>
+	
+	<select id="checkImg" parameterType="String" resultType="String">
+		SELECT PHOTO
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
+	<select id="checkId" parameterType="String" resultType="Integer">
+		SELECT COUNT(STUDENT_ID) AS CHK
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
+	<select id="checkNewPw" parameterType="String" resultMap="memberMap">
+		SELECT NEW_PW
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
+	<select id="login" resultMap="memberMap" parameterType="member">
+		SELECT STUDENT_ID,
+			   AUTH,
+			   S_GROUP
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+		   AND PW = SHA(#{pw})
+	</select>
+	
+	<!-- 비밀번호 강제설정 -->
+	<update id="updatePw" parameterType="String">
+		UPDATE MEMBER
+		   SET PW = SHA(#{studentId}),
+		   	   NEW_PW = 'Y'
+		 WHERE STUDENT_ID = #{studentId}
+	</update>
 	
 	<!-- 전체 리스트 조회 -->
 	<select id="getAllMemberList" resultMap="memberMap">
@@ -28,7 +65,8 @@
 			   JOB_POSITION,
 			   JOB_PHONE
 		  FROM MEMBER
-		 ORDER BY STUDENT_ID
+		 WHERE STUDENT_ID != 'itpm'
+		 ORDER BY ABS(S_GROUP), STUDENT_ID
 	</select>
 	
 	<!-- 기수별 원우 리스트 조회 -->
@@ -44,6 +82,7 @@
 			   JOB_PHONE
 		  FROM MEMBER
 		 WHERE S_GROUP = #{sGroup}
+		   AND STUDENT_ID != 'itpm'
 		 ORDER BY STUDENT_ID
 	</select>
 	
@@ -51,10 +90,48 @@
 	<select id="getGroupList" parameterType="member" resultMap="memberMap">
 		SELECT DISTINCT S_GROUP
 		  FROM MEMBER
+		 WHERE STUDENT_ID != 'itpm'
 		 ORDER BY ABS(S_GROUP)
 	</select>
-	<!-- 
-	<insert id="insertMember" parameterType="member">
+	
+	<!-- 내정보 조회 -->
+	<select id="getMyInfo" parameterType="String" resultMap="memberMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE,
+			   PHOTO
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="updateNewPw" parameterType="member">
+		UPDATE MEMBER
+		   SET PW = SHA('${pw}'),
+		   	   NEW_PW = 'N'
+		 WHERE STUDENT_ID = #{studentId}
+	</update>
+	
+	<!-- 원우 정보 수정 -->
+	<update id="updateMyInfo" parameterType="member">
+		UPDATE MEMBER
+		   SET PHONE_NUMBER = #{phoneNumber},
+		   	   MAIL_ID = #{mailId},
+		   	   MAIL_DOMAIN = #{mailDomain},
+		   	   JOB = #{job},
+		   	   JOB_POSITION = #{jobPosition},
+		   	   PHOTO = #{photo}
+		 WHERE STUDENT_ID = #{studentId}
+	</update>
+	
+	
+	<!-- <insert id="insertMember" parameterType="member">
 		INSERT INTO MEMBER(STUDENT_ID,
 						   PW,
 						   NAME,
@@ -63,7 +140,7 @@
 						   MAIL_DOMAIN,
 						   JOB,
 						   AUTH,
-						   GROUP)
+						   S_GROUP)
 					VALUES(#{studentId},
 						   #{studentId},비밀번호를 학번으로 초기화한다.
 						   #{name},
@@ -72,7 +149,7 @@
 						   #{mailDomain},
 						   #{job},
 						   #{auth},
-						   #{group})
+						   #{sGroup})
 	</insert> -->
 
 </mapper>

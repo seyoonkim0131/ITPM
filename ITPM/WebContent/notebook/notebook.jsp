@@ -10,32 +10,45 @@
 		<title>원우수첩 | IT정책경영학과</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/itpm.css" />
-		<link rel="stylesheet" href="css/menu.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			$(window).resize(function(){
-				if(getWidth() <= '767') {
-					document.getElementById('side_menu').style.display = 'none';
-					$('.content-div').css('margin-left', '80px');
-				} else {
-					document.getElementById('side_menu').style.display = 'block';
-					$('.content-div').css('margin-left', '250px');
-				}
-			});
+			$(window).resize(function () {
+				if (getWidth() >= '767') {
+		              document.getElementById('side_menu').style.display = 'block';
+		              $('.content-div').css('padding-left', '250px');
+		          } else {
+		              document.getElementById('side_menu').style.display = 'none';
+		              $('.content-div').css('padding-left', '10px');
+		              $('.content-div').css('padding-right', '10px');
+		          }
+		      });
 			
 			$(document).ready(function() {
-				if(getWidth() <= '767') {
-					document.getElementById('side_menu').style.display = 'none';
-					$('.content-div').css('margin-left', '80px');
-				} else {
-					document.getElementById('side_menu').style.display = 'block';
-					$('.content-div').css('margin-left', '250px');
-				}
+				if (getWidth() >= '767') {
+		              document.getElementById('side_menu').style.display = 'block';
+		              $('.content-div').css('padding-left', '250px');
+		          } else {
+		              document.getElementById('side_menu').style.display = 'none';
+		              $('.content-div').css('padding-left', '10px');
+		              $('.content-div').css('padding-right', '10px');
+		          }
 				
 				$('#group').change(function() {
 					document.getElementById('sGroup').value = $('#group option:selected').val();
 					document.getElementById('groupForm').submit();
+				});
+				
+				$('#update').click(function() {
+					if(confirm('나의 정보를 수정하시겠습니까?') == true) {
+						$('#updateForm').submit();
+					} else {
+						return false;
+					}
+				});
+				$('#photo').click(function() {
+					alert('준비중입니다.');
+					return false;
 				});
 			});
 		</script>
@@ -53,32 +66,47 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="document" role="document">
 		<c:import url="../import/header.jsp" />
 		<div class="container" id="side_menu">
-            <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
-            <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">원우수첩</div>            
+			<div class="redline"></div>
+			<div class="menutitle">원우수첩</div>
+			<div class="grayline"></div>
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active1"><a href="">원우수첩</a></li>
+				<li class="inactive"><a href="javascript:document.getElementById('goMyInfoForm').submit();">내 정보</a></li>
+			</ul>
         </div>
         <div class="content-div">
-			<div class="small-title" style="margin: 80px 0 0 0;">
+			<div class="small-title">
 	            <p>
 	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우수첩</span>
-	                <span style="float:right;"><small><a href="index.jsp">홈</a> > 원우수첩</small></span>
+	                <span class="small-title-right"><small><a href="index.jsp">홈</a> > 원우수첩 > 원우수첩</small></span>
 	            </p>
+			</div>
+			<div class="content-board">
+				<form id="goMyInfoForm" action="goMyInfo.do" method="post" style="display: none;">
+					<input type="text" id="myId" name="myId" value="${loginSession.studentId}"/>
+				</form>
 	            <form id="groupForm" action="getAllMemberList.do" method="get" style="display: none;">
+	            	<input type="text" id="studnetId" name="studentId" value="${loginSession.studentId}"/>
 	            	<input type="text" id="sGroup" name="sGroup" value="" />
 	            </form>
 	            <select id="group" style="float: right;">
 	            	<c:forEach items="${requestScope.groupList}" var="result" varStatus="status">
             			<option value="${result.sGroup}" ${result.sGroup == requestScope.curGroup ? 'selected' : '' }><c:out value="${result.sGroup}"></c:out></option>
 	            	</c:forEach>
-				</select>
+				</select><br/><br/>
+				<!-- <form id="updateForm" name="updateForm" method="post" action="updateMyInfo.do" enctype="multipart/form-data"> -->
+				<!-- <input type="button" id="update" value="저장" style="float: right; color: #b31b1b;"/> -->
+            	<%-- <input type="hidden" id="id" name="id" value="${loginSession.studentId}"/> --%>
                 <table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
                     <colgroup>
                     	<col width="30%">
                     	<col width="20%">
                     	<col width="50%">
                     </colgroup>
+                    
                     <c:forEach items="${requestScope.allMemberList}" var="result">
                         <tr align="center">
                             <td rowspan="6" style="padding-top: 3px;">
