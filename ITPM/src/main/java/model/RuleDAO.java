@@ -37,6 +37,7 @@ public class RuleDAO {
 			ruleList = (ArrayList)session.selectList("rule.getRuleList");
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
 			session.close();
 		}
 		return ruleList;
@@ -45,20 +46,16 @@ public class RuleDAO {
 	/**
 	 * Rule 신규등록
 	 * @param Rule
-	 * @return Boolean
 	 */
-	public static boolean insertRule(Rule rule) {
-		SqlSession session = DAOFactory.getSqlSession(false);
-		boolean result = false;
+	public static void insertRule(Rule rule) {
+		SqlSession session = DAOFactory.getSqlSession(true);
 		try {
-			if(session.insert("rule.insertRule", rule) > 0) {
-				result = true;
-			}
+			session.insert("rule.insertRule", rule);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
 			session.close();
 		}
-		return result;
 	}
 	
 	/**
@@ -66,11 +63,12 @@ public class RuleDAO {
 	 * @param Integer
 	 */
 	public static void updateView(int no) {
-		SqlSession session = DAOFactory.getSqlSession();
+		SqlSession session = DAOFactory.getSqlSession(true);
 		try {
 			session.update("rule.updateView", no);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
 			session.close();
 		}
 	}
@@ -81,15 +79,34 @@ public class RuleDAO {
 	 * @return Rule
 	 */
 	public static Rule getRuleDetail(int no) {
-		SqlSession session = DAOFactory.getSqlSession(); //session 연결
-		Rule rule = null; //조회한 값 담을 DTO 생성
+		SqlSession session = DAOFactory.getSqlSession(false);
+		Rule rule = null;
 		try {
-			rule = session.selectOne("rule.getRuelDetail", no); //조회한 내용 담기
+			rule = session.selectOne("rule.getRuleDetail", no);
 		} catch (Exception e) {
 			e.printStackTrace();
-			session.close(); //조회 실패시 fail.jsp로 이동
+		} finally {
+			session.close();
 		}
-		return rule; //조회한 값을 담은 Rule 반환
+		return rule;
+	}
+	
+	/**
+	 * 이전글, 다음글 불러오기
+	 * @param no
+	 * @return ArrayList
+	 */
+	public static ArrayList<Rule> getBeforeNext(int no) {
+		SqlSession session = DAOFactory.getSqlSession();
+		ArrayList<Rule> rule = new ArrayList<Rule>();
+		try {
+			rule = (ArrayList)session.selectList("rule.getBeforeNext", no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return rule;
 	}
 	
 	/**
@@ -97,11 +114,12 @@ public class RuleDAO {
 	 * @param Rule
 	 */
 	public static void updateRule(Rule rule) {
-		SqlSession session = DAOFactory.getSqlSession();
+		SqlSession session = DAOFactory.getSqlSession(true);
 		try {
 			session.update("rule.updateRule", rule);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
 			session.close();
 		}
 	}
@@ -111,11 +129,12 @@ public class RuleDAO {
 	 * @param Integer
 	 */
 	public static void deleteRule(int no) {
-		SqlSession session = DAOFactory.getSqlSession();
+		SqlSession session = DAOFactory.getSqlSession(true);
 		try {
 			session.delete("rule.deleteRule", no);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
 			session.close();
 		}
 	}

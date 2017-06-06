@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+
+	<resultMap type="model.domain.Notice" id="noticeMap">
+		<result property="no" column="no"/> <!-- 글번호 -->
+		<result property="title" column="title"/> <!-- 제목 -->
+		<result property="body" column="body"/> <!-- 내용 -->
+		<result property="view" column="view"/> <!-- 조회수 -->
+		<result property="point" column="point"/> <!-- 중요여부 -->
+		<result property="file1" column="file1"/> <!-- 첨부파일 -->
+		<result property="file2" column="file2"/>
+		<result property="file3" column="file3"/>
+		<result property="createId" column="create_id"/> <!-- 작성자 -->
+		<result property="createDate" column="create_date"/> <!-- 작성일 -->
+		<result property="updateId" column="update_id"/> <!-- 수정자 -->
+		<result property="updateDate" column="update_date"/> <!-- 수정일 -->
+	</resultMap>
+	
+	<!-- 메인에 불러오기 -->
+	<select id="getMainList" resultMap="noticeMap">
+		SELECT TITLE,
+			   DATE_FORMAT(UPDATE_DATE,'%m.%d') AS UPDATE_DATE,
+			   NO 
+		  FROM NOTICE
+		 ORDER BY NO DESC LIMIT 6
+	</select>
+		
+	<!-- 공지사항 조회 -->
+	<select id="getNoticeList" resultMap="noticeMap">
+		SELECT POINT,
+			   NO,
+			   TITLE,
+			   B.NAME AS CREATE_ID,
+			   DATE_FORMAT(CREATE_DATE,'%Y.%m.%d') AS CREATE_DATE,
+			   VIEW
+		  FROM NOTICE A, MEMBER B
+		 WHERE 1=1
+	 	   AND A.CREATE_ID = B.STUDENT_ID
+	 	   AND A.UPDATE_ID = B.STUDENT_ID
+		 ORDER BY POINT DESC, NO DESC
+	</select>
+	
+	<!-- 공지사항 내용페이지 조회 -->
+	<select id="getNoticeDetail" parameterType="Integer" resultMap="noticeMap">
+		SELECT NO,
+			   TITLE,
+			   B.NAME AS CREATE_ID,
+			   DATE_FORMAT(CREATE_DATE,'%Y-%m-%d %T') AS CREATE_DATE,
+			   CREATE_DATE,
+			   UPDATE_ID,
+			   UPDATE_DATE,
+			   VIEW,
+			   FILE1,
+			   FILE2,
+			   FILE3,
+			   BODY,
+			   POINT
+		  FROM NOTICE A, MEMBER B
+       	 WHERE NO = #{no}
+	 	   AND A.CREATE_ID = B.STUDENT_ID
+	 	   AND A.UPDATE_ID = B.STUDENT_ID
+	</select>
+	
+	<!--글쓰기-->
+	<insert id="insertNotice" parameterType="notice">
+		INSERT INTO NOTICE (CREATE_ID,
+						    UPDATE_ID,
+						    POINT,
+						    TITLE,
+						    BODY,
+						    FILE1,
+						    FILE2,
+						    FILE3)
+					VALUES (#{createId},
+						    #{createId},
+						    #{point},
+						    #{title},
+						    #{body},
+						    #{file1},
+						    #{file2},
+						    #{file3})
+	</insert>
+	
+	<!--글수정-->
+	<update id="updateNotice" parameterType="notice">
+		UPDATE NOTICE SET UPDATE_ID = #{updateId},
+						  UPDATE_DATE = NOW(),
+						  POINT = #{point},
+						  TITLE = #{title},
+						  BODY = #{body},
+						  FILE1 = #{file1},
+						  FILE2 = #{file2},
+						  FILE3 = #{file3}
+				    WHERE NO = #{no}
+	</update>
+	
+	<!--글삭제-->
+	<delete id="deleteNotice" parameterType="Integer">
+		DELETE FROM NOTICE
+		 WHERE NO = #{no}
+	</delete>
+	<!--조회수-->
+	<update id="updateView" parameterType="notice">
+		UPDATE NOTICE SET VIEW = VIEW + 1 WHERE NO = #{no}
+	</update>
+	
+	<!--이전글, 다음글-->
+	<select id="beforeNext" parameterType="Integer" resultMap="noticeMap">
+	<![CDATA[
+		SELECT NO,
+			   TITLE
+		  FROM NOTICE
+		 WHERE NO IN ((SELECT NO FROM NOTICE WHERE NO < #{no} ORDER BY NO DESC LIMIT 1), (SELECT NO FROM NOTICE WHERE NO > #{no} LIMIT 1))
+	]]>
+	</select>
+	
+	<select id="getTotalCnt" resultType="Integer">
+		SELECT COUNT(NO) FROM NOTCIE
+	</select>
+	
+</mapper>

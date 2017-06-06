@@ -36,6 +36,10 @@
 		 WHERE STUDENT_ID = #{studentId}
 	</select>
 	
+	<select id="getAdminMail" resultMap="memberMap">
+		SELECT MAIL_ID, MAIL_DOMAIN FROM MEMBER WHERE STUDENT_ID = 'itpm'
+	</select>
+	
 	<select id="login" resultMap="memberMap" parameterType="member">
 		SELECT STUDENT_ID,
 			   AUTH,
@@ -63,7 +67,8 @@
 			   JOB,
 			   S_GROUP,
 			   JOB_POSITION,
-			   JOB_PHONE
+			   JOB_PHONE,
+			   PHOTO
 		  FROM MEMBER
 		 WHERE STUDENT_ID != 'itpm'
 		 ORDER BY ABS(S_GROUP), STUDENT_ID
@@ -79,7 +84,8 @@
 			   JOB,
 			   S_GROUP,
 			   JOB_POSITION,
-			   JOB_PHONE
+			   JOB_PHONE,
+			   PHOTO
 		  FROM MEMBER
 		 WHERE S_GROUP = #{sGroup}
 		   AND STUDENT_ID != 'itpm'

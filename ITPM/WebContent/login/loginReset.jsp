@@ -6,7 +6,7 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
+        <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>비밀번호 수정 | IT정책경영학과</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/itpm.css" rel="stylesheet"/>
@@ -69,7 +69,7 @@
                 <p>
                     <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">비밀번호 재설정</span>
                     <span style="float:right;">
-                        <small><a href="index.jsp">홈</a> > 비밀번호 재설정</small>
+                        <small><a href="welcome.do">홈</a> > 비밀번호 재설정</small>
                     </span>
                 </p>
                 <div>

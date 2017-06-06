@@ -33,10 +33,6 @@
 					$('.content-div').css('padding-left', '10px');
 					$('.content-div').css('padding-right', '10px');
 				}
-				/* $('#photo').click(function() {
-					alert('준비중입니다.');
-					return false;
-				}); */
 				$('#update').click(function() {
 					if(confirm('나의 정보를 수정하시겠습니까?') == true) {
 						$('#updateForm').submit();
@@ -67,21 +63,22 @@
 			<div class="menutitle">원우수첩</div>
 			<div class="grayline"></div>
 			<ul class="nav nav-pills nav-stacked">
-				<li class="inactive"><a href="">원우수첩</a></li>
-				<li class="active1"><a href="">내 정보</a></li>
+				<li class="inactive"><a href="javascript:document.getElementById('cancelForm').submit();">원우수첩</a></li>
+				<li class="active1"><a href="#">내 정보</a></li>
 			</ul>
 		</div>
 		<div class="content-div">
 			<div class="small-title">
 				<p><span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우수첩</span>
-					<span class="small-title-right"><small><a href="index.jsp">홈</a> > 원우수첩 > 내 정보</small></span>
+					<span class="small-title-right"><small><a href="welcome.do">홈</a> > 원우수첩 > 내 정보</small></span>
 				</p>
 			</div>
 			<div class="content-board">
 				<form id="cancelForm" name="cancelForm" action="getAllMemberList.do" method="get" style="display: none;">
-					<input type="text" id="studentId" name="studentId" value="${loginSession.studentId}" />
+					 <input type="text" id="studentId" name="studentId" value="${loginSession.studentId}" />
 				</form>
 				<form id="updateForm" name="updateForm" method="post" action="updateMyInfo.do" enctype="multipart/form-data">
+					<input type="hidden" id="photo" name="photo" value="${requestScope.myInfo.photo}" />
 					<input type="hidden" id="id" name="id" value="${loginSession.studentId }"/>
 					<table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
 						<colgroup>

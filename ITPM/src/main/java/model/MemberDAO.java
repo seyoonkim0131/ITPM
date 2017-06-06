@@ -99,6 +99,23 @@ public class MemberDAO {
 	}
 	
 	/**
+	 * footer의 관리자 메일계정을 불러온다.
+	 * @return
+	 */
+	public static Member getAdminMail() {
+		SqlSession session = DAOFactory.getSqlSession();
+		Member member = null;
+		try {
+			member = session.selectOne("member.getAdminMail");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return member;
+	}
+	
+	/**
 	 * 로그인
 	 * @param member
 	 * @return
@@ -191,7 +208,6 @@ public class MemberDAO {
 	 * @param member
 	 */
 	public static void updateMyInfo(Member member) {
-		System.out.println("=======================요기 오니?");
 		SqlSession session = DAOFactory.getSqlSession(true);
 		try {
 			session.update("member.updateMyInfo", member);
@@ -201,8 +217,4 @@ public class MemberDAO {
 			session.close();
 		}
 	}
-	
-//	public static void checkImg(String studentId) {
-//		
-//	}
 }

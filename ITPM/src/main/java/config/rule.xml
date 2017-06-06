@@ -5,11 +5,11 @@
 	<resultMap type="model.domain.Rule" id="ruleMap">
 		<result property="no" column="no"/>
 		<result property="createId" column="create_id"/>
-		<result property="createDate" column="crate_date"/>
+		<result property="createDate" column="create_date"/>
 		<result property="updateId" column="update_id"/>
 		<result property="updateDate" column="update_date"/>
 		<result property="view" column="view"/>
-		<result property="fileAdd1" column="file_add1"/>
+		<result property="file1" column="file1"/>
 		<result property="point" column="point"/>
 		<result property="title" column="title"/>
 		<result property="body" column="body"/>
@@ -20,90 +20,84 @@
 		SELECT COUNT(*) FROM RULE
 	</select>
 	
-	<!-- 규정 목록 조회 여기서부터 수정 시작 -->
-	<select id="getAllRule" parameterType="java.util.HashMap" resultMap="ruleMap">
+	<!-- 규정 목록 조회 -->
+	<select id="getRuleList" resultMap="ruleMap">
 		SELECT NO,
-			   UPDATE_ID,
-			   UPDATE_DATE,
+			   DATE_FORMAT(UPDATE_DATE,'%Y.%m.%d') AS UPDATE_DATE,
 			   VIEW,
-			   FILE_ADD1,
+			   FILE1,
 			   POINT,
 			   TITLE
 		  FROM RULE
 		 WHERE 1=1
-		 ORDER BY POINT, NO
+		 ORDER BY POINT DESC, NO DESC
 	</select>
 	
-	<!-- 기수별 원우 리스트 조회 -->
-	<select id="getGroupMemberList" parameterType="String" resultMap="ruleMap">
-		SELECT PHONE_NUMBER,
-			   NAME,
-			   STUDENT_ID,
-			   MAIL_ID,
-			   MAIL_DOMAIN,
-			   JOB,
-			   S_GROUP,
-			   JOB_POSITION,
-			   JOB_PHONE
-		  FROM MEMBER
-		 WHERE S_GROUP = #{sGroup}
-		 ORDER BY STUDENT_ID
+	<!-- 규정 상세조회 -->
+	<select id="getRuleDetail" parameterType="Integer" resultMap="ruleMap">
+		SELECT NO,
+		       TITLE,
+		       BODY,
+		       POINT,
+		       VIEW,
+		       FILE1,
+		       A.UPDATE_ID AS CREATE_ID,
+		       DATE_FORMAT(CREATE_DATE,'%Y-%m-%d %T') AS CREATE_DATE,
+		       B.NAME AS UPDATE_ID,
+		       DATE_FORMAT(UPDATE_DATE,'%Y-%m-%d %T') AS UPDATE_DATE
+		  FROM RULE A, MEMBER B
+		 WHERE NO = #{no}
+		   AND A.CREATE_ID = B.STUDENT_ID
+		   AND A.UPDATE_ID = B.STUDENT_ID
 	</select>
 	
-	<!-- 기수 리스트 조회 -->
-	<select id="getGroupList" parameterType="member" resultMap="ruleMap">
-		SELECT DISTINCT S_GROUP
-		  FROM MEMBER
-		 ORDER BY ABS(S_GROUP)
-	</select>
-	
-	<!-- 내정보 조회 -->
-	<select id="getMyInfo" parameterType="String" resultMap="ruleMap">
-		SELECT PHONE_NUMBER,
-			   NAME,
-			   STUDENT_ID,
-			   MAIL_ID,
-			   MAIL_DOMAIN,
-			   JOB,
-			   S_GROUP,
-			   JOB_POSITION,
-			   JOB_PHONE
-		  FROM MEMBER
-		 WHERE STUDENT_ID = #{studentId}
-	</select>
-	
-	<!-- 원우 정보 수정 -->
-	<update id="updateMember" parameterType="member">
-		UPDATE MEMBER
-		   SET PHONE_NUMBER = #{phoneNumber},
-		   	   MAIL_ID = #{mailId},
-		   	   MAIL_DOMAIN = #{mailDomain},
-		   	   JOB = #{job},
-		   	   JOB_POSITION = #{jobPosition},
-		   	   JOB_PHONE = #{jobPhone}
-		 WHERE STUDENT_ID = #{studentId}
+	<!-- 조회수 올리기 -->
+	<update id="updateView" parameterType="rule" >
+		UPDATE RULE SET VIEW = VIEW + 1
+		 WHERE NO = #{no}
 	</update>
 	
+	<!-- 이전/다음글 조회 -->
+	<select id="getBeforeNext" parameterType="Integer" resultMap="ruleMap">
+	<![CDATA[
+		SELECT NO,
+			   TITLE
+		  FROM RULE
+		 WHERE NO IN ((SELECT NO FROM RULE WHERE NO < #{no} ORDER BY NO DESC LIMIT 1), (SELECT NO FROM RULE WHERE NO > #{no} LIMIT 1))
+	]]>
+	</select>
 	
-	<!-- <insert id="insertMember" parameterType="member">
-		INSERT INTO MEMBER(STUDENT_ID,
-						   PW,
-						   NAME,
-						   PHONE_NUMBER,
-						   MAIL_ID,
-						   MAIL_DOMAIN,
-						   JOB,
-						   AUTH,
-						   S_GROUP)
-					VALUES(#{studentId},
-						   #{studentId},비밀번호를 학번으로 초기화한다.
-						   #{name},
-						   #{phoneNumber},
-						   #{mailId},
-						   #{mailDomain},
-						   #{job},
-						   #{auth},
-						   #{sGroup})
-	</insert> -->
+	<!-- 새 글 작성 -->
+	<insert id="insertRule" parameterType="rule">
+		INSERT INTO RULE (TITLE,
+					      BODY,
+					      POINT,
+					      FILE1,
+					      CREATE_ID,
+					      UPDATE_ID)
+				  VALUES (#{title},
+				  		  #{body},
+				  		  #{point},
+				  		  #{file1},
+				  		  #{createId},
+				  		  #{createId})
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="updateRule" parameterType="rule">
+		UPDATE RULE SET TITLE=#{title},
+					    BODY=#{body},
+					    POINT=#{point},
+					    FILE1=#{file1},
+					    UPDATE_ID=#{updateId},
+					    UPDATE_DATE=NOW()
+			      WHERE NO = #{no}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteRule" parameterType="Integer">
+		DELETE FROM RULE
+		 WHERE NO = #{no}
+	</delete>
 
 </mapper>

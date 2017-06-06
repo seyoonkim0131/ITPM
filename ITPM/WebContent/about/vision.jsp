@@ -6,9 +6,9 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
+        <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>교육비전 | IT정책경영학과</title>
-        <link href="../css/itpm.css" rel="stylesheet"/>
+        <link href="css/itpm.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -79,36 +79,36 @@
             <div class="grayline"></div>
             <ul class="nav nav-pills nav-stacked">
                 <li class="inactive">
-                    <a href="itpm.jsp">학과소개</a>
+                    <a href="goItpm.do">학과소개</a>
                 </li>
                 <li class="inactive">
                     <a href="prof.jsp">교수소개</a>
                 </li>
                 <li class="active1">
-                    <a href="vision.jsp">교육비전</a>
+                    <a href="goVision.do">교육비전</a>
                 </li>
                 <li class="inactive">
-                    <a href="map.jsp">방문안내</a>
+                    <a href="goMap.do">방문안내</a>
                 </li>
             </ul>
         </div>
 		<div class="content-div" >
 	        <div class="small-title">
 	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">교육비전</span>
+	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">교육비전</span>
 	                <span class="small-title-right">
-	                    <small><a href="../index.jsp">홈</a> > 대학원소개 > 교육비전</small>
+	                    <small><a href="welcome.do">홈</a> > 대학원소개 > 교육비전</small>
 	                </span>
 	            </p>
 	        </div>
-	        <div class="content">
+	        <div class="content-board">
 	        	<ul class="about-list" id="vision_list">
 		        	<li>대학원 IT정책경영학과는 IT를 기반으로 한 다중학문을 탐구하고, IT정책경영의 석박사급(고급인재)인력을 양성하는 최고의 교육기관으로 세게최고의 IT정책경영 전문대학원으로 우뚝 선다.</li>
 		            <li>우수한 신입생을 유치하기 위하여 정부기관의 고급관료, 성적우수자 등에게 많은 장학금을 배려하고, 관산연학의 긴밀한 협력관계를 유지하며, 수요자 중심으로 선진화된 교육연구서비스를 제공한다.</li>
 		            <li>우수한 교육연구서비스를 제공하기 위하여 세계적인 전임교수를 지속적으로 확보하고, 국내외의 저명인사를 석좌교수, 객원교수, 겸임교수로 활용한다.</li>
 		            <li>IT정책경영학과의 세부전공은 9개 세부전공으로 운영하며, 공공부문과 민간부문이 균형발전하도록 하고 상호 긴밀히 공동협력할 수 있도록 한다.</li>
 	        	</ul>
-				<img class="major-img" id="major_image" alt="" src="../image/majorinfo.png">
+				<img class="major-img" id="major_image" alt="" src="image/majorinfo.png">
 	            <br>
 	        </div>
         </div>

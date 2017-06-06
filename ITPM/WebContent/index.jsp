@@ -7,6 +7,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 	<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
+	<meta name="og:type" content="website"/>
+	<meta name="og:title" content="IT정책경영학과 홈페이지"/>
+	<meta name="og:description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
+	<meta name="og:image" content=""/><!-- 이미지 넣어용 -->
 	<link rel="Shortcut Icon" href="image/favicon.ico" />
 	<title>Home | IT정책경영학과</title>
 	<link rel="StyleSheet" href="css/itpm.css" /> 
@@ -52,6 +56,32 @@
 		      $('.mob').css('display', 'none');
 		      $('#navbar').css('max-height', '40px');
 		   }
+			$('#mobNotebook').click(function() {
+				if(document.location.href.indexOf('.do') != -1) {
+					document.getElementById('goNotebook').action = 'getAllMemberList.do';
+					document.getElementById('goNotebook').submit();
+				} else if(document.location.href.split('ITPM/')[1] == 'index.jsp') { 
+					document.getElementById('goNotebook').action = 'getAllMemberList.do';
+					document.getElementById('goNotebook').submit();
+				} else if(document.location.href.indexOf('.do') == -1) {
+					document.getElementById('goNotebook').action = '../getAllMemberList.do';
+					document.getElementById('goNotebook').submit();
+				}
+			});
+			$('#hideUl1').click(function() {
+		      if($('#hideUl1 > ul').css('display') == 'none') {
+		         $('#hideUl1 > ul').css('display', 'block');
+		      } else {
+		         $('#hideUl1 > ul').css('display', 'none');
+		      }
+		   });
+		   $('#hideUl2').click(function() {
+		      if($('#hideUl2 > ul').css('display') == 'none') {
+		         $('#hideUl2 > ul').css('display', 'block');
+		      } else {
+		         $('#hideUl2 > ul').css('display', 'none');
+		      }
+		   });
 		});
 	</script>
 	<style type="text/css">
@@ -102,7 +132,7 @@
 <body role="document">
 	<nav id="redMenu" class="navbar navbar-inverse navbar-fixed-top" style="background-color: #b31b1b; border-style: none; letter-spacing: 2px;">
 		<div class="container-header">
-			<a id="whiteHome" class="navbar-brand" href="../index.jsp"><img id="whiteLogo" alt="white logo" src="image/main_logo.png" style="disply: none;"></a>
+			<a id="whiteHome" class="navbar-brand" href="welcome.do"><img id="whiteLogo" alt="white logo" src="image/main_logo.png" style="disply: none;"></a>
          	<div class="navbar-header">
 	         	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 	               <span class="sr-only">Toggle navigation</span>
@@ -113,46 +143,50 @@
          	</div>
 		</div>
 		<form action="logout.do" id="logoutForm" method="post" style="display: none;"></form>
+		<form action="goMyInfo.do" id="mypageForm" method="post" style="display: none;"><input type="text" name="myId" value="${loginSession.studentId }"/></form>
 		<div id="navbar" class="navbar-collapse collapse" style="overflow-y:hidden; overflow-x:hidden; background-color: #b31b1b;" >
             <ul class="nav navbar-nav" style="float: right; font-size: 11px;">
-               <li style="line-height: 30px;"><a id="home" href="../index.jsp" style="color:#fff;">HOME</a></li>
+               <li style="line-height: 30px;"><a id="home" href="welcome.do" style="color:#fff;">HOME</a></li>
                <c:choose>	
 					<c:when test="${null eq loginSession}" >
-		               <li><a id="login" href="login/login.jsp" style="color:#fff;">LOGIN</a></li>
+		               <li><a id="login" href="goLogin.do" style="color:#fff;">LOGIN</a></li>
 					</c:when>
 					<c:otherwise>
+						<li><a id="mypage" style="color:#fff;" href="javascript: return false;" onclick="document.getElementById('mypageForm').submit();">내 정보</a></li>
 						<li><a id="logout" style="color:#fff;" href="javascript: return false;" onclick="document.getElementById('logoutForm').submit();">LOGOUT</a></li>
 					</c:otherwise>
 				</c:choose>
                <c:choose>
 					<c:when test="${null eq loginSession}">
-						<li class="mob" style="display: none;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); return false;">원우수첩</span></li>
+						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); return false;">원우수첩</span></li>
 					</c:when>
 					<c:otherwise>
 						<form name="goNotebook" id="goNotebook" method="get" style="display: none;">
 							<input type="hidden" id="studentId" name="studentId" value="${loginSession.studentId}">
 						</form>
-						<li class="mob" style="display: none;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;">원우수첩</span></li>
+						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;">원우수첩</span></li>
 					</c:otherwise>
                </c:choose>
-               <li id="hideUl1" class="mob" style="display: none;"><span style="color:#fff; font-size: 13px;">대학원소개</span><span class="caret" style="color: #fff;"></span>
+               <li id="hideUl1" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="color:#fff; font-size: 13px;">대학원소개</span><span class="caret" style="color: #fff;"></span>
                   <ul class="nav navbar-nav" style="display: none;">
-                     <li><a id="mobAboutItpm" href="../about/itpm.jsp" style="color:#fff;">학과소개</a></li>
-                     <li><a id="mobAboutProf" href="../about/prof.jsp" style="color:#fff;">교수소개</a></li>
-                     <li><a id="mobAboutVi" href="../about/vision.jsp" style="color:#fff;">교육비전</a></li>
-                     <li><a id="mobAboutMap" href="../about/map.jsp" style="color:#fff;">방문안내</a></li>
+                     <li><a id="mobAboutItpm" href="goItpm.do" style="color:#fff;">학과소개</a></li>
+                     <li><a id="mobAboutProf" href="getAllProfList.do" style="color:#fff;">교수소개</a></li>
+                     <li><a id="mobAboutVi" href="goVision.do" style="color:#fff;">교육비전</a></li>
+                     <li><a id="mobAboutMap" href="goMap.do" style="color:#fff;">방문안내</a></li>
                   </ul>
                </li>
-               <li id="hideUl2" class="mob" style="display: none;"><span style="color:#fff; font-size: 13px;">학사정보&nbsp;&nbsp;</span><span class="caret" style="color: #fff;"></span>
+               <li id="hideUl2" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="color:#fff; font-size: 13px;">학사정보&nbsp;&nbsp;</span><span class="caret" style="color: #fff;"></span>
                   <ul class="nav navbar-nav" style="display: none;">
-                     <li><a href="../academic/education.jsp" id="mobAcEdu" style="color:#fff;">개설과정</a></li>
-                     <li><a href="../regulation/regulation.jsp" id="mobRegul" style="color:#fff;">규정</a></li>
-                     <li><a href="../academic/calendar.jsp" id="mobAcCal" style="color:#fff;">학사일정</a></li>
-                     <li><a href="../board/notice.jsp" id="mobBoardNotice" style="color:#fff;">공지사항</a></li>
+                     <li><a href="getAllEduList.do" id="mobAcEdu" style="color:#fff;">개설과정</a></li>
+                     <li><a href="getRuleList.do" id="mobRegul" style="color:#fff;">규정</a></li>
+                     <li><a href="getAllScheduleList.do" id="mobAcCal" style="color:#fff;">학사일정</a></li>
+                     <li><a href="getNoticeList.do" id="mobBoardNotice" style="color:#fff;">공지사항</a></li>
                   </ul>
                </li>
-               <li class="mob" style="display: none;"><span style="font-size: 13px;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank" style="color:#fff;">입학정보</a></span></li>
-               <li><a id="staff" href="../admin/insertStudent.jsp" onclick="alert('준비중입니다.'); return false;" style="color:#fff;">ADMIN</a></li>
+               <li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank" style="color:#fff;">입학정보</a></span></li>
+				<c:if test="${loginSession.studentId eq 'itpm' }">
+	               <li><a id="staff" href="admin/insertStudent.jsp" onclick="javascript:alert('준비중입니다.'); return false;" style="color:#fff;">ADMIN</a></li>
+				</c:if>
            	</ul>
 		</div>
 	</nav><div id="space"><br/><br/></div>
@@ -162,25 +196,25 @@
 				<li style="padding-left: 1.5%; width: 25%;">
 					<a style="padding:19px 15px 11px 15px; "href="#"><img style="display:inherit; margin:0 auto;" alt="대학원정보" src="image/menuimage_itpminfo.png"></a>
 					<ul class="dropdown-sub list-group" style="width:94%">
-						<li class="list-group-item" role="presentation"><a href="about/itpm.jsp">학과소개</a></li>
-						<li class="list-group-item" role="presentation"><a href="about/prof.jsp">교수소개</a></li>
-						<li class="list-group-item" role="presentation"><a href="about/vision.jsp">비전</a></li>
-						<li class="list-group-item" role="presentation"><a href="about/map.jsp">방문안내</a></li>
+						<li class="list-group-item" role="presentation"><a href="goItpm.do">학과소개</a></li>
+						<li class="list-group-item" role="presentation"><a href="getAllProfList.do">교수소개</a></li>
+						<li class="list-group-item" role="presentation"><a href="goVision.do">비전</a></li>
+						<li class="list-group-item" role="presentation"><a href="goMap.do">방문안내</a></li>
 					</ul>
 				</li>
 				<li style="padding-right: 1.5%; width: 25%;">
 					<a style="padding:19px 15px 11px 15px; "href="#"><img style="display:inherit; margin:0 auto;" alt="학사정보" src="image/menuimage_schoolinfo.png"></a>
 					<ul class="dropdown-sub list-group" style="width:94%">
-						<li class="list-group-item" role="presentation"><a href="academic/education.jsp">개설과정</a></li>
-						<li class="list-group-item" role="presentation"><a href="regulation/regulation.jsp">규정</a></li>
-						<li class="list-group-item" role="presentation"><a href="academic/calendar.jsp">학사일정</a></li>
-						<li class="list-group-item" role="presentation"><a href="board/notice.jsp">공지사항</a></li>
+						<li class="list-group-item" role="presentation"><a href="getAllEduList.do">개설과정</a></li>
+						<li class="list-group-item" role="presentation"><a href="getRuleList.do">규정</a></li>
+						<li class="list-group-item" role="presentation"><a href="getAllScheduleList.do">학사일정</a></li>
+						<li class="list-group-item" role="presentation"><a href="getNoticeList.do">공지사항</a></li>
 					</ul>
 				</li>
 				<li style="padding-left: 1.5%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;"  alt="입학정보" src="image/menuimage_admission.png"></a></li>
 				<c:choose>
 					<c:when test="${null eq loginSession}">
-						<li style="padding-right: 3%; width: 25%;"><a href="login/login.jsp"style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>
+						<li style="padding-right: 3%; width: 25%;"><a href="goLogin.do"style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>
 					</c:when>
 					<c:otherwise>
 						<form name="goNotebook" id="goNoteBook" method="get" action="getAllMemberList.do" style="display: none;">
@@ -200,7 +234,7 @@
 	</div>
 	<a href="#" style="position:absolute; float:left; z-index:6; margin-top:90px; margin-left:6%; left:0;"><img id="main_logo" class="main-logo" style="width:120%;" src="image/main_logo.png"/></a>
 	<div id="text" class="text" style="margin-left:5%; margin-top:350px;">
-		<p style="letter-spacing:1pt; font-size:20pt; margin-top:0%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;IT정책경영학과</p>
+		<p style="letter-spacing:1pt; font-size:20pt; margin-top:0%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;<strong>IT정책경영학과</strong></p>
 		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:3%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Graduate School of</p>
 		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:1%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Information Technology Policy and Management</p>
 	</div>
@@ -209,39 +243,21 @@
 			<div>
 				<table style="margin-left: auto; margin-right: auto;">
 					<colgroup>
-						<col width="225px" style="padding-right:3%; color:black; white-space:nowrap;" />
+						<col width="225px" style="padding-right:3%; color:black; white-space:nowrap;"/>
 						<col style="float:right; font-size:7pt;"/>
 					</colgroup>
 					<thead>
 						<tr>
 							<td style="font-size:12pt; padding-bottom:10px; color:#b31b1b;"><strong>공지사항</strong></td>
-							<td><a href="board/notice.jsp" style="float:right; color:#00688f; padding-bottom:10px; text-decoration: none;">more</a></td>
+							<td><a href="getNoticeList.do" style="float:right; color:#00688f; padding-bottom:10px; text-decoration: none;">more</a></td>
 						</tr>
 					</thead>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">개인정보 변경 안내</a></td>
-						<td class="date" style="float:right; font-size:7pt;">04.21</td>
-					</tr>
-					<!-- <tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
-						<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
-					</tr>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
-						<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
-					</tr>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
-						<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
-					</tr>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
-						<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
-					</tr>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap;">2016-2 학위 논문 심사비 납부 안내 및...</a></td>
-						<td class="date" style="color:black; float:right; font-size:7pt;">10.07</td>
-					</tr> -->
+					<c:forEach items="${requestScope.mainNoticeList}" var="result">
+						<tr>
+							<td><a class="list" href="getNoticeDetail.do?no=${result.no}" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
+							<td class="date" style="float:right; font-size:7pt;">${result.updateDate}</td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
@@ -256,13 +272,15 @@
 					<thead>
 						<tr>
 							<td style="font-size:12pt; padding-bottom:10px; color:#b31b1b;"><strong>학사일정</strong></td>
-							<td><a href="board/notice.jsp" style="float:right; color:#00688f; padding-bottom:10px; text-decoration: none;">more</a></td>
+							<td><a href="getAllScheduleList.do" style="float:right; color:#00688f; padding-bottom:10px; text-decoration: none;">more</a></td>
 						</tr>
 					</thead>
-					<tr>
-						<td><a class="list" href="#" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">2017-1 학사 일정 안내</a></td>
-						<td class="date" style="float:right; font-size:7pt;">04.21</td>
-					</tr>
+					<c:forEach items="${requestScope.mainScheduleList}" var="result">
+						<tr>
+							<td><a class="list" href="scheduleDetail.do?no=${result.no}" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
+							<td class="date" style="float:right; font-size:7pt;">${result.updateDate}</td>
+						</tr>
+					</c:forEach>
 				</table>			
 			</div>
 		</div>
@@ -287,7 +305,7 @@
 			</ul>
 		</div>
 		<address class="address" style="padding: 21px 0 0 20px; font-size: 12px; color: #adadad; font-style: normal; margin-bottom: 20px; line-height: 20px;">
-			서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: yrbak@ssu.ac.kr
+			서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과 사무실 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel: 02-828-7361&nbsp;&nbsp;&nbsp;&nbsp;E-mail: ${requestScope.member.mailId}@${requestScope.member.mailDomain}
 			<span class="copyright" style="display: block;">Copyright(c) 2017 Soongsil University. All rights reserved</span>
 		</address>
 	</div>

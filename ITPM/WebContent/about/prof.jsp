@@ -6,9 +6,9 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
+        <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>교수소개 | IT정책경영학과</title> 
-        <link href="../css/itpm.css" rel="stylesheet"/>
+        <link href="css/itpm.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -45,6 +45,7 @@
                     $('.content-div').css('padding-left', '10px');
                     $('.content-div').css('padding-right', '10px');
                 }
+                
             });
             
         </script>
@@ -95,218 +96,62 @@
 		<div class="content-div">
 	        <div class="small-title">
 	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">교수소개</span>
+	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">교수소개</span>
 	                <span class="small-title-right">
-	                    <small><a href="../index.jsp">홈</a> > 대학원소개 > 교수소개</small>
+	                    <small><a href="welcome.do">홈</a> > 대학원소개 > 교수소개</small>
 	                </span>
 	            </p>
 	        </div>
-			<div class="content">   
-				<table id="profTable">
+			<div class="content-board">   
+				<table class = "bbs-list" style="width: 100%; border-collapse: inherit; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">	
+				<!--  id="profTable" -->
 					<colgroup>
+						<col width="30%">
 						<col width="20%">
-						<col width="80%">
+						<col width="50%">
 					</colgroup>
-					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/namyonglee.png"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 이남용 (Lee, NamYong)</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D ( Mississippi State Univ. )</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 정보과학관 222호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : nylee@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : 소프트웨어, 시스템 엔지니어링, 소프트웨어 엔지니어링, 전자상거래시스템, 경영정보시스템</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/shin.jpg"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 신용태 (Shin, YongTae)</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D ( Univ. of lowa )</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 정보과학관 422호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : shin@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : 컴퓨터 네트워크, 그룹통신, 분산 컴퓨팅, 인터넷 프로토콜, 초고속 통신망, 전자상거래 기술</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/han.jpg"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 한경석 (Han, KyeongSeok)</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph.D. (Purdue Univ.)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 벤처관 513호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : kshan@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Electronic Business</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/chulho.jpg"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 오철호 ( Oh, ChulHo )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph.D. (Univ. of Illinois-Urbana)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 조만식기념관 707호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : coh@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Policy Making</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/kimgwangyong.png"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 김광용 ( Kim, KwangYong )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D (Georgia State Univ.)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 경상관 104호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : gygim@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Digital Business</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"><img class="prof-img" id="prof_img" alt="" src="../image/prof/junsamhyun.png"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 전삼현 ( Jun, SamHyun )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Dr. Jur. (Frankfurt Univ.)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 진리관 507호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : shchun@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Business Laws</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-		            <tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/junghyunlee.png"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 이정현 ( Yi, JungHyun )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D (Univ. of California)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 정보과학관 327호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : jhyi@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Network Security</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/jungillchoi.png"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 최정일 ( Choi, JeongIl )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D (Univ. of Nebraska-Lincoln)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 벤처중소기업센터 508호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : jichoi@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Electronic Business</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/choiyong.jpg"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 최용락 ( Choi, YongRak )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D (Univ. of Soongsil)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 전산관 319호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : ylchoi58@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Data Base</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-						<td rowspan="6"> <img class="prof-img" id="prof_img" alt="" src="../image/prof/kimjongbae.jpg"></td>
-					</tr>
-					<tr>
-						<td>성 명(영문) : 김종배 ( Kim, JongBae )</td>
-					</tr>
-					<tr>
-						<td>학 력 : Ph. D (Univ. of Soongsil)</td>
-					</tr>
-					<tr>
-						<td>연 구 실 : 전산관 318호</td>
-					</tr>
-					<tr>
-						<td>이 메 일 : kjb123@ssu.ac.kr</td>
-					</tr>
-					<tr>
-						<td>연구분야 : Software Engineering</td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr><td>&nbsp;</td></tr>
+					<c:forEach items="${requestScope.allProfList}" var="result">
+						<tr align="center">
+							<td rowspan="5" width="180px" height="230px"> 								
+								<c:choose>
+									<c:when test="${result.photo eq '' || result.photo eq null}">
+										<img class="prof-img prof_img" border="1"  height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
+									</c:when>
+									<c:otherwise>
+										<img class="prof-img prof_img" border="1" width="180px" height="230px" src="image/prof/${result.photo}" style="vertical-align: middle;">
+									</c:otherwise>
+								</c:choose>
+							</td>
+							<td style="text-align:left">성 명(영문) : </td>
+							<td style="text-align:left"> <c:out value="${result.nameKor}" />(<c:out value="${result.nameEng}" />)
+								<c:choose>
+									<c:when test="${loginSession.studentId eq 'itpm' }">
+										<input type="button" id="updatebutton" value="수정" style="display: inline-block; float: right; height: 26px; padding: 0 20px; border: 1px solid #b31b1b; 
+									   background: #b31b1b; line-height: 26px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-right: 20px;">
+									</c:when>
+									<c:otherwise>&nbsp;
+									</c:otherwise>
+								</c:choose>
+							</td>
+						</tr>
+						<tr>
+							<td style="text-align:left">학 력 : </td>
+							<td style="text-align:left"> <c:out value="${result.education}" /></td>
+						</tr>
+						<tr>
+							<td style="text-align:left">연 구 실 : </td>
+							<td style="text-align:left"> <c:out value="${result.office}" /></td>
+						</tr>
+						<tr>
+							<td style="text-align:left">이 메 일 : </td>
+							<td style="text-align:left"> <c:out value="${result.email}" /></td>
+						</tr>
+						<tr style="border-bottom: solid 2px #a1a4a8; ">
+							<td style="text-align:left">연구분야 : </td>
+							<td style="text-align:left"> <c:out value="${result.about}" /></td>
+						</tr>
+					 	 
+					</c:forEach>
 				</table>
 			</div>
 		</div>

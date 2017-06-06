@@ -1,5 +1,13 @@
 package model.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
+/**
+ * 학과내규
+ * @author Seyoon Kim
+ * @version 1.1
+ * 2017.05.24
+ */
 public class Rule {
 
 	private int no;
@@ -8,7 +16,8 @@ public class Rule {
 	private String updateId;
 	private String updateDate;
 	private int view;
-	private String fileAdd1;
+	private MultipartFile file;
+	private String file1;
 	private String point;
 	private String title;
 	private String body;
@@ -17,7 +26,7 @@ public class Rule {
 		super();
 	}
 
-	public Rule(int no, String createId, String createDate, String updateId, String updateDate, int view, String fileAdd1, String point, String title, String body) {
+	public Rule(int no, String createId, String createDate, String updateId, String updateDate, int view, MultipartFile file, String file1, String point, String title, String body) {
 		super();
 		this.no = no;
 		this.createId = createId;
@@ -25,7 +34,8 @@ public class Rule {
 		this.updateId = updateId;
 		this.updateDate = updateDate;
 		this.view = view;
-		this.fileAdd1 = fileAdd1;
+		this.file = file;
+		this.file1 = file1;
 		this.point = point;
 		this.title = title;
 		this.body = body;
@@ -79,12 +89,20 @@ public class Rule {
 		this.view = view;
 	}
 
-	public String getFileAdd1() {
-		return fileAdd1;
+	public MultipartFile getFile() {
+		return file;
 	}
 
-	public void setFileAdd1(String fileAdd1) {
-		this.fileAdd1 = fileAdd1;
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+	public String getFile1() {
+		return file1;
+	}
+
+	public void setFile1(String file1) {
+		this.file1 = file1;
 	}
 
 	public String getPoint() {
@@ -125,8 +143,10 @@ public class Rule {
 		builder.append(updateDate);
 		builder.append(", view=");
 		builder.append(view);
-		builder.append(", fileAdd1=");
-		builder.append(fileAdd1);
+		builder.append(", file=");
+		builder.append(file);
+		builder.append(", file1=");
+		builder.append(file1);
 		builder.append(", point=");
 		builder.append(point);
 		builder.append(", title=");

@@ -112,6 +112,12 @@ public class MemberCtrl {
 		return mv;
 	}
 	
+	/**
+	 * 로그인을 한다.
+	 * @param request
+	 * @param response
+	 * @return ModelAndView
+	 */
 	@RequestMapping(value="login.do", method=RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response){
 		Member loginUser = null;
@@ -148,6 +154,12 @@ public class MemberCtrl {
 		return mv;
 	}
 	
+	/**
+	 * 로그아웃을 한다.
+	 * @param request
+	 * @return ModelAndView2
+	 * @throws Exception
+	 */
 	@RequestMapping(value="logout.do", method=RequestMethod.POST)
 	public ModelAndView logout(HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
@@ -187,6 +199,11 @@ public class MemberCtrl {
 		return mv;
 	}
 	
+	/**
+	 * 내 정보를 조회한다.
+	 * @param request
+	 * @return ModelAndView
+	 */
 	@RequestMapping(value="goMyInfo.do", method=RequestMethod.POST)
 	public ModelAndView goMyInfo(HttpServletRequest request) {
 		Member myInfo = null;
@@ -201,11 +218,14 @@ public class MemberCtrl {
 		return mv;
 	}
 
+	/**
+	 * 내 정보를 수정한다.
+	 * @param request
+	 * @param member
+	 * @return ModelAndView
+	 */
 	@RequestMapping(value="updateMyInfo.do", method=RequestMethod.POST)
 	public ModelAndView updateMyInfo(HttpServletRequest request, @ModelAttribute Member member) {
-		HttpSession session = request.getSession();
-		String root_path = session.getServletContext().getRealPath("/");
-		System.out.println(root_path);
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
 		Member myInfo = null;
@@ -218,18 +238,16 @@ public class MemberCtrl {
 		ModelAndView mv = new ModelAndView();
 		String fileName = "";
 		try {
-			System.out.println("안뇽");
 			if(photoFile != null) {
-				System.out.println("==========크크크");
 				fileName = photoFile.getOriginalFilename();
 				member.setPhoto(fileName);
-				System.out.println(System.getProperty("user.home"));
 				try {
-					//File file = new File("/Users/Shiny/git/ITPM/ITPM/WebContent/image/member/" + fileName);
-					//System.out.println(file);
-					photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/member/" + fileName));
-					System.out.println("==============여기도 와야해");
-					//MemberDAO.updateMyInfo(member);
+					if(!fileName.equals("")) {
+						//photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/member/" + fileName)); //로컬
+						photoFile.transferTo(new File(System.getProperty("user.dir") + "/webapps/ITPM/image/member/" + fileName)); //운영
+					} else {
+						fileName = request.getParameter("photo");
+					}
 					MemberDAO.updateMyInfo(new Member(request.getParameter("phoneNumber"), mailId, mailDomain, request.getParameter("job"), request.getParameter("jobPosition"), fileName, studentId));
 				} catch (Exception e) {
 					mv.setViewName("fail");

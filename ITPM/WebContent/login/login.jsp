@@ -6,11 +6,10 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
+        <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>로그인 | IT정책경영학과</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/itpm.css" rel="stylesheet"/>
-        <link href="../css/menu.css" rel="stylesheet">
+        <link href="css/itpm.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
@@ -38,19 +37,19 @@
                 }
                 
                 $('#loginSubmit').click(function() {
-                	if($('#studentId').val() == '') {
+                	if(!$('#studentId').val()) {
 						alert("아이디를 입력해주세요.");
 						$('#studentId').focus();
 						return false;
 					}
-                	if($('#pw').val() == '') {
+                	if(!$('#pw').val()) {
                 		alert("비밀번호를 입력해주세요.");
                 		$('#pw').focus();
                 		return false;
                 	}
-                	if(!$('#studentId').val() == '' && !$('#pw').val() == '') {
+                	if($('#studentId').val() != '' && $('#pw').val() != '') {
         				$.ajax({
-        					url:"../checkPw.do",
+        					url:"checkPw.do",
         					method: "GET",
         					contentType: "application/json",
         					data: "studentId="+document.getElementById("studentId").value,
@@ -64,7 +63,7 @@
 	        							return false;
         							}
         						} else if(data.data == 'N'){
-			                		document.getElementById('loginForm').action = '../login.do';
+			                		document.getElementById('loginForm').action = 'login.do';
 			                		document.getElementById('loginForm').submit();
         						} else if(data.data == '') {
         							alert('비밀번호 초기화 후 로그인해주세요.');
@@ -122,9 +121,9 @@
         <div class="content-div">
             <div class="small-title">
                 <p>
-                    <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">로그인</span>
+                    <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">로그인</span>
                     <span class="small-title-right">
-                        <small><a href="../index.jsp">홈</a> > 로그인</small>
+                        <small><a href="welcome.do">홈</a> > 로그인</small>
                     </span>
                 </p>
 			</div>
@@ -134,14 +133,14 @@
 						<tbody>
 							<tr class="login-redline" align="center">                           
 								<td class="login-logo" colspan="3" align="center">
-									<img height="67px" src="../image/login_firstline.png" width="250px"> 
+									<img height="67px" src="image/login_firstline.png" width="250px"> 
 								</td>
 							</tr>
 							<tr>
 								<td class="login-id">아이디</td>
 								<td class="input-id"><input type="text" class="form-control" name="studentId" id="studentId" tabindex="1" value=""/></td>
 								<td class="input-button" rowspan="2" style="text-align: left;">
-									<input type="image" class="img" id="loginSubmit" height="54px" src="../image/login_login_button.png" width="71px">
+									<input type="image" class="img" id="loginSubmit" height="54px" src="image/login_login_button.png" width="71px">
 								</td>
 							</tr>
 							<tr>
@@ -150,8 +149,8 @@
 							</tr>
 							<tr>
 								<td class="login-remakepw" colspan="3" align="center">
-									<input type="image" class="img" height="17px" width="254px" src="../image/login_forget.png">
-									<input type="image" class="img" id="updatePw" height="17px" width="128ps" src="../image/login_reset.png">
+									<input type="image" class="img" height="17px" width="254px" src="image/login_forget.png">
+									<input type="image" class="img" id="updatePw" height="17px" width="128ps" src="image/login_reset.png">
 								</td>
 							</tr>
 						</tbody>

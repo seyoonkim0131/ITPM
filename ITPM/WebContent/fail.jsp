@@ -47,7 +47,7 @@
 			<div class="small-title">
 				<p>
 					<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">로그인 실패</span>
-					<span class="small-title-right"><small><a href="index.jsp">홈</a> > 로그인실패</small></span>
+					<span class="small-title-right"><small><a href="welcome.do">홈</a> > 로그인실패</small></span>
 				</p>
 			</div>
 			<div class="content-board">

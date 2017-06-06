@@ -4,9 +4,11 @@
 	
 	<typeAliases>
 		<typeAlias type="model.domain.Member" alias="member"/>
-		<!-- <typeAlias type="model.domain.Rule" alias="rule"/>
+		<typeAlias type="model.domain.Rule" alias="rule"/>
+		<typeAlias type="model.domain.Schedule" alias="schedule"/>
 		<typeAlias type="model.domain.Notice" alias="notice"/>
-		<typeAlias type="model.domain.Professor" alias="professor"/> -->
+		<typeAlias type="model.domain.Professor" alias="professor"/>
+		<typeAlias type="model.domain.Education" alias="education"/>
 	</typeAliases>
 
 	<environments default="env">			
@@ -26,9 +28,11 @@
 
 	<mappers>
 		<mapper resource="config/member.xml" />
-		<!-- <mapper resource="config/rule.xml" />
+		<mapper resource="config/rule.xml" />
+		<mapper resource="config/schedule.xml" />
 		<mapper resource="config/notice.xml" />
-		<mapper resource="config/professor.xml" /> -->
+		<mapper resource="config/professor.xml" />
+		<mapper resource="config/education.xml" />
 	</mappers>
 
 </configuration>

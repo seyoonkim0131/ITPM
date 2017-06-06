@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+<mapper namespace="education">
+
+   <resultMap type="model.domain.Education" id="educationMap">
+      <result property="major" column="major"/>
+      <result property="nameKor" column="name_kor"/>
+      <result property="nameEng" column="name_eng"/>
+   </resultMap>
+   
+   <!-- 공통과목 리스트 조회 -->
+   <select id="getCommonEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO  
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%공통과목%'
+		ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT경영전공 과목 리스트 조회 -->
+   <select id="getBizEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO          
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT경영전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT정책전공 리스트 조회 -->
+   <select id="getPolicyEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT정책전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT금융전공 과목 리스트 조회 -->
+   <select id="getFinEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT금융전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT서비스전공 과목 리스트 조회 -->
+   <select id="getServEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT서비스전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT법령전공 리스트 조회 -->
+   <select id="getLawEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT법령전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT보안전공 리스트 조회 -->
+   <select id="getSecurEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT보안전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT행정전공 과목 리스트 조회 -->
+   <select id="getAdminEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT행정전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT국방전공 리스트 조회 -->
+   <select id="getDefEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT국방전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- IT사업전공 리스트 조회 -->
+   <select id="getEntpEducationList" resultMap="educationMap">
+      SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO            
+        FROM EDUCATION
+       WHERE MAJOR LIKE '%IT사업전공%'
+       ORDER BY NAME_KOR
+   </select>
+   
+   <!-- 과목 세부페이지 조회 -->
+	<select id="getEducationDetail" parameterType="Integer" resultMap="educationMap">
+		SELECT MAJOR,
+            NAME_KOR,
+            NAME_ENG,
+            NO  
+        FROM EDUCATION
+		WHERE NO = #{no}
+	</select>
+	
+   <!-- 과목 수정 -->
+   <update id="updateEducation" parameterType="education">
+      UPDATE EDUCATION
+         SET MAJOR    = #{major},
+             NAME_KOR = #{nameKor},
+             NAME_ENG = #{nameEng}
+         WHERE NO = #{no}
+   </update>
+   
+   <!-- 과목 삭제 -->
+   <delete id="deleteEducation" parameterType="Integer">
+      DELETE FROM EDUCATION
+      WHERE NO = #{no}
+   </delete>
+   
+   <!-- 과목 추가 -->
+   <insert id="insertEducation" parameterType="education">
+      INSERT INTO EDUCATION (
+         NO,
+         MAJOR,
+         NAME_KOR,
+         NAME_ENG)
+      VALUES(
+         #{no},
+         #{major},
+         #{nameKor},
+         #{nameEng} )      
+   </insert>
+   
+   <!-- 
+   <insert id="insertMember" parameterType="member">
+      INSERT INTO MEMBER(STUDENT_ID,
+                     PW,
+                     NAME,
+                     PHONE_NUMBER,
+                     MAIL_ID,
+                     MAIL_DOMAIN,
+                     JOB,
+                     AUTH,
+                     GROUP)
+               VALUES(#{studentId},
+                     #{studentId},비밀번호를 학번으로 초기화한다.
+                     #{name},
+                     #{phoneNumber},
+                     #{mailId},
+                     #{mailDomain},
+                     #{job},
+                     #{auth},
+                     #{group})
+   </insert> -->
+
+</mapper>

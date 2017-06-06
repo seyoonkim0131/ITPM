@@ -6,9 +6,9 @@
         <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
         <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" name="viewport"/>
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
-        <link href="../image/favicon.ico" rel="Shortcut Icon"/>
+        <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>방문안내 | IT정책경영학과</title>
-        <link href="../css/itpm.css" rel="stylesheet"/> 
+        <link href="css/itpm.css" rel="stylesheet"/> 
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -81,43 +81,43 @@
             <div class="grayline"></div>
             <ul class="nav nav-pills nav-stacked">
                 <li class="inactive">
-                    <a href="itpm.jsp">학과소개</a>
+                    <a href="goItpm.do">학과소개</a>
                 </li>
                 <li class="inactive">
                     <a href="prof.jsp">교수소개</a>
                 </li>
                 <li class="inactive">
-                    <a href="vision.jsp">교육비전</a>
+                    <a href="goVision.do">교육비전</a>
                 </li>
                 <li class="active1">
-                    <a href="map.jsp">방문안내</a>
+                    <a href="goMap.do">방문안내</a>
                 </li>
             </ul>
         </div>
 		<div class="content-div" >
 	        <div class="small-title">
 	            <p>
-	                <span><img alt="menu main title bar" src="../image/menu_main_titlebar.png">방문안내</span>
+	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">방문안내</span>
 	                <span class="small-title-right">
-	                    <small><a href="../index.jsp">홈</a> > 대학원소개 > 방문안내</small>
+	                    <small><a href="welcome.do">홈</a> > 대학원소개 > 방문안내</small>
 	                </span>
 	            </p>
 	        </div>
-	        <div class="content">
+	        <div class="content-board">
 	        	<p><strong>IT정책경영학과 위치</strong></p>
 				<p>서울특별시 동작구 상도로369 숭실대학교 미래관101호 IT정책경영학과</p>
 				<br>&nbsp;<br>        	
 	        	<p><strong>학교 위치</strong></p> 
 				<ul id="nav_tab" class="nav nav-tabs">
-	    			<li><a href="map.jsp">지하철</a></li>
-	    			<li class="active"><a href="map_02.jsp">버스</a></li>
-	   				<li><a href="map_03.jsp">자가용</a></li>
-	    			<li><a href="map_04.jsp">고속도로</a></li>
+	    			<li><a href="goMap.do">지하철</a></li>
+	    			<li class="active"><a href="goMap2.do">버스</a></li>
+	   				<li><a href="goMap3.do">자가용</a></li>
+	    			<li><a href="goMap4.do">고속도로</a></li>
 	  			</ul>
 	  			<br>
 	  			<div class="map-contents">
-	  				<img id="bus_image" alt="" src="../image/map_bus_image.png" > 		
-	  				<img id="bus_text" alt="" src="../image/map_bus_text.png">
+	  				<img id="bus_image" alt="" src="image/map_bus_image.png" > 		
+	  				<img id="bus_text" alt="" src="image/map_bus_text.png">
 	        	</div>
 	        </div>
         </div>

@@ -81,7 +81,7 @@
 			<div class="small-title">
 	            <p>
 	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우수첩</span>
-	                <span class="small-title-right"><small><a href="index.jsp">홈</a> > 원우수첩 > 원우수첩</small></span>
+	                <span class="small-title-right"><small><a href="welcome.do">홈</a> > 원우수첩 > 원우수첩</small></span>
 	            </p>
 			</div>
 			<div class="content-board">
@@ -93,20 +93,17 @@
 	            	<input type="text" id="sGroup" name="sGroup" value="" />
 	            </form>
 	            <select id="group" style="float: right;">
+	            	<option value="">전체</option>
 	            	<c:forEach items="${requestScope.groupList}" var="result" varStatus="status">
             			<option value="${result.sGroup}" ${result.sGroup == requestScope.curGroup ? 'selected' : '' }><c:out value="${result.sGroup}"></c:out></option>
 	            	</c:forEach>
 				</select><br/><br/>
-				<!-- <form id="updateForm" name="updateForm" method="post" action="updateMyInfo.do" enctype="multipart/form-data"> -->
-				<!-- <input type="button" id="update" value="저장" style="float: right; color: #b31b1b;"/> -->
-            	<%-- <input type="hidden" id="id" name="id" value="${loginSession.studentId}"/> --%>
                 <table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
                     <colgroup>
                     	<col width="30%">
                     	<col width="20%">
                     	<col width="50%">
                     </colgroup>
-                    
                     <c:forEach items="${requestScope.allMemberList}" var="result">
                         <tr align="center">
                             <td rowspan="6" style="padding-top: 3px;">
@@ -136,7 +133,7 @@
                         </tr>
                         <tr align="left">
                             <td style="text-align:center">핸드폰</td>
-                            <td style="text-align:left; letter-spacing:-2px;">${result.phoneNumber}</td>
+                            <td style="text-align:left;">${result.phoneNumber}</td>
                         </tr>
                         <tr align="left" style="border-bottom: solid 2px #a1a4a8;">
                             <td style="text-align:center; letter-spacing: -1px;">E-mail</td>
