@@ -13,39 +13,39 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-		$(window).resize(function () {
-            if (getWidth() >= '767') {
-                document.getElementById('side_menu').style.display = 'block';
-                $('.content-div').css('padding-left', '250px');
-            } else {
-                document.getElementById('side_menu').style.display = 'none';
-                $('.content-div').css('padding-left', '10px');
-                $('.content-div').css('padding-right', '10px');
-            }
-        });
-        $(document).ready(function () {
-            if (getWidth() >= '767') {
-                document.getElementById('side_menu').style.display = 'block';
-                $('.content-div').css('padding-left', '250px');
-            } else {
-                document.getElementById('side_menu').style.display = 'none';
-                $('.content-div').css('padding-left', '10px');
-                $('.content-div').css('padding-right', '10px');
-            }
-            $('#list').click(function () {
-		    	location.href = "getRuleList.do";
-		    });
-            $('#delete').click(function () {
-		    	if(confirm("삭제하시겠습니까?") == true){
-		    		$('#deleteform').submit();
-		    	} else {
-		    		return false;
-		    	}
-		    });
-		    $('#update').click(function () {
-		    	$('#goUpdate').submit();
-		    });
-        });
+			$(window).resize(function () {
+	            if (getWidth() >= '767') {
+	                document.getElementById('side_menu').style.display = 'block';
+	                $('.content-div').css('padding-left', '250px');
+	            } else {
+	                document.getElementById('side_menu').style.display = 'none';
+	                $('.content-div').css('padding-left', '10px');
+	                $('.content-div').css('padding-right', '10px');
+	            }
+	        });
+	        $(document).ready(function () {
+	            if (getWidth() >= '767') {
+	                document.getElementById('side_menu').style.display = 'block';
+	                $('.content-div').css('padding-left', '250px');
+	            } else {
+	                document.getElementById('side_menu').style.display = 'none';
+	                $('.content-div').css('padding-left', '10px');
+	                $('.content-div').css('padding-right', '10px');
+	            }
+	            $('#list').click(function () {
+			    	location.href = "getRuleList.do";
+			    });
+	            $('#delete').click(function () {
+			    	if(confirm("삭제하시겠습니까?") == true){
+			    		$('#deleteform').submit();
+			    	} else {
+			    		return false;
+			    	}
+			    });
+			    $('#update').click(function () {
+			    	$('#goUpdate').submit();
+			    });
+	        });
 		</script>
 	</head>
 	<body>

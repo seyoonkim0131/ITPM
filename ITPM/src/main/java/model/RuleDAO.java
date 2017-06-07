@@ -27,14 +27,31 @@ public class RuleDAO {
 	}
 	
 	/**
+	 * Rule 전체갯수 조회
+	 * @return
+	 */
+	public static int getTotalCnt() {
+		SqlSession session = DAOFactory.getSqlSession();
+		int total = 0;
+		try {
+			total = session.selectOne("rule.getListCnt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return total;
+	}
+	
+	/**
 	 * Rule 목록조회
 	 * @return ArrayList
 	 */
-	public static ArrayList<Rule> getRuleList() {
+	public static ArrayList<Rule> getRuleList(/*int startNo*/) {
 		SqlSession session = DAOFactory.getSqlSession();
 		ArrayList<Rule> ruleList = new ArrayList<Rule>();
 		try {
-			ruleList = (ArrayList)session.selectList("rule.getRuleList");
+			ruleList = (ArrayList)session.selectList("rule.getRuleList"/*, startNo*/);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

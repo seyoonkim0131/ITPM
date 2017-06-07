@@ -13,8 +13,8 @@
 	<meta name="og:image" content=""/><!-- 이미지 넣어용 -->
 	<link rel="Shortcut Icon" href="image/favicon.ico" />
 	<title>Home | IT정책경영학과</title>
-	<link rel="StyleSheet" href="css/itpm.css" /> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="StyleSheet" href="css/itpm.css" /> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
@@ -178,7 +178,7 @@
                <li id="hideUl2" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="color:#fff; font-size: 13px;">학사정보&nbsp;&nbsp;</span><span class="caret" style="color: #fff;"></span>
                   <ul class="nav navbar-nav" style="display: none;">
                      <li><a href="getAllEduList.do" id="mobAcEdu" style="color:#fff;">개설과정</a></li>
-                     <li><a href="getRuleList.do" id="mobRegul" style="color:#fff;">규정</a></li>
+                     <li><a href="getRuleList.do?pageid=1" id="mobRegul" style="color:#fff;">규정</a></li>
                      <li><a href="getAllScheduleList.do" id="mobAcCal" style="color:#fff;">학사일정</a></li>
                      <li><a href="getNoticeList.do" id="mobBoardNotice" style="color:#fff;">공지사항</a></li>
                   </ul>
@@ -206,7 +206,7 @@
 					<a style="padding:19px 15px 11px 15px; "href="#"><img style="display:inherit; margin:0 auto;" alt="학사정보" src="image/menuimage_schoolinfo.png"></a>
 					<ul class="dropdown-sub list-group" style="width:94%">
 						<li class="list-group-item" role="presentation"><a href="getAllEduList.do">개설과정</a></li>
-						<li class="list-group-item" role="presentation"><a href="getRuleList.do">규정</a></li>
+						<li class="list-group-item" role="presentation"><a href="getRuleList.do?pageid=1">규정</a></li>
 						<li class="list-group-item" role="presentation"><a href="getAllScheduleList.do">학사일정</a></li>
 						<li class="list-group-item" role="presentation"><a href="getNoticeList.do">공지사항</a></li>
 					</ul>

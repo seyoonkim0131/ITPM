@@ -33,6 +33,7 @@
 					$('.content-div').css('padding-left', '10px');
 					$('.content-div').css('padding-right', '10px');
 				}
+				
 				$('#update').click(function() {
 					if(confirm('교수 정보를 수정하시겠습니까?') == true) {
 						$('#updateForm').submit();
@@ -40,18 +41,12 @@
 						return false;
 					}
 				});
-				$('#cancel').click(function() {
-					if(confirm('취소하시겠습니까?') == true) {
-						$('#cancelForm').submit();
-					} else {
-						return false;
-					}
-				});
+				
 			});
 		</script>
 		<style type="text/css">
 			@media only screen and (max-width: 376px) { 
-				.memberImg {width: 60px; height: 80px;}
+				.prof-img {width: 60px; height: 80px;}
 				table.bbs-list thead th, table.bbs-list tbody td {font-size: 13px;}
 			}
 		</style>
@@ -63,8 +58,10 @@
 			<div class="menutitle">대학원소개</div>
 			<div class="grayline"></div>
 			<ul class="nav nav-pills nav-stacked">
-				<li class="inactive"><a href="javascript:document.getElementById('cancelForm').submit();">교수소개</a></li>
-				<li class="active1"><a href="#">교수정보</a></li>
+				<li class="inactive"><a href="goItpm.do">학과소개</a></li>
+				<li class="active1"><a href="getAllProfList.do">교수소개</a></li>
+				<li class="inactive"><a href="goVision.do">교육비전</a></li>
+				<li class="inactive"><a href="goMap.do">방문안내</a></li>
 			</ul>
 		</div>
 		<div class="content-div">
@@ -74,12 +71,9 @@
 				</p>
 			</div>
 			<div class="content-board">
-				<form id="cancelForm" name="cancelForm" action="getAllProfList.do" method="get" style="display: none;">
-					 <input type="text" id="studentId" name="studentId" value="${loginSession.studentId}" />
-				</form>
-				<form id="updateForm" name="updateForm" method="post" action="updateProf.do" enctype="multipart/form-data">
-					<input type="hidden" id="photo" name="photo" value="${request.photo}" />
-					<input type="hidden" id="id" name="id" value="${loginSession.studentId }"/>	<!-- 이건 나중에 어떻게 처리해야하는지 물어보기(교수id로 하는지 or 관리자) -->
+				<form id="updateForm" name="updateForm" method="post" action="updateProfessor.do" enctype="multipart/form-data">
+					<input type="hidden" id="no" name="no" value="${requestScope.updateProfessor.no}" />
+					<input type="hidden" id="photo" name="photo" value="${requestScope.updateProfessor.photo}" />
 					<table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
 						<colgroup>
 							<col width="30%">
@@ -87,50 +81,55 @@
 							<col width="50%">
 						</colgroup>
 						<tr align="center">
-							<td rowspan="6" style="padding-top: 3px;">
+							<td rowspan="7" style="padding-top: 3px;">
 								<c:choose>
-									<c:when test="${request.photo eq '' || request.photo eq null}">
+									<c:when test="${requestScope.updateProfessor.photo eq '' || requestScope.updateProfessor.photo eq null}">
 										<img class="professorImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
 									</c:when>
 									<c:otherwise>
-										<img class="professorImg" border="1" height="120px" width="90px" src="image/prof/${request.photo}" style="vertical-align: middle;">
+										<img class="professorImg" border="1" height="120px" width="90px" src="image/prof/${requestScope.updateProfessor.photo}" style="vertical-align: middle;">
 									</c:otherwise>
 								</c:choose>
 							</td>
 							<td style="text-align:center">교수번호</td>
-							<td style="text-align:left"><c:out value="${request.profNumber}"/><input type="hidden" id="profNumber" name="profNumber" value="<c:out value='${request.profNumber}'/>"/></td>
-						</tr>
+							<td style="text-align:left">${requestScope.updateProfessor.no}</td>
+						</tr>	
+						<tr>	
+							<td style="text-align:center">성명(한글)</td>
+							<td style="text-align:left"><input type="text" name="nameKor" id="nameKor" class="form-control" value="${requestScope.updateProfessor.nameKor}"/></td>
+						</tr>						
 						<tr align="left">
-							<td style="text-align:center">이름</td>
-							<td style="text-align:left"><c:out value="${request.nameKor}"/>(<c:out value="${request.nameEng}"/>)</td>
+							<td style="text-align:center">성명(영문)</td>
+							<td style="text-align:left"><input type="text" name="nameEng" id="nameEng" class="form-control" value="${requestScope.updateProfessor.nameEng}"/></td>
 						</tr>
 						<tr align="left">
 							<td style="text-align:center">학력</td>
-							<td style="text-align:left"><input type="text" class="form-control" id="education" name="education" value="${request.education}"/></td>
+							<td style="text-align:left"><input type="text" name="education" id="education" class="form-control" value="${requestScope.updateProfessor.education}"/></td>
 						</tr>
 						<tr align="left">
 							<td style="text-align:center">연구실</td>
-							<td style="text-align:left"><input type="text" class="form-control" id="office" name="office" value="${request.office}"/></td>
+							<td style="text-align:left"><input type="text" name="office" id="office" class="form-control" value="${requestScope.updateProfessor.office}"/></td>
 						</tr>
 						<tr align="left">
 							<td style="text-align:center">연구분야</td>
-							<td style="text-align:left"><input type="text" class="form-control" id="about" name="about" value="${request.about}"/></td>
+							<td style="text-align:left"><input type="text" name="about" id="about" class="form-control" value="${requestScope.updateProfessor.about}"/></td>
 						</tr>
 						<tr align="left">
 							<td style="text-align:center">전화번호</td>
-							<td style="text-align:left; letter-spacing:-2px;"><input type="text" class="form-control" id="phone" name="phone" value="${request.phone}" placeholder="02-1234-5678형식으로 입력해주세요"/></td>
+							<td style="text-align:left; letter-spacing:-2px;"><input type="text" name="phone" id="phone" class="form-control" value="${requestScope.updateProfssor.phone}" placeholder="02-1234-5678형식으로 입력해주세요"/></td>
 						</tr>
 						<tr align="left" style="border-bottom: solid 2px #b31b1b;">
 							<td><input type="file" class="form-control" id="photoFile" name="photoFile"></td>
 							<td style="text-align:center">E-mail</td>
-							<td style="text-align:left"><input type="text" class="form-control" id="email" name="email" value="${request.email}"/></td>
+							<td style="text-align:left"><input type="text" name="email" id="email" class="form-control" value="${requestScope.updateProfessor.email}"/></td>
 						</tr>
 					</table>
 					<div class="button-list">
 						<ul class="right" style="border-color: #fff; border-style: solid;">
 							<li>
 								<input type="button" id="update" value="저장" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
-								<input type="button" id="cancel" value="취소" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
+								<input type="button" id="cancel" value="취소" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"
+									   onclick="javascript:location.href='getAllProfList.do'">
 							</li>
 						</ul>
 					</div>

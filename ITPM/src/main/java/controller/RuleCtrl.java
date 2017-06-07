@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,9 +33,30 @@ public class RuleCtrl {
 	@RequestMapping(value="getRuleList.do", method=RequestMethod.GET)
 	public ModelAndView getRuleList(HttpServletRequest request) {
 		ArrayList<Rule> ruleList = new ArrayList<Rule>();
+//		int startNo = 0;
+//		int total = 0;
+//		int pageMax = 0;
+//		int pageid = Integer.parseInt(request.getParameter("pageid"));
 		ModelAndView mv = new ModelAndView();
 		try {
-			ruleList = RuleDAO.getRuleList();
+//			total = RuleDAO.getTotalCnt();
+//			if(pageid != 1) {
+//				startNo = (pageid * 10) - 1;
+//			} else {
+//				startNo = 0;
+//			}
+//			if(10 >= total) {
+//				startNo = 0;
+//				pageMax = 1;
+//			} else {
+//				if(total%10 != 0) {
+//					pageMax = (total/10) + 1;
+//				} else {
+//					pageMax = total/10;
+//				}
+//			}
+			ruleList = RuleDAO.getRuleList(/*startNo*/);
+//			mv.addObject("pageMax", pageMax);
 			mv.addObject("ruleList", ruleList);
 			mv.setViewName("regulation/regulation");
 		} catch (Exception e) {

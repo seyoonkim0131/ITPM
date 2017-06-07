@@ -13,6 +13,7 @@
 		<result property="point" column="point"/>
 		<result property="title" column="title"/>
 		<result property="body" column="body"/>
+		<result property="startNo" column="startNo"/>
 	</resultMap>
 	
 	<!-- Paging처리를 위한 글 개수 조회 -->

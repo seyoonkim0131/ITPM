@@ -73,7 +73,7 @@
 		        	<div class="table_list">
 		        		<ul>
 			        		<c:choose>
-			        			<c:when test="${requestScope.ruleList eq null }">
+			        			<c:when test="${requestScope.ruleList eq '[]' }">
 					        		<li>내용이 없습니다.</li>
 			        			</c:when>
 			        			<c:otherwise>
@@ -114,6 +114,7 @@
 		        		&nbsp;
 		        		</c:otherwise>
 		        	</c:choose>
+		        	<c:if test="${requestScope.ruleList eq '[]'}">
 		        	<div><p>&nbsp;</p></div>
 	                <div><p>&nbsp;</p></div>
 	                <div><p>&nbsp;</p></div>
@@ -121,6 +122,7 @@
 	                <div><p>&nbsp;</p></div>
 	                <div><p>&nbsp;</p></div>
 	                <div><p>&nbsp;</p></div>
+	                </c:if>
 		        	<!-- <div class="pagination-centered">
 						<div class="pagination">
 							<a class="laquo" href="#">&laquo;</a>

@@ -3,7 +3,7 @@
 <mapper namespace="professor">
 
 	<resultMap type="model.domain.Professor" id="professorMap">
-		<result property="profNumber" column="prof_number"/>
+		<result property="no" column="no"/>
 		<result property="nameKor" column="name_kor"/>
 		<result property="nameEng" column="name_eng"/>
 		<result property="phone" column="phone"/>
@@ -16,7 +16,8 @@
 	
 	<!-- 전체 교수 리스트 조회 -->
 	<select id="getAllProfessorList" resultMap="professorMap">
-		SELECT NAME_KOR,
+		SELECT NO,
+			   NAME_KOR,
 			   NAME_ENG,
 			   PHONE,
 			   EMAIL,
@@ -25,7 +26,23 @@
 			   EDUCATION,
 			   PHOTO
 		  FROM PROFESSOR
-		 ORDER BY PROF_NUMBER
+		 ORDER BY NO
+	</select>
+	
+	<!-- 교수 세부페이지 조회 -->
+	<select id="getProfessorDetail" parameterType="Integer" resultMap="professorMap">
+		SELECT NO,
+			   NAME_KOR,
+			   NAME_ENG,
+			   PHONE,
+			   EMAIL,
+			   OFFICE,
+			   ABOUT,
+			   EDUCATION,
+			   PHOTO
+		  FROM PROFESSOR
+		 WHERE NO = #{no}
+		 ORDER BY NO
 	</select>
 	
 	<!-- 교수 정보 수정 -->
@@ -39,20 +56,20 @@
 		   	   ABOUT 	 = #{about},
 		   	   EDUCATION = #{education},
 		   	   PHOTO 	 = #{photo}
-		 WHERE PROF_NUMBER = #{profNumber}  	   
+		 WHERE NO = #{no}  	   
 	</update>
 	
 	<!-- 교수 정보 삭제 -->
-	<delete id="deleteProfessor" parameterType="professor">
+	<delete id="deleteProfessor" parameterType="Integer">
 		DELETE 
 		  FROM PROFESSOR
-		 WHERE PROF_NUMBER = #{profNumber}	
+		 WHERE NO = #{no}	
 	</delete>
 	
 	<!-- 교수 정보 입력 -->
 	<insert id="insertProfessor" parameterType="professor">
 		INSERT INTO PROFESSOR (
-			PROF_NUMBER,
+			NO,
 			NAME_KOR,
 			NAME_ENG,
 			PHONE, 
@@ -62,7 +79,7 @@
 			EDUCATION,
 			PHOTO )
 		VALUES (
-			#{profNumber},
+			#{no},
 			#{nameKor},
 			#{nameEng},
 			#{phone},
@@ -72,5 +89,28 @@
 			#{education},
 			#{photo} )
 	</insert>
+	
+	
+	<!-- 
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO MEMBER(STUDENT_ID,
+						   PW,
+						   NAME,
+						   PHONE_NUMBER,
+						   MAIL_ID,
+						   MAIL_DOMAIN,
+						   JOB,
+						   AUTH,
+						   GROUP)
+					VALUES(#{studentId},
+						   #{studentId},비밀번호를 학번으로 초기화한다.
+						   #{name},
+						   #{phoneNumber},
+						   #{mailId},
+						   #{mailDomain},
+						   #{job},
+						   #{auth},
+						   #{group})
+	</insert> -->
 
 </mapper>

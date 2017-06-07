@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes"/>
         <meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
-        <link rel="Shortcut Icon" href="../image/favicon.ico"/>
+        <link rel="Shortcut Icon" href="image/favicon.ico"/>
         <title>학과내규 | IT정책경영학과</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/itpm.css"/>

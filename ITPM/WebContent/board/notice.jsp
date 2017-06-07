@@ -72,25 +72,32 @@
 		<div class="content-board">
 			<div class="table_list">
 				<ul>
-					<c:forEach items="${requestScope.noticeList}" var="result">
-						<li>
-							<div class="top_area">
-								<c:choose>
-									<c:when test="${result.point eq 'Y'}">
-			        					<div class="write_num"><img alt="중요공지" src="image/notice.png"></div>
-				        			</c:when>
-		    	    				<c:otherwise>&nbsp;</c:otherwise>
-								</c:choose>
-								<div class="num_area">
-									<span class="table_date"><strong>${result.createDate}</strong></span>
-									<span class="table_hit"><strong>${result.view}</strong></span>   <!-- view: xml에서 properties이름 -->
-								</div>
-							</div>
-							<div class="subject">
-								<a href="getNoticeDetail.do?no=${result.no}">${result.title}</a>
-							</div>
-						</li>
-					</c:forEach>
+					<c:choose>
+						<c:when test="${requestScope.noticeList eq '[]'}">
+							<li>내용이 없습니다.</li>
+						</c:when>
+						<c:otherwise>
+							<c:forEach items="${requestScope.noticeList}" var="result">
+								<li>
+									<div class="top_area">
+										<c:choose>
+											<c:when test="${result.point eq 'Y'}">
+					        					<div class="write_num"><img alt="중요공지" src="image/notice.png"></div>
+						        			</c:when>
+				    	    				<c:otherwise>&nbsp;</c:otherwise>
+										</c:choose>
+										<div class="num_area">
+											<span class="table_date"><strong>${result.createDate}</strong></span>
+											<span class="table_hit"><strong>${result.view}</strong></span>   <!-- view: xml에서 properties이름 -->
+										</div>
+									</div>
+									<div class="subject">
+										<a href="getNoticeDetail.do?no=${result.no}">${result.title}</a>
+									</div>
+								</li>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 			<c:choose>
@@ -117,6 +124,22 @@
 			</div>
 			</div> -->
 			</div>
+			<c:if test="${'[]' eq requestScope.noticeList}">
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			</c:if>
+			<div style="width: 80%;">&nbsp;</div>
 		</div>
 		<c:import url="../import/footer.jsp"/>
 	</body>

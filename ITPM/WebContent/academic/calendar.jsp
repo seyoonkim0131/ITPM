@@ -73,7 +73,7 @@
 				<div class="table_list">
 					<ul>
 						<c:choose>
-							<c:when test="${requestScope.list eq null}">
+							<c:when test="${requestScope.list eq '[]'}">
 								<li>내용이 없습니다.</li>
 							</c:when>
 							<c:otherwise>
@@ -125,6 +125,21 @@
 						</div>
 			  </div> -->
 			</div>
+			<c:if test="${'[]' eq requestScope.list}">
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			<div>&nbsp;</div>
+			</c:if>
 			<div style="width: 80%;">&nbsp;</div>
 		</div>
 		<c:import url="../import/footer.jsp" />

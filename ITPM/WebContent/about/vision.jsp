@@ -8,8 +8,8 @@
         <meta content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." name="description"/>
         <link href="image/favicon.ico" rel="Shortcut Icon"/>
         <title>교육비전 | IT정책경영학과</title>
-        <link href="css/itpm.css" rel="stylesheet"/>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/itpm.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">

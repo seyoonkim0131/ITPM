@@ -31,47 +31,51 @@ public class ProfessorDAO {
 		}
 		return allProfList;
 	}
-//	
-//	/**
-//	 * 교수 List 조회
-//	 * @return
-//	 */
-//	public static ArrayList<Professor> getGroupList() {
-//		SqlSession session = DAOFactory.getSqlSession(false);
-//		ArrayList<Professor> groupList = new ArrayList<Professor>();
-//		try {
-//			groupList = (ArrayList)session.selectList("professor.getGroupList");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			session.close();
-//		}
-//		return groupList;
-//	}
+
+	/**
+	 * 교수 정보 담기
+	 * @return
+	 */
+	public static Professor getProfessorDetail(int no) {
+		SqlSession session = DAOFactory.getSqlSession(false); //session 연결
+		Professor professorDetail = new Professor();
+		try {
+			professorDetail = session.selectOne("professor.getProfessorDetail", no); //조회한 내용 담기
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close(); //조회 실패시 fail.jsp로 이동
+		}
+		return professorDetail;  //조회한 값을 담은 noticeDetail 반환
+	}
+	   
 	
 	/**
-	 * 교수정보를 변경한다.
+	 * 교수정보를 수정한다.
 	 * @param professor
 	 */
-	public static void updateProf(Professor professor) {
+	public static void updateProfessor(Professor professor) {
 		SqlSession session = DAOFactory.getSqlSession(true);
+		
 		try {
-			session.update("professor.updateProf", professor);
+			System.out.println(professor);
+			session.update("professor.updateProfessor", professor);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			session.close();
 		}
 	}
+
 	
 	/**
 	 * 교수정보를 추가한다.
 	 * @param professor
 	 */
-	public static void insertProf(Professor professor) {
-		SqlSession session = DAOFactory.getSqlSession(false); 
+	public static void insertProfessor(Professor professor) {
+		SqlSession session = DAOFactory.getSqlSession(true); 
 		try {
-			session.insert("professor.insertProf", professor);
+			session.insert("professor.insertProfessor", professor);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -83,10 +87,10 @@ public class ProfessorDAO {
 	 * 교수정보를 삭제한다.
 	 * @param professor
 	 */
-	public static void deleteProf(char profNumber) {
-		SqlSession session = DAOFactory.getSqlSession(false); 
+	public static void deleteProfessor(int no) {
+		SqlSession session = DAOFactory.getSqlSession(true); 
 		try {
-			session.delete("professor.deleteProf", profNumber); 
+			session.delete("professor.deleteProfessor", no); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

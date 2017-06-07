@@ -21,12 +21,13 @@ public class Rule {
 	private String point;
 	private String title;
 	private String body;
+	//private int startNo;
 	
 	public Rule() {
 		super();
 	}
 
-	public Rule(int no, String createId, String createDate, String updateId, String updateDate, int view, MultipartFile file, String file1, String point, String title, String body) {
+	public Rule(int no, String createId, String createDate, String updateId, String updateDate, int view, MultipartFile file, String file1, String point, String title, String body/*, int startNo*/) {
 		super();
 		this.no = no;
 		this.createId = createId;
@@ -39,6 +40,7 @@ public class Rule {
 		this.point = point;
 		this.title = title;
 		this.body = body;
+		//this.startNo = startNo;
 	}
 
 	public int getNo() {
@@ -128,6 +130,14 @@ public class Rule {
 	public void setBody(String body) {
 		this.body = body;
 	}
+	
+//	public int getStartNo() {
+//		return startNo;
+//	}
+//
+//	public void setStartNo(int startNo) {
+//		this.startNo = startNo;
+//	}
 
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -153,6 +163,8 @@ public class Rule {
 		builder.append(title);
 		builder.append(", body=");
 		builder.append(body);
+//		builder.append(", startNo=");
+//		builder.append(startNo);
 		builder.append("]");
 		return builder.toString();
 	}
