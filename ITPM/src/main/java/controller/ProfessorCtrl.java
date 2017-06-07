@@ -93,8 +93,8 @@ public class ProfessorCtrl {
 				fileName = photoFile.getOriginalFilename();
 				try {
 					if(!fileName.equals("")) {
-						photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/prof/" + fileName)); //로컬
-						//photoFile.transferTo(new File(System.getProperty("user.dir") + "/webapps/ITPM/image/prof/" + fileName)); //운영
+						//photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/prof/" + fileName)); //로컬
+						photoFile.transferTo(new File(System.getProperty("user.dir") + "/webapps/ITPM/image/prof/" + fileName)); //운영
 					} else {
 						fileName = request.getParameter("photo");
 					}
