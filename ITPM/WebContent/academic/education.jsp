@@ -166,7 +166,11 @@
 				<div class="table_list">
 					<ul>
 						<c:forEach items="${requestScope.SecurEducationList}" var="result7">
-							<a href="getEducationDetail.do?no=${result7.no}">${result7.nameKor}(${result7.nameEng})</a>
+							<li>
+								<div class="subject">
+									<a href="getEducationDetail.do?no=${result7.no}">${result7.nameKor}(${result7.nameEng})</a>
+								</div>
+							</li>
 						</c:forEach>	
 					</ul>
 				</div><br>
