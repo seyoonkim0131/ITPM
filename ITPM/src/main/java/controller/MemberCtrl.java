@@ -124,6 +124,8 @@ public class MemberCtrl {
 		Member myInfo = null;
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
+		ArrayList<Member> professorList = new ArrayList<Member>();
+		ArrayList<Member> studentList = new ArrayList<Member>();
 		ModelAndView mv = new ModelAndView();
 		try {
 			loginUser = MemberDAO.login(new Member(request.getParameter("pw"), request.getParameter("studentId")));
@@ -136,7 +138,10 @@ public class MemberCtrl {
 				getAllMemberList(request, loginUser.getsGroup(), loginUser.getStudentId());
 				myInfo = MemberDAO.getMyInfo(request.getParameter("studentId"));
 				if(loginUser.getsGroup() == null || loginUser.getsGroup().equals("")) {
-					allMemberList = MemberDAO.getAllMemberList();
+					professorList = MemberDAO.getProfessorList();
+					studentList = MemberDAO.getStudentList();
+					allMemberList.addAll(professorList);
+					allMemberList.addAll(studentList);
 					mv.addObject("groupList", groupList);
 				} else {
 					allMemberList = MemberDAO.getGroupMemberList(loginUser.getsGroup());
@@ -177,13 +182,18 @@ public class MemberCtrl {
 	public ModelAndView getAllMemberList(HttpServletRequest request, String sGroup, String studentId) {
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
+		ArrayList<Member> professorList = new ArrayList<Member>();
+		ArrayList<Member> studentList = new ArrayList<Member>();
 		Member myInfo = null;
 		ModelAndView mv = new ModelAndView();
 		try {
 			groupList = MemberDAO.getGroupList();
 			myInfo = MemberDAO.getMyInfo(studentId);
 			if(sGroup == null || sGroup.equals("")) {
-				allMemberList = MemberDAO.getAllMemberList();
+				professorList = MemberDAO.getProfessorList();
+				studentList = MemberDAO.getStudentList();
+				allMemberList.addAll(professorList);
+				allMemberList.addAll(studentList);
 				mv.addObject("groupList", groupList);
 			} else {
 				allMemberList = MemberDAO.getGroupMemberList(sGroup);
@@ -228,6 +238,8 @@ public class MemberCtrl {
 	public ModelAndView updateMyInfo(HttpServletRequest request, @ModelAttribute Member member) {
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
+		ArrayList<Member> professorList = new ArrayList<Member>();
+		ArrayList<Member> studentList = new ArrayList<Member>();
 		Member myInfo = null;
 		String studentId = request.getParameter("id");
 		String group = request.getParameter("group");
@@ -256,7 +268,10 @@ public class MemberCtrl {
 			groupList = MemberDAO.getGroupList();
 			myInfo = MemberDAO.getMyInfo(studentId);
 			if(group == null || group.equals("")) {
-				allMemberList = MemberDAO.getAllMemberList();
+				professorList = MemberDAO.getProfessorList();
+				studentList = MemberDAO.getStudentList();
+				allMemberList.addAll(professorList);
+				allMemberList.addAll(studentList);
 				mv.addObject("groupList", groupList);
 			} else {
 				allMemberList = MemberDAO.getGroupMemberList(group);

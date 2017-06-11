@@ -23,6 +23,10 @@ a:hover {
 	text-decoration: none;
 }
 
+pre{
+	white-space: pre-wrap;
+}
+
 ul {
 	list-style: none;
 }
@@ -84,7 +88,7 @@ table.bbs-list thead th {
 .list-group-item>a{color:black; text-decoration: none;}
 .map-contents{text-align:center;}
 
-.prof-img{padding: 0 20px 0 0; max-width:160px; width: 160px; height: 210px;}
+.prof-img{padding: 0 0 0 0; max-width: 90px; width: 90px; height: 120px;}
 
 .major-img{padding: 0 20px 0 20%;  width: auto; height: auto;}
 

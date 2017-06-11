@@ -44,44 +44,48 @@
 		      $('#navbar').css('max-height', '40px');
 		   }
 		});
-		$(document).ready(function(){
-		   if(getWidth() <= '767') {
-		      document.getElementById('whiteLogo').style.display = 'block';
-		      document.getElementById('grayMenu').style.display = 'none';
-		      $('.mob').css('display', 'block');
-		      $('#navbar').css('max-height', '700px');
-		   } else {
-		      document.getElementById('whiteLogo').style.display = 'none';
-		      document.getElementById('grayMenu').style.display = 'block';
-		      $('.mob').css('display', 'none');
-		      $('#navbar').css('max-height', '40px');
-		   }
-			$('#mobNotebook').click(function() {
-				if(document.location.href.indexOf('.do') != -1) {
-					document.getElementById('goNotebook').action = 'getAllMemberList.do';
-					document.getElementById('goNotebook').submit();
-				} else if(document.location.href.split('ITPM/')[1] == 'index.jsp') { 
-					document.getElementById('goNotebook').action = 'getAllMemberList.do';
-					document.getElementById('goNotebook').submit();
-				} else if(document.location.href.indexOf('.do') == -1) {
-					document.getElementById('goNotebook').action = '../getAllMemberList.do';
-					document.getElementById('goNotebook').submit();
+
+		$(document).ready(function() {
+			if (getWidth() <= '767') {
+				document.getElementById('whiteLogo').style.display = 'block';
+				document.getElementById('grayMenu').style.display = 'none';
+				$('.mob').css('display', 'block');
+				$('#navbar').css('max-height', '700px');
+			} else {
+				document.getElementById('whiteLogo').style.display = 'none';
+				document.getElementById('grayMenu').style.display = 'block';
+				$('.mob').css('display', 'none');
+				$('#navbar').css('max-height', '40px');
+			}
+			$('#hideUl1').click(function() {
+				if ($('#hideUl1 > ul').css('display') == 'none') {
+					$('#hideUl1 > ul').css('display', 'block');
+				} else {
+					$('#hideUl1 > ul').css('display', 'none');
 				}
 			});
-			$('#hideUl1').click(function() {
-		      if($('#hideUl1 > ul').css('display') == 'none') {
-		         $('#hideUl1 > ul').css('display', 'block');
-		      } else {
-		         $('#hideUl1 > ul').css('display', 'none');
-		      }
-		   });
-		   $('#hideUl2').click(function() {
-		      if($('#hideUl2 > ul').css('display') == 'none') {
-		         $('#hideUl2 > ul').css('display', 'block');
-		      } else {
-		         $('#hideUl2 > ul').css('display', 'none');
-		      }
-		   });
+			$('#hideUl2').click(function() {
+				if ($('#hideUl2 > ul').css('display') == 'none') {
+					$('#hideUl2 > ul').css('display', 'block');
+				} else {
+					$('#hideUl2 > ul').css('display', 'none');
+				}
+			});
+			$('#mob_enter').click(function() {
+				if(confirm('숭실대학교 대학원 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+					window.open('http://grad.ssu.ac.kr/web/grad/enter_a', '_blank');
+					
+				} else {
+					return false;
+				}
+			});
+			$('#enter').click(function() {
+				if(confirm('숭실대학교 대학원 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+					window.open('http://grad.ssu.ac.kr/web/grad/enter_a', '_blank');
+				} else {
+					return false;
+				}
+			});
 		});
 	</script>
 	<style type="text/css">
@@ -158,7 +162,7 @@
 				</c:choose>
                <c:choose>
 					<c:when test="${null eq loginSession}">
-						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); return false;">원우수첩</span></li>
+						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); location.href = 'goLogin.do';">원우수첩</span></li>
 					</c:when>
 					<c:otherwise>
 						<form name="goNotebook" id="goNotebook" method="get" style="display: none;">
@@ -183,7 +187,7 @@
                      <li><a href="getNoticeList.do" id="mobBoardNotice" style="color:#fff;">공지사항</a></li>
                   </ul>
                </li>
-               <li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank" style="color:#fff;">입학정보</a></span></li>
+               <li id="mob_enter" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="#" style="color:#fff;">입학정보</a></span></li>
 				<c:if test="${loginSession.studentId eq 'itpm' }">
 	               <li><a id="staff" href="admin/insertStudent.jsp" onclick="javascript:alert('준비중입니다.'); return false;" style="color:#fff;">ADMIN</a></li>
 				</c:if>
@@ -211,7 +215,7 @@
 						<li class="list-group-item" role="presentation"><a href="getNoticeList.do">공지사항</a></li>
 					</ul>
 				</li>
-				<li style="padding-left: 1.5%; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;"  alt="입학정보" src="image/menuimage_admission.png"></a></li>
+				<li id="enter" style="padding-left: 1.5%; width: 25%;"><a href="#" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="입학정보" src="image/menuimage_admission.png"></a></li>
 				<c:choose>
 					<c:when test="${null eq loginSession}">
 						<li style="padding-right: 3%; width: 25%;"><a href="goLogin.do"style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>

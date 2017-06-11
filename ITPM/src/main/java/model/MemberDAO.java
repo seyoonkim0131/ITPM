@@ -134,20 +134,46 @@ public class MemberDAO {
 	}
 	
 	/**
-	 * 기수 입력이 안되어있는 사람(관리자) 전체 원우 조회
+	 * 전체 원우 조회(관리자 제외)
 	 * @return
 	 */
-	public static ArrayList<Member> getAllMemberList() {
+//	public static ArrayList<Member> getAllMemberList() {
+//		SqlSession session = DAOFactory.getSqlSession(false);
+//		ArrayList<Member> allMemberList = new ArrayList<Member>();
+//		try {
+//			allMemberList = (ArrayList)session.selectList("member.getAllMemberList");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			session.close();
+//		}
+//		return allMemberList;
+//	}
+	
+	public static ArrayList<Member> getProfessorList() {
 		SqlSession session = DAOFactory.getSqlSession(false);
-		ArrayList<Member> allMemberList = new ArrayList<Member>();
+		ArrayList<Member> professorList = new ArrayList<Member>();
 		try {
-			allMemberList = (ArrayList)session.selectList("member.getAllMemberList");
+			professorList = (ArrayList)session.selectList("member.getProfessorList");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			session.close();
 		}
-		return allMemberList;
+		return professorList;
+	}
+	
+	public static ArrayList<Member> getStudentList() {
+		SqlSession session = DAOFactory.getSqlSession(false);
+		ArrayList<Member> studentList = new ArrayList<Member>();
+		try {
+			studentList = (ArrayList)session.selectList("member.getStudentList");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return studentList;
 	}
 	
 	/**

@@ -57,7 +57,7 @@
         					success: function(data){
         						if(data.data == 'Y') {
         							if(confirm('초기화된 비밀번호 입니다.\n비밀번호를 변경하세요.') == true) {
-        								document.getElementById('loginForm').action = '../loginReset.do';
+        								document.getElementById('loginForm').action = 'loginReset.do';
         								document.getElementById('loginForm').submit();
         							} else {
 	        							return false;
@@ -66,7 +66,7 @@
 			                		document.getElementById('loginForm').action = 'login.do';
 			                		document.getElementById('loginForm').submit();
         						} else if(data.data == '') {
-        							alert('비밀번호 초기화 후 로그인해주세요.');
+        							alert('비밀번호 초기화 후 로그인해주세요.\n하단의 비밀번호 재설정 버튼을 눌러주세요.');
         						}
         					}
         				});
@@ -81,7 +81,7 @@
                 	
                 	if(!$('#studentId').val()== '') {
         				$.ajax({
-        					url:"../checkId.do",
+        					url:"checkId.do",
         					method: "GET",
         					contentType: "application/json",
         					data: "studentId="+document.getElementById("studentId").value,
@@ -93,14 +93,14 @@
         							return false;
         						} else if(data.data == '1') {
 			        				$.ajax({
-			        					url:"../updatePw.do",
+			        					url:"updatePw.do",
 			        					method: "GET",
 			        					contentType: "application/json",
 			        					data: "studentId="+document.getElementById("studentId").value,
 			        					dataType: "json",
 			        					success: function(data){
 			        						if(data.message == 'success') {
-			        							alert('비밀번호가 학번으로 초기화되었습니다.\n비밀번호 변경해주세요.');
+			        							alert('비밀번호가 학번으로 초기화되었습니다.\n비밀번호를 변경해주세요.');
 			        						}
 			        					}
 			        				});

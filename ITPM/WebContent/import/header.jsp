@@ -69,36 +69,22 @@
 						$('#hideUl2 > ul').css('display', 'none');
 					}
 				});
-				$('#mobNotebook').click(function() {
-					if(document.location.href.indexOf('.do') != -1) {
-						document.getElementById('goNotebook').action = 'getAllMemberList.do';
-						document.getElementById('goNotebook').submit();
-					} else if(document.location.href.split('ITPM/')[1] == 'index.jsp') { 
-						document.getElementById('goNotebook').action = 'getAllMemberList.do';
-						document.getElementById('goNotebook').submit();
-					} else if(document.location.href.indexOf('.do') == -1) {
-						document.getElementById('goNotebook').action = '../getAllMemberList.do';
-						document.getElementById('goNotebook').submit();
+				$('#mob_enter').click(function() {
+					if(confirm('숭실대학교 대학원 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+						window.open('http://grad.ssu.ac.kr/web/grad/enter_a', '_blank');
+					} else {
+						return false;
+					}
+				});
+				$('#enter').click(function() {
+					if(confirm('숭실대학교 대학원 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+						window.open('http://grad.ssu.ac.kr/web/grad/enter_a', '_blank');
+					} else {
+						return false;
 					}
 				});
 				if(document.location.href.indexOf('.do') != -1) {
 					document.getElementById('staff').href = 'admin/insertStudent.jsp';
-					if(document.getElementById('notebook')) {
-						document.getElementById('goNoteBook').action = 'getAllMemberList.do';
-						document.getElementById('notebook').href = 'javascript:document.getElementById("goNoteBook").submit();';
-					}
-				} else {
-					if(document.getElementById('mypage')) {
-						document.getElementById('mypageForm').action = '../goMyInfo.do';
-					}
-					document.getElementById('logoutForm').action = '../logout.do';
-				}
-				if(document.location.href.split('ITPM/')[1] == 'index.jsp' || document.location.href.split('ITPM/')[1] == '') {
-					document.getElementById('mobAboutProf').href = 'about/prof.jsp';
-					document.getElementById('space').style.display = 'none';
-					document.getElementById('headMenu').style.display = 'none';
-					document.getElementById('staff').href = 'admin/insertStudent.jsp';
-					document.getElementById('logoutForm').action = 'logout.do';
 				}
 				if(document.location.href.split('ITPM/')[1] == 'logout.do') {
 					document.getElementById('space').style.display = 'none';
@@ -160,7 +146,7 @@
 								<li><a href="getNoticeList.do" id="mobBoardNotice" style="color:#fff;">공지사항</a></li>
 							</ul>
 						</li>
-						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank" style="color:#fff;">입학정보</a></span></li>
+						<li id="mob_enter" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="#" style="color:#fff;">입학정보</a></span></li>
 						<c:if test="${loginSession.studentId eq 'itpm'}">
 							<li><a id="staff" href="../admin/insertStudent.jsp" onclick="javascript:alert('준비중입니다.'); return false;" style="color:#fff;">ADMIN</a></li>
 						</c:if>
@@ -194,13 +180,13 @@
 									<li class="list-group-item" role="presentation"><a href="getNoticeList.do" id="boardNotice">공지사항</a></li>
 								</ul>
 							</li>
-							<li style="padding-left: 1.5; width: 25%;"><a href="http://grad.ssu.ac.kr/web/grad/enter_a" target="_blank" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="입학정보" src="image/menuimage_admission.png"></a></li>
+							<li id="enter" style="padding-left: 1.5; width: 25%;"><a href="#" style="padding:19px 15px 11px 15px;"><img style="display:inherit; margin:0 auto;" alt="입학정보" src="image/menuimage_admission.png"></a></li>
 							<c:choose>
 								<c:when test="${null eq loginSession}">
 									<li style="padding-right: 3%; width: 25%;"><a href="goLogin.do" id="goLogin" style="color:#fff;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>
 								</c:when>
 								<c:otherwise>
-									<form name="goNotebook" id="goNoteBook" method="get" action="../getAllMemberList.do" style="display: none;">
+									<form name="goNotebook" id="goNoteBook" method="get" action="getAllMemberList.do" style="display: none;">
 										<input type="hidden" id="studentId" name="studentId" value="${loginSession.studentId}">
 									</form>
 									<li style="padding-right: 3%; width: 25%;"><a href="javascript:document.getElementById('goNoteBook').submit();" id="notebook" style="color:#fff;"><img style="display:inherit; margin:0 auto;" alt="원우수첩" src="image/menuimage_notebook.png"></a></li>

@@ -25,6 +25,8 @@
 		      });
 			
 			$(document).ready(function() {
+				//window.location.reload();
+				console.log(window.localStorage);
 				if (getWidth() >= '767') {
 		              document.getElementById('side_menu').style.display = 'block';
 		              $('.content-div').css('padding-left', '250px');
@@ -50,6 +52,14 @@
 					alert('준비중입니다.');
 					return false;
 				});
+				if(window.localStorage) {
+					if(!localStorage.getItem('firstLoad')) {
+						localStorage['firstLoad'] = true;
+						window.location.reload();
+					} else {
+						localStorage.removeItem('firstLoad');
+					}
+				}
 			});
 		</script>
 		<style type="text/css">
@@ -95,7 +105,7 @@
 	            <select id="group" style="float: right;">
 	            	<option value="">전체</option>
 	            	<c:forEach items="${requestScope.groupList}" var="result" varStatus="status">
-            			<option value="${result.sGroup}" ${result.sGroup == requestScope.curGroup ? 'selected' : '' }><c:out value="${result.sGroup}"></c:out></option>
+            			<option value="${result.sGroup}" ${requestScope.curGroup == result.sGroup ? 'selected' : '' }><c:out value="${result.sGroup}"></c:out></option>
 	            	</c:forEach>
 				</select><br/><br/>
                 <table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
@@ -116,7 +126,7 @@
                             		</c:otherwise>
                             	</c:choose>
                             </td>
-                            <td style="text-align:center">기수</td>
+                            <td style="text-align:center">구분</td>
                             <td style="text-align:left"><c:out value="${result.sGroup}" /></td>
                         </tr>
                         <tr align="left">
@@ -124,7 +134,7 @@
                             <td style="text-align:left"><c:out value="${result.name}" /></td>
                         </tr>
                         <tr align="left">
-                            <td style="text-align:center">회사명</td>
+                            <td style="text-align:center">소속</td>
                             <td style="text-align:left">${result.job}</td>
                         </tr>
                         <tr align="left">

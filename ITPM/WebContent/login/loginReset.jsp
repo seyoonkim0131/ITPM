@@ -41,6 +41,26 @@
                 });
                 $('#submit').click(function () {
                 	if(confirm('변경하시겠습니까?') == true) {
+                		if($('#pw').val() == "") {
+                			alert('비밀번호를 입력해주세요.');
+                			$('#pw').focus();
+                			return false;
+                		}
+                		if($('#pw').val().length < 4) {
+                			alert('비밀번호는 4자리 이상으로 입력해주세요.');
+                			$('#pw').focus();
+                			return false;
+                		}
+                		if($('#checkPw').val() == "") {
+                			alert('비밀번호를 입력해주세요.');
+                			$('#checkPw').focus();
+                			return false;
+                		}
+                		if($('#checkPw') != $('#pw')) {
+                			alert('비밀번호가 일치하지 않습니다.');
+                			$('#checkPw').focus();
+                			return false;
+                		}
                 		document.getElementById('loginResetForm').submit();
                 	} else {
                 		return false;
@@ -72,8 +92,10 @@
                         <small><a href="welcome.do">홈</a> > 비밀번호 재설정</small>
                     </span>
                 </p>
-                <div>
+               </div>
+                <div class="content-board">
                 	<form action="updateNewPw.do" id="loginResetForm" name="loginResetForm" method="post">
+					<span>※비밀번호는 4자리 이상 입력해주세요.</span>
 		                <table class="bbs-list" style="width: 100%; border-spacing: 0; margin-top: 5%; margin-bottom: 5%;"> 
 		                    <tbody>
 		                        <tr>
@@ -86,11 +108,11 @@
 		                        </tr>
 		                        <tr>
 		                            <td style="white-space: nowrap; text-align: center;">새 비밀번호</td>
-		                            <td><input type="text" class="form-control" name="pw" id="pw" style="width: 100%;" tabindex="1" value=""/></td>
+		                            <td><input type="password" class="form-control" name="pw" id="pw" style="width: 100%;" tabindex="1" value=""/></td>
 		                        </tr>
 		                        <tr>
 		                            <td style="white-space: nowrap; text-align: center;">비밀번호 확인</td>
-		                            <td><input type="text" class="form-control" name="checkPw" id="checkpw" tabindex="2"style="width: 100%;" value=""/></td>
+		                            <td><input type="password" class="form-control" name="checkPw" id="checkpw" tabindex="2"style="width: 100%;" value=""/></td>
 		                        </tr>
 		                    </tbody>
 		                </table>
@@ -102,10 +124,10 @@
 							<input type="button" id="cancel" value="취소" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 						</li>
 					</ul>
+				</div>
 				</div><br>
                 </div>
-            </div>
-        </div>
+           
         <div style="width: 80%">&nbsp;</div>
         <c:import url="../import/footer.jsp"/>
     </body>

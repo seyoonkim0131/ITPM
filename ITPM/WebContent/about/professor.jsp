@@ -104,16 +104,16 @@
 					</colgroup>
 					<c:forEach items="${requestScope.allProfList}" var="result">
 						<tr align="center">
-							<td rowspan="5" width="180px" height="230px">
+							<td rowspan="5">
 								<c:choose>
 									<c:when test="${result.photo eq '' || result.photo eq null}">
 										<img class="prof-img prof_img" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
 									</c:when>
 									<c:otherwise>
-										<img class="prof-img prof_img" border="1" width="180px" height="230px" src="image/prof/${result.photo}" style="vertical-align: middle;">
+										<img class="prof-img prof_img" border="1" width="120px" height="90px" src="image/prof/${result.photo}" style="vertical-align: middle;">
 									</c:otherwise>
 								</c:choose></td>
-							<td style="text-align: center;">성명(영문)</td>
+							<td style="text-align: center;">성명</td>
 							<td style="text-align: left;">
 								<c:choose>
 									<c:when test="${loginSession.studentId eq 'itpm'}">
@@ -121,6 +121,14 @@
 									</c:when>
 									<c:otherwise>
 										<c:out value="${result.nameKor}" />(<c:out value="${result.nameEng}" />)
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+									<c:when test="${result.no eq '001'}">
+										, 주임교수
+									</c:when>
+									<c:otherwise>
+										&nbsp;
 									</c:otherwise>
 								</c:choose>
 							</td>

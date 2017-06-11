@@ -32,6 +32,27 @@
 					$('.content-div').css('padding-left', '10px');
 					$('.content-div').css('padding-right', '10px');
 				}
+	            $('#sideSchoolRule').click(function() {
+					if(confirm('숭실대학교 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+						window.open('http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23', '_blank');
+					} else {
+						return false;
+					}
+				});
+	            $('#sideSchoolRuleD').click(function() {
+					if(confirm('숭실대학교 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+						window.open('http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25', '_blank');
+					} else {
+						return false;
+					}
+				});
+	            $('#sideSchoolPaper').click(function() {
+					if(confirm('숭실대학교 대학원 홈페이지로 이동합니다. \n계속하시겠습니까?') == true) {
+						window.open('http://grad.ssu.ac.kr/web/grad/paper_f', '_blank');
+					} else {
+						return false;
+					}
+				});
 				$('#update').click(function (){
 					$('#goUpdate').submit();
 				});
@@ -67,10 +88,10 @@
 				<li class="inactive" onclick="submenu()">
 					<a href="#">규정</a>
 					<ul id="hide">
-						<li class="inactive"><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=23" target="_blank">학칙</a></li>
-						<li class="inactive"><a href="http://rule.ssu.ac.kr/lmxsrv/law/lawFullView.srv?SEQ=25" target="_blank">시행세칙</a></li>
-						<li class="inactive"><a href="getRuleList.do">학과내규</a></li>
-						<li class="inactive"><a href="http://grad.ssu.ac.kr/web/grad/paper_f" target="_blank">논문심사기준</a></li>
+                      <li id="sideSchoolRule" class="inactive"><a href="#">학칙</a></li>
+                      <li id="sideSchoolRuleD" class="inactive"><a href="#">시행세칙</a></li>
+                      <li class="inactive"><a href="getRuleList.do">학과내규</a></li>
+                      <li id="sideSchoolPaper" class="inactive"><a href="#">논문심사기준</a></li>
 					</ul>
 				</li>
 				<li class="inactive"><a href="getAllScheduleList.do">학사일정</a></li>
@@ -99,11 +120,11 @@
 								<tr><th colspan="2" class="title">${requestScope.noticeDetail.title}</th></tr>
 								<tr>
 									<th>작성자</th>
-									<td>${requestScope.noticeDetail.createId}</td>
+									<td>${requestScope.noticeDetail.updateId}</td>
 								</tr>
 								<tr>
 									<th>작성일</th>
-									<td>${requestScope.noticeDetail.createDate}</td>
+									<td>${requestScope.noticeDetail.updateDate}</td>
 								</tr>
 								<tr>
 									<th>조회수</th>
@@ -138,7 +159,7 @@
 					<tr>
 						<td colspan="2">
 							<input type="button" value="목록" onclick="javascript:location.href='getNoticeList.do'" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
-							<c:if test="${null ne loginSession}">
+							<c:if test="${loginSession.studentId eq 'itpm'}">
 								<input type="button" id="update" value="수정" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 								<input type="button" id="delete" value="삭제" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 							</c:if>

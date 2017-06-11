@@ -32,7 +32,7 @@
 			   NO,
 			   TITLE,
 			   B.NAME AS CREATE_ID,
-			   DATE_FORMAT(CREATE_DATE,'%Y.%m.%d') AS CREATE_DATE,
+			   DATE_FORMAT(UPDATE_DATE,'%Y.%m.%d') AS UPDATE_DATE,
 			   VIEW
 		  FROM NOTICE A, MEMBER B
 		 WHERE 1=1
@@ -48,7 +48,7 @@
 			   B.NAME AS CREATE_ID,
 			   DATE_FORMAT(CREATE_DATE,'%Y-%m-%d %T') AS CREATE_DATE,
 			   CREATE_DATE,
-			   UPDATE_ID,
+			   B.NAME AS UPDATE_ID,
 			   UPDATE_DATE,
 			   VIEW,
 			   FILE1,
