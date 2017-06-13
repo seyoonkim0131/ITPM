@@ -71,6 +71,14 @@ public class Member {
 		this.sGroup = sGroup;
 	}
 
+	public Member(String studentId, String name, String phoneNumber, String sGroup) {
+		super();
+		this.studentId = studentId;
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.sGroup = sGroup;
+	}
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}

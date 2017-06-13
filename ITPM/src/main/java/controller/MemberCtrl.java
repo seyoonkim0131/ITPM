@@ -1,7 +1,10 @@
 package controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,11 +16,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.MemberDAO;
 import model.domain.Member;
+import util.ExcelRead;
+import util.ExcelReadOption;
 
 /**
  * 회원정보를 관리하는 Controller
@@ -286,4 +292,91 @@ public class MemberCtrl {
 		}
 		return mv;
 	}
+	
+	/*ADMIN을 위한 로직*/
+	/**
+	 * 신입생 등록 페이지로 이동한다.
+	 * @return
+	 */
+	@RequestMapping(value = "goInsertStudent.do", method = RequestMethod.GET)
+	public ModelAndView goInsertPage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/studentInsert");
+		return mv;
+	}
+	
+	/**
+	 * 업로드한 엑셀파일로 신입생을 등록한다.
+	 * @param request
+	 * @return ModelAndView
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "insertStudentExcel.do", method = RequestMethod.POST)
+	public ModelAndView insertStudentExcel(MultipartHttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		MultipartFile excelFile = request.getFile("excelFile");
+		if(excelFile == null || excelFile.isEmpty()) {
+			throw new RuntimeException("엑셀파일을 선택해주세요.");
+		}
+		//File destFile = new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + excelFile.getOriginalFilename()); //로컬
+		File destFile = new File(System.getProperty("user.dir") + "/webapps/ITPM/attach/" + excelFile.getOriginalFilename()); //운영
+		try {
+			excelFile.transferTo(destFile);
+		} catch (IllegalStateException | IOException e) {
+			throw new RuntimeException(e.getMessage(), e);
+		}
+		ExcelReadOption excelReadOption = new ExcelReadOption();
+		excelReadOption.setFilePath(destFile.getAbsolutePath());
+		excelReadOption.setOutputColumns("A", "B", "C", "D");
+		excelReadOption.setStartRow(2);
+		List<Map<String, String>> excelContent = ExcelRead.read(excelReadOption);
+		for(Map<String, String> article: excelContent) {
+			MemberDAO.insertMember(new Member(article.get("A"), article.get("B"), article.get("C"), article.get("D")));
+		}
+		destFile.delete();
+		mv.setViewName("admin/studentInsert");
+		return mv;
+	}
+	
+	/**
+	 * 원우 삭제 페이지로 이동한다.
+	 * @return
+	 */
+	@RequestMapping(value = "goDeleteStudent.do", method = RequestMethod.GET)
+	public ModelAndView goDeletePage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/studentDelete");
+		return mv;
+	}
+	
+	/**
+	 * 학번으로 member 검색
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "getMemberById.do", method = RequestMethod.GET, produces={"application/json"})
+	public ModelAndView getMemberById(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView();
+		Member member = null;
+		try {
+			String studentId = request.getParameter("studentId");
+			member = MemberDAO.getMyInfo(studentId);
+			JSONObject jObject = new JSONObject();
+			jObject.put("studentId", member.getStudentId());
+			jObject.put("sGroup", member.getsGroup());
+			jObject.put("name", member.getName());
+			jObject.put("job", member.getJob());
+			jObject.put("jobPosition", member.getJobPosition());
+			jObject.put("phoneNumber", member.getPhoneNumber());
+			jObject.put("mailId", member.getMailId());
+			jObject.put("mailDomain", member.getMailDomain());
+			System.out.println(jObject);
+			response.getWriter().write(jObject.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+
 }

@@ -97,7 +97,7 @@
 									</c:otherwise>
 								</c:choose>
 							</td>
-							<td style="text-align:center">기수</td>
+							<td style="text-align:center">구분</td>
 							<td style="text-align:left"><c:out value="${requestScope.myInfo.sGroup}"/><input type="hidden" id="group" name="group" value="<c:out value='${requestScope.myInfo.sGroup}'/>"/></td>
 						</tr>
 						<tr align="left">
@@ -105,7 +105,7 @@
 							<td style="text-align:left"><c:out value="${requestScope.myInfo.name}"/></td>
 						</tr>
 						<tr align="left">
-							<td style="text-align:center">회사명</td>
+							<td style="text-align:center">소속</td>
 							<td style="text-align:left"><input type="text" class="form-control" id="job" name="job" value="${requestScope.myInfo.job}"/></td>
 						</tr>
 						<tr align="left">

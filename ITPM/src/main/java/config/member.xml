@@ -93,55 +93,7 @@
 		 ORDER BY ABS(S_GROUP), NAME
 	
 	</select>
-	
-	
-	<!-- 전체 리스트 조회 -->
-<!-- 	<select id="getAllMemberList" resultMap="memberMap">
-	        SELECT PHONE_NUMBER,
-			   NAME,
-			   STUDENT_ID,
-			   MAIL_ID,
-			   MAIL_DOMAIN,
-			   JOB,
-			   S_GROUP,
-			   JOB_POSITION,
-			   JOB_PHONE,
-			   PHOTO, 1 as tmp
-		  FROM MEMBER
-		 WHERE STUDENT_ID != 'itpm'
-           AND S_GROUP = '교수진'
-         UNION
-         SELECT PHONE_NUMBER,
-			   NAME,
-			   STUDENT_ID,
-			   MAIL_ID,
-			   MAIL_DOMAIN,
-			   JOB,
-			   S_GROUP,
-			   JOB_POSITION,
-			   JOB_PHONE,
-			   PHOTO, 2 as tmp
-		  FROM MEMBER
-		 WHERE STUDENT_ID != 'itpm'
-           AND S_GROUP != '교수진'
-         ORDER BY tmp asc,
-CASE WHEN tmp = 1 THEN STUDENT_ID ELSE 0 END , 
-CASE WHEN tmp = 2 THEN abs(S_GROUP), NAME ELSE 0 END 
-		SELECT PHONE_NUMBER,
-			   NAME,
-			   STUDENT_ID,
-			   MAIL_ID,
-			   MAIL_DOMAIN,
-			   JOB,
-			   S_GROUP,
-			   JOB_POSITION,
-			   JOB_PHONE,
-			   PHOTO
-		  FROM MEMBER
-		 WHERE STUDENT_ID != 'itpm'
-		 ORDER BY ABS(S_GROUP), NAME
-	</select> -->
-	
+
 	<!-- 기수별 원우 리스트 조회 -->
 	<select id="getGroupMemberList" parameterType="String" resultMap="memberMap">
 		SELECT PHONE_NUMBER,
@@ -204,26 +156,24 @@ CASE WHEN tmp = 2 THEN abs(S_GROUP), NAME ELSE 0 END
 		 WHERE STUDENT_ID = #{studentId}
 	</update>
 	
-	
-	<!-- <insert id="insertMember" parameterType="member">
+	<!-- 신입생 등록 -->
+	<insert id="insertMember" parameterType="member">
 		INSERT INTO MEMBER(STUDENT_ID,
 						   PW,
 						   NAME,
 						   PHONE_NUMBER,
-						   MAIL_ID,
-						   MAIL_DOMAIN,
-						   JOB,
-						   AUTH,
 						   S_GROUP)
 					VALUES(#{studentId},
-						   #{studentId},비밀번호를 학번으로 초기화한다.
+						   #{studentId},
 						   #{name},
 						   #{phoneNumber},
-						   #{mailId},
-						   #{mailDomain},
-						   #{job},
-						   #{auth},
 						   #{sGroup})
-	</insert> -->
+	</insert>
+	
+	<!-- 삭제 -->
+	<delete id="deleteMember" parameterType="String">
+		DELETE FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</delete>
 
 </mapper>

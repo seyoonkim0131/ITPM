@@ -189,7 +189,7 @@
                </li>
                <li id="mob_enter" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="font-size: 13px;"><a href="#" style="color:#fff;">입학정보</a></span></li>
 				<c:if test="${loginSession.studentId eq 'itpm' }">
-	               <li><a id="staff" href="admin/insertStudent.jsp" onclick="javascript:alert('준비중입니다.'); return false;" style="color:#fff;">ADMIN</a></li>
+	               <li><a id="staff" href="goInsertStudent.do" style="color:#fff;">ADMIN</a></li>
 				</c:if>
            	</ul>
 		</div>

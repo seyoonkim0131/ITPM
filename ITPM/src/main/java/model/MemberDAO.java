@@ -15,22 +15,40 @@ import util.DAOFactory;
  */
 public class MemberDAO {
 
-//	public static boolean insertMember(Member member) {
-//		
-//		SqlSession session = DAOFactory.getSqlSession(true);
-//		boolean result = false;
-//		
-//		try {
-//			if (session.insert("member.insertMember", member) > 0) {
-//				result = true;
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			session.close();
-//		}
-//		return result;
-//	}
+	/**
+	 * 신입생 추가
+	 * @param member
+	 * @return
+	 */
+	public static boolean insertMember(Member member) {
+		SqlSession session = DAOFactory.getSqlSession(true);
+		boolean result = false;
+		try {
+			if (session.insert("member.insertMember", member) > 0) {
+				result = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return result;
+	}
+	
+	/**
+	 * 원우 삭제
+	 * @param studentId
+	 */
+	public static void deleteMember(int studentId) {
+		SqlSession session = DAOFactory.getSqlSession(true);
+		try {
+			session.delete("member.deleteMember", studentId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
 	
 	/**
 	 * 비밀번호 재설정이 필요한지 체크
