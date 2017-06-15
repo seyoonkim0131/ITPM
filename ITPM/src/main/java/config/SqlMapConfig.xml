@@ -16,7 +16,8 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://13.124.113.184:3306/itpm?characterEncoding=UTF-8"/>
+				<!-- <property name="url" value="jdbc:mysql://13.124.113.184:3306/itpm?characterEncoding=UTF-8"/> 개발 -->
+				<property name="url" value="jdbc:mysql://52.78.105.73:3306/itpm?characterEncoding=UTF-8"/><!-- 운영 -->
 				<property name="username" value="itpm" />
 				<property name="password" value="itpm1234" />
 				<property name="poolPingQuery" value="select 1"/>
