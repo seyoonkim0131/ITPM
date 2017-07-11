@@ -9,7 +9,7 @@
 <%
     request.setCharacterEncoding("UTF-8");
     // 파일 업로드된 경로
-    String savePath = "/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach";
+    String savePath = "/home/ubuntu/public_html/ITPM/attach";
     //String savePath = System.getProperty("user.home")+"/webapps/ITPM/attach"; //운영
     //String savePath = System.getProperty("user.dir")+"/webapps/ITPM/attach"; //운영
     //String savePath = System.getProperty("user.home")+"/git/ITPM/ITPM/WebContent/attach"; //개발

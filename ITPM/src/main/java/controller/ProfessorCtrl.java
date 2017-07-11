@@ -94,7 +94,7 @@ public class ProfessorCtrl {
 				try {
 					if(!fileName.equals("")) {
 						//photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/prof/" + fileName)); //로컬
-						photoFile.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/image/prof/" + fileName)); //운영
+						photoFile.transferTo(new File("/home/ubuntu/public_html/ITPM/image/prof/" + fileName)); //운영
 					} else {
 						fileName = request.getParameter("photo");
 					}

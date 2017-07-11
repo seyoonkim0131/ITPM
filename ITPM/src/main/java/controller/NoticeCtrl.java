@@ -111,7 +111,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_1.equals("")) {
 						//file_1.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_1));// 로컬용
-						file_1.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_1)); //운영용
+						file_1.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_1)); //운영용
 					} else {
 						fileName_1 = request.getParameter("file1");
 					}
@@ -125,7 +125,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_2.equals("")) {
 						//file_2.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_2));// 로컬용
-						file_2.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_2)); //운영용
+						file_2.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_2)); //운영용
 					} else {
 						fileName_2 = request.getParameter("file2");
 					}
@@ -139,7 +139,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_3.equals("")) {
 						//file_3.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_3));// 로컬용
-						file_3.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_3)); //운영용
+						file_3.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_3)); //운영용
 					} else {
 						fileName_3 = request.getParameter("file3");
 					}
@@ -198,7 +198,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_1.equals("")) {
 						//file_1.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_1));// 로컬용
-						file_1.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_1)); //운영용
+						file_1.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_1)); //운영용
 					} else {
 						fileName_1 = request.getParameter("file1");
 						reqNotice.setFile1(fileName_1);
@@ -213,7 +213,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_2.equals("")) {
 						//file_2.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_2));// 로컬용
-						file_2.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_2)); //운영용
+						file_2.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_2)); //운영용
 					} else {
 						fileName_2 = request.getParameter("file2");
 						reqNotice.setFile2(fileName_2);
@@ -228,7 +228,7 @@ public class NoticeCtrl {
 				try {
 					if(!fileName_3.equals("")) {
 						//file_3.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName_3));// 로컬용
-						file_3.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName_3)); //운영용
+						file_3.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName_3)); //운영용
 					} else {
 						fileName_3 = request.getParameter("file3");
 						reqNotice.setFile3(fileName_3);

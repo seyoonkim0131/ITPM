@@ -152,7 +152,7 @@ public class RuleCtrl {
 				try {
 					if(!fileName.equals("")) {
 						//file.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName));// 로컬용
-						file.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName)); //운영용
+						file.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName)); //운영용
 					} else {
 						fileName = request.getParameter("file1");
 						reqRule.setFile1(fileName);
@@ -197,7 +197,7 @@ public class RuleCtrl {
 				try {
 					if(!fileName.equals("")) {
 						//file.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + fileName));// 로컬용
-						file.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + fileName)); //운영용
+						file.transferTo(new File("/home/ubuntu/public_html/ITPM/attach/" + fileName)); //운영용
 					} else {
 						fileName = request.getParameter("file1");
 					}

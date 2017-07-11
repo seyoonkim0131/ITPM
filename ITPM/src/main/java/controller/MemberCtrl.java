@@ -262,7 +262,7 @@ public class MemberCtrl {
 				try {
 					if(!fileName.equals("")) {
 						//photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/member/" + fileName)); //로컬
-						photoFile.transferTo(new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/image/member/" + fileName)); //운영
+						photoFile.transferTo(new File("/home/ubuntu/public_html/ITPM/image/member" + fileName)); //운영
 					} else {
 						fileName = request.getParameter("photo");
 					}
@@ -319,7 +319,7 @@ public class MemberCtrl {
 			throw new RuntimeException("엑셀파일을 선택해주세요.");
 		}
 		//File destFile = new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/attach/" + excelFile.getOriginalFilename()); //로컬
-		File destFile = new File("/usr/local/apache-tomcat-8.5.15/webapps/ITPM/attach/" + excelFile.getOriginalFilename()); //운영
+		File destFile = new File("/home/ubuntu/public_html/ITPM/attach/" + excelFile.getOriginalFilename()); //운영
 		try {
 			excelFile.transferTo(destFile);
 		} catch (IllegalStateException | IOException e) {
