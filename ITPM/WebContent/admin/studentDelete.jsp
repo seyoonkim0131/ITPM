@@ -150,7 +150,7 @@
 						<col width="50%">
 					</colgroup>
 					<tr align="center">
-						<td rowspan="6" style="padding-top: 3px;"><div id="photo"></div><img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;"></td>
+						<td rowspan="6" style="padding-top: 3px; border-bottom: solid 2px #a1a4a8;"><div id="photo"></div><img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;"></td>
 						<td style="text-align: center">구분</td>
 						<td style="text-align: left"><div id="sGroup"></div></td>
 					</tr>
