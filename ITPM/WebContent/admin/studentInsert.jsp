@@ -85,7 +85,7 @@
 			<div class="small-title">
 				<p>
 					<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">신입생 등록</span>
-					<span class="small-title-left"><small><a href="welcome.do">홈</a> > 관리자 메뉴 > 신입생 등록</small></span>
+					<span class="small-title-left"><!-- <small><a href="welcome.do">홈</a> > 관리자 메뉴 > 신입생 등록</small> --></span>
 				</p>
 			</div>
 			<div class="content-board">

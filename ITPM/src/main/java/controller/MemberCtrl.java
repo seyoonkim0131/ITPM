@@ -356,8 +356,7 @@ public class MemberCtrl {
 	 * @return
 	 */
 	@RequestMapping(value = "getMemberById.do", method = RequestMethod.GET, produces={"application/json"})
-	public ModelAndView getMemberById(HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView();
+	public void getMemberById(HttpServletRequest request, HttpServletResponse response) {
 		Member member = null;
 		try {
 			String studentId = request.getParameter("studentId");
@@ -371,12 +370,34 @@ public class MemberCtrl {
 			jObject.put("phoneNumber", member.getPhoneNumber());
 			jObject.put("mailId", member.getMailId());
 			jObject.put("mailDomain", member.getMailDomain());
-			System.out.println(jObject);
+			jObject.put("photo", member.getPhoto());
+			response.setContentType("text/html;charset=UTF-8");
 			response.getWriter().write(jObject.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return mv;
+	}
+	
+	/**
+	 * 원우를 삭제한다.
+	 * @param request
+	 * @param response
+	 */
+	@RequestMapping(value = "deleteMember.do", method = RequestMethod.GET, produces={"application/json"})
+	public void deleteMember(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			JSONObject jObject = new JSONObject();
+			boolean result = MemberDAO.deleteMember(Integer.parseInt(request.getParameter("deleteId")));
+			response.setContentType("text/html;charset=UTF-8");
+			if(result == true) {
+				jObject.put("message", "삭제되었습니다.");
+			} else {
+				jObject.put("message", "삭제를 실패하였습니다.");
+			}
+			response.getWriter().write(jObject.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

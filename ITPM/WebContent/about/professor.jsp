@@ -104,7 +104,7 @@
 					</colgroup>
 					<c:forEach items="${requestScope.allProfList}" var="result">
 						<tr align="center">
-							<td rowspan="5">
+							<td rowspan="5" style="border-bottom: solid 2px black;">
 								<c:choose>
 									<c:when test="${result.photo eq '' || result.photo eq null}">
 										<img class="prof-img prof_img" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
@@ -146,8 +146,8 @@
 							<td style="text-align: left;"><c:out value="${result.email}" /></td>
 						</tr>
 						<tr style="border-bottom: solid 2px #a1a4a8;">
-							<td style="text-align: center;">연구분야</td>
-							<td style="text-align: left;"><c:out value="${result.about}" /></td>
+							<td style="text-align: center; border-bottom: solid 2px black;">연구분야</td>
+							<td style="text-align: left; border-bottom: solid 2px black;"><c:out value="${result.about}" /></td>
 						</tr>
 					</c:forEach>
 				</table>

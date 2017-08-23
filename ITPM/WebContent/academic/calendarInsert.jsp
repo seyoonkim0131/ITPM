@@ -57,7 +57,7 @@
 					$('#goList').submit();
 				});
 				$('#insert').click(function () {
-					if (confirm("등록하시겠습니까?") ==true ){
+					if (confirm("등록하시겠습니까?") == true ){
                     	$('#insertform').submit();
 					} else {
                     	return false;

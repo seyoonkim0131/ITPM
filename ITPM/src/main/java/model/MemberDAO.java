@@ -39,15 +39,20 @@ public class MemberDAO {
 	 * 원우 삭제
 	 * @param studentId
 	 */
-	public static void deleteMember(int studentId) {
+	public static boolean deleteMember(int studentId) {
 		SqlSession session = DAOFactory.getSqlSession(true);
+		boolean result = false;
+		System.out.println(studentId);
 		try {
-			session.delete("member.deleteMember", studentId);
+			if(session.delete("member.deleteMember", studentId) > 0) {
+				result = true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			session.close();
 		}
+		return result;
 	}
 	
 	/**

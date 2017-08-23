@@ -2,18 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
-<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." />
-<link rel="Shortcut Icon" href="image/favicon.ico" />
-<title>원우 삭제 | IT정책경영학과</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/itpm.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
+		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공." />
+		<link rel="Shortcut Icon" href="image/favicon.ico" />
+		<title>원우 삭제 | IT정책경영학과</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/itpm.css" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
 			function getWidth() {
 				if (self.innerWidth) {
 					return self.innerWidth;
@@ -60,7 +60,6 @@
 						$('#searchId').focus();
 						return false;
 					}
-					//$('#excelUploadForm').submit();
 					$.ajax({
 						url: "getMemberById.do",
 						method: "GET",
@@ -68,16 +67,48 @@
 						data: "studentId="+document.getElementById("searchId").value,
 						dataType: "json",
 						success: function(data) {
-							alert(data);
-							//var html = '';
-							//html += '<input type="text" id="deleteId" name="deleteId" value="'+data.studentId+'"/>';
-							//$('#test').after(html);
-							
+							var sGroup = '';
+							sGroup += '<input type="hidden" id="deleteId" name="deleteId" value="'+data.studentId+'"/>';
+							sGroup += data.sGroup;
+							$('#sGroup').after(sGroup);
+							$('#name').after(data.name);
+							$('#job').after(data.job);
+							$('#jobPosition').after(data.jobPosition);
+							$('#phoneNumber').after(data.phoneNumber);
+							var email = '';
+							if(data.mailId == '' || data.mailId == null) {
+								email += '&nbsp;-';
+							} else {
+								email += data.mailId+'@'+data.mailDomain;
+							}
+							$('#email').after(email);
+							var photo = '';
+							if(data.photo == '' || data.photo == null) {
+								photo += '<img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">';
+							} else {
+								photo += '<img class="memberImg" border="1" height="120px" width="90px" src="image/member/'+data.photo+'" style="vertical-align: middle;">';
+							}							
 						},
-						error: function() {
-							alert("실패");
+						error: function(data) {
+							alert('확인되지않는 학번입니다.');
 						}
 					});
+				});
+				$('#delete').click(function() {
+					if(confirm('삭제하시겠습니까?') == true) {
+						$.ajax({
+							url: "deleteMember.do",
+							method: "GET",
+							contentType: "application/json",
+							data: "deleteId="+document.getElementById("deleteId").value,
+							dataType: "json",
+							success: function(data) {
+								alert(data.message);
+							}
+						});
+					} else {
+						return false;
+					}
 				});
 			});
 		</script>
@@ -97,7 +128,7 @@
 		<div class="small-title">
 			<p>
 				<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우 삭제</span>
-				<span class="small-title-left"><small><a href="welcome.do">홈</a> > 관리자 메뉴 > 원우 삭제</small></span>
+				<span class="small-title-left"><!-- <small><a href="welcome.do">홈</a> > 관리자 메뉴 > 원우 삭제</small> --></span>
 			</p>
 		</div>
 		<div class="content-board">
@@ -111,54 +142,45 @@
 					</tr>
 				</table>
 			</form>
-			<div id="test"></div>
-			<table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
-				<colgroup>
-					<col width="30%">
-					<col width="20%">
-					<col width="50%">
-				</colgroup>
-				<tr align="center">
-					<td rowspan="6" style="padding-top: 3px;">
-						<c:choose>
-							<c:when test="${result.photo eq '' || result.photo eq null}">
-								<img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">
-							</c:when>
-							<c:otherwise>
-								<img class="memberImg" border="1" height="120px" width="90px" src="image/member/${result.photo}" style="vertical-align: middle;">
-							</c:otherwise>
-						</c:choose></td>
-					<td style="text-align: center">구분</td>
-					<td style="text-align: left"><c:out value="${result.sGroup}" /></td>
-				</tr>
-				<tr align="left">
-					<td style="text-align: center">이름</td>
-					<td style="text-align: left"><c:out value="${result.name}" /></td>
-				</tr>
-				<tr align="left">
-					<td style="text-align: center">소속</td>
-					<td style="text-align: left">${result.job}</td>
-				</tr>
-				<tr align="left">
-					<td style="text-align: center">직급</td>
-					<td style="text-align: left">${result.jobPosition}</td>
-				</tr>
-				<tr align="left">
-					<td style="text-align: center">핸드폰</td>
-					<td style="text-align: left;">${result.phoneNumber}</td>
-				</tr>
-				<tr align="left" style="border-bottom: solid 2px #a1a4a8;">
-					<td style="text-align: center; letter-spacing: -1px;">E-mail</td>
-					<td style="text-align: left; letter-spacing: -1px;"><c:choose>
-							<c:when test="${result.mailId eq null || result.mailId == ''}">
-                           			&nbsp;-
-                           		</c:when>
-							<c:otherwise>
-		                            ${result.mailId}@${result.mailDomain}
-                           		</c:otherwise>
-						</c:choose></td>
-				</tr>
-			</table>
+			<form id="deleteForm" name="deleteForm" action="deleteMember.do" method="get">
+				<table class="bbs-list" style="width: 100%; border-top: solid 2px #b31b1b; border-spacing: 0; font-size: 15px;">
+					<colgroup>
+						<col width="30%">
+						<col width="20%">
+						<col width="50%">
+					</colgroup>
+					<tr align="center">
+						<td rowspan="6" style="padding-top: 3px;"><div id="photo"></div><img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;"></td>
+						<td style="text-align: center">구분</td>
+						<td style="text-align: left"><div id="sGroup"></div></td>
+					</tr>
+					<tr align="left">
+						<td style="text-align: center">이름</td>
+						<td style="text-align: left"><div id="name"></div></td>
+					</tr>
+					<tr align="left">
+						<td style="text-align: center">소속</td>
+						<td style="text-align: left"><div id="job"></div></td>
+					</tr>
+					<tr align="left">
+						<td style="text-align: center">직급</td>
+						<td style="text-align: left"><div id="jobPosition"></div></td>
+					</tr>
+					<tr align="left">
+						<td style="text-align: center">핸드폰</td>
+						<td style="text-align: left;"><div id="phoneNumber"></div></td>
+					</tr>
+					<tr align="left" style="border-bottom: solid 2px #a1a4a8;">
+						<td style="text-align: center; letter-spacing: -1px;">E-mail</td>
+						<td style="text-align: left; letter-spacing: -1px;"><div id="email"></div></td>
+					</tr>
+					<tr>
+						<td colspan="3" style="border-bottom: solid 2px #fff;">
+							<input type="button" id="delete" value="삭제" class="pull-right" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"/>                                
+						</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 	<div>&nbsp;</div>
