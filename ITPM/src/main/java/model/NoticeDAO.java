@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import model.domain.Notice;
 import util.DAOFactory;
+import util.PagingUtil;
 
 /**
  * 회원정보 CRUD
@@ -28,11 +29,11 @@ public class NoticeDAO {
 		return totalCnt;
 	}
 	
-	public static ArrayList<Notice> getNoticeList() {
+	public static ArrayList<Notice> getNoticeList(PagingUtil param) {
 		SqlSession session = DAOFactory.getSqlSession(false);
 		ArrayList<Notice> noticeList = new ArrayList<Notice>();
 		try {
-			noticeList = (ArrayList)session.selectList("notice.getNoticeList");
+			noticeList = (ArrayList)session.selectList("notice.getNoticeList", param);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

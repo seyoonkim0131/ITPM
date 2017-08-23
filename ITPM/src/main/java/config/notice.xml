@@ -27,7 +27,7 @@
 	</select>
 		
 	<!-- 공지사항 조회 -->
-	<select id="getNoticeList" resultMap="noticeMap">
+	<select id="getNoticeList" resultMap="noticeMap" parameterType="util.PagingUtil">
 		SELECT POINT,
 			   NO,
 			   TITLE,
@@ -39,6 +39,7 @@
 	 	   AND A.CREATE_ID = B.STUDENT_ID
 	 	   AND A.UPDATE_ID = B.STUDENT_ID
 		 ORDER BY POINT DESC, NO DESC
+		 LIMIT ${rowStart - 1}, 10
 	</select>
 	
 	<!-- 공지사항 내용페이지 조회 -->
@@ -100,6 +101,7 @@
 		DELETE FROM NOTICE
 		 WHERE NO = #{no}
 	</delete>
+	
 	<!--조회수-->
 	<update id="updateView" parameterType="notice">
 		UPDATE NOTICE SET VIEW = VIEW + 1 WHERE NO = #{no}
@@ -115,8 +117,9 @@
 	]]>
 	</select>
 	
+	<!-- 전체 글 갯수 -->
 	<select id="getTotalCnt" resultType="Integer">
-		SELECT COUNT(NO) FROM NOTCIE
+		SELECT COUNT(NO) FROM NOTICE
 	</select>
 	
 </mapper>

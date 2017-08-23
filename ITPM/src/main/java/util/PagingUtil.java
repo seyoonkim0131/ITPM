@@ -1,111 +1,107 @@
 package util;
 
-import java.util.Map;
-
 public class PagingUtil {
+
+	private Integer displayRowCount = 10;
+	private Integer rowStart;
+	private Integer rowEnd;
+	private Integer totPage;
+	private Integer totRow = 0;
+	private Integer page;
+	private Integer pageStart;
+	private Integer pageEnd;
 	
-	private static final int countPerPage = 10;
-	private static final int unitPage = 10;
-	
-	/* 페이지 정보 셋팅 */
-	public static Map setPageInfo(Map reqParam, int defaultCountPerPage) {
-		int pageNo = Integer.parseInt(reqParam.get("pageNo").toString());
-		int countPerPage = Integer.parseInt(reqParam.get("countPerPage").toString());
-		//countPerPage = countPerPage < 100 ? countPerPage : 100; //최대 100개로 제한 ..?
-		int first = ((pageNo - 1) * countPerPage) + 1, last = first + countPerPage - 1;
-		reqParam.put("countPerPage", countPerPage);
-		reqParam.put("first", first);
-		reqParam.put("last", last);
-		System.out.println("setPageInfo ::: " + reqParam);
-		return reqParam;
+	/**
+	 * 전체 데이터 개수를 이용하여 페이지수 계산.
+	 */
+	public void pageCalculate(Integer total) {
+		getPage();
+		totRow = total;
+		totPage = (int)(total / displayRowCount);
+		
+		if(total % displayRowCount > 0) {
+			totPage++;
+		}
+		
+		pageStart = (page - (page - 1) % 10);
+		pageEnd = pageStart + 9;
+		if(pageEnd > totPage) {
+			pageEnd = totPage;
+		}
+		
+		rowStart = ((page - 1) * displayRowCount) + 1;
+		rowEnd = rowStart + displayRowCount - 1;
 	}
 	
-	public static Map getPageObject(int totalCount, int currentPageNo) {
-		return getPageObject(totalCount, currentPageNo, 10);
+	/**
+	 * 현재 페이지 번호.
+	 */
+	public Integer getPage() {
+		if(page == null || page == 0) {
+			page = 1;
+		}
+		return page;
 	}
 	
-	public static Map getPageObject(int totalCount, int currentPageNo, int countPerPage) {
-		return getPageObject(totalCount, currentPageNo, countPerPage, 10);
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getRowStart() {
+		return rowStart;
 	}
 	
-	public static Map getPageObject(int totalCount, int currentPageNo, int countPerPage, int unitPage) {
-		int currPage = currentPageNo;
-		int unitCount = 100;
-		boolean isFirst = false;
-		if(totalCount == 0) {
-			countPerPage = unitCount;
-		} else if (totalCount < countPerPage) {
-			countPerPage = totalCount / unitCount * unitCount;
-			if(totalCount % unitCount > 0) {
-				countPerPage += unitPage;
-			}
-		}
-		int totalPage = getMaxNum(totalCount, countPerPage);
-		if(totalPage < currPage) {
-			currPage = totalPage;
-		}
-		int currStartCount;
-		int currEndCount;
-		if(currPage != 1) {
-			currEndCount = currPage * countPerPage;
-			currStartCount = currEndCount - countPerPage;
-		} else {
-			currEndCount = countPerPage;
-			currStartCount = 0;
-		}
-		if(currEndCount > totalCount) {
-			currEndCount = totalCount;
-		}
-		int currStartPage;
-		int currEndPage;
-		if(totalPage <= unitPage) {
-			currEndPage = totalPage;
-			currStartPage = 1;
-		} else {
-			currEndPage = (currPage - 1) / unitPage * unitPage + unitPage;
-			currStartPage = currEndPage - unitPage + 1;
-		}
-		if(currEndPage > totalPage) {
-			currEndPage = totalPage;
-		}
-		int prePage;
-		boolean prePageIs;
-		if(currStartPage != 1) {
-			prePageIs = true;
-			prePage = currStartPage - 1;
-		} else {
-			prePageIs = false;
-			prePage = 0;
-		}
-		int nextPage;
-		boolean nextPageIs;
-		if(currEndPage != totalPage) {
-			nextPageIs = true;
-			nextPage = currEndPage + 1;
-		} else {
-			nextPageIs = false;
-			nextPage = 0;
-		}
-		Map tempJSON = new java.util.HashMap();
-		try {
-			tempJSON.put("currPage", Integer.valueOf(currPage));
-			tempJSON.put("unitPage", Integer.valueOf(unitPage));
-			tempJSON.put("prePage", Integer.valueOf(prePage));
-			tempJSON.put("prePage_is", Boolean.valueOf(prePageIs));
-			tempJSON.put("nextPage", Integer.valueOf(nextPage));
-			tempJSON.put("nextPage_is", Boolean.valueOf(nextPageIs));
-			tempJSON.put("currStartPage", Integer.valueOf(currStartPage));
-			tempJSON.put("currEndPage", Integer.valueOf(currEndPage));
-			tempJSON.put("totalCount", Integer.valueOf(totalCount));
-			tempJSON.put("totalPage", Integer.valueOf(totalPage));
-		} catch (Exception localException) {
-		}
-		return tempJSON;
+	public void setRowStart(Integer rowStart) {
+		this.rowStart = rowStart;
 	}
-	private static int getMaxNum(int allPage, int listNum) {
-		if(allPage % listNum == 0) {
-			return allPage / listNum;
-		}
-		return allPage / listNum + 1;
+	
+	public Integer getRowEnd() {
+		return rowEnd;
 	}
+	
+	public void setRowEnd(Integer rowEnd) {
+		this.rowEnd = rowEnd;
+	}
+	
+	public Integer getDisplayRowCount() {
+		return displayRowCount;
+	}
+
+	public void setDisplayRowCount(Integer displayRowCount) {
+		this.displayRowCount = displayRowCount;
+	}
+
+	public Integer getTotPage() {
+		return totPage;
+	}
+
+	public void setTotPage(Integer totPage) {
+		this.totPage = totPage;
+	}
+
+	public Integer getTotRow() {
+		return totRow;
+	}
+
+	public void setTotRow(Integer totRow) {
+		this.totRow = totRow;
+	}
+
+	public Integer getPageStart() {
+		return pageStart;
+	}
+
+	public void setPageStart(Integer pageStart) {
+		this.pageStart = pageStart;
+	}
+
+	public Integer getPageEnd() {
+		return pageEnd;
+	}
+
+	public void setPageEnd(Integer pageEnd) {
+		this.pageEnd = pageEnd;
+	}
+	
+	
 }

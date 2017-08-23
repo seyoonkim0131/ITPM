@@ -133,8 +133,29 @@
 				</c:when>
 				<c:otherwise>&nbsp;</c:otherwise>
 			</c:choose>
+			<div>&nbsp;</div>
+			<div class="pagination-centered">
+				<c:if test="${pagingUtil.totPage > 1}">
+					<div class="pagination">
+						<c:forEach var="i" begin="${pagingUtil.pageStart}" end="${pagingUtil.pageEnd}" step="1">
+							<c:url var="pageLink" value="getNoticeList.do">
+								<c:param name="page" value="${i}" />
+							</c:url>
+							<c:choose>
+								<c:when test="${i eq pagingUtil.page}">
+									<a href="${pageLink}" class="active"><c:out value="${i}" /></a>
+								</c:when>
+								<c:otherwise>
+									<a href="${pageLink}"><c:out value="${i}" /></a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</div>
+				</c:if>
+			</div>
 			<!-- <div class="pagination-centered">
 			<div class="pagination">
+			<a class="laquo" href="getNoticeList.do?page=${i-1}">&laquo;</a>
 			<a class="laquo" href="#">&laquo;</a>
 			<a class="active" href="#">1</a>
 			<a href="#">2</a>
@@ -142,6 +163,7 @@
 			<a href="#">4</a>
 			<a href="#">5</a>
 			<a class="raquo" href="#">&raquo;</a>
+			<a class="raquo" href="getNoticeList.do?page=${i+1}">&raquo;</a>
 			</div>
 			</div> -->
 			</div>

@@ -116,7 +116,7 @@
                     </colgroup>
                     <c:forEach items="${requestScope.allMemberList}" var="result">
                         <tr align="center">
-                            <td rowspan="6" style="padding-top: 3px;">
+                            <td rowspan="6" style="padding-top: 3px; border-bottom: solid 2px #a1a4a8;">
                             	<c:choose>
                             		<c:when test="${result.photo eq '' || result.photo eq null}">
 		                            	<img class="memberImg" border="1" height="120px" width="90px" src="image/nophoto.png" style="vertical-align: middle;">

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,23 +32,18 @@ public class NoticeCtrl {
 	 * @return ModelAndView
 	 */
 	@RequestMapping(value="getNoticeList.do", method=RequestMethod.GET)
-	public ModelAndView getNoticeList(HttpServletRequest request) {
+	public ModelAndView getNoticeList(PagingUtil pagingUtil, ModelMap modelMap) throws Exception {
+		int total = NoticeDAO.getTotalCnt();
+		pagingUtil.pageCalculate(total);
 		ArrayList<Notice> noticeList = new ArrayList<Notice>();
 		ModelAndView mv = new ModelAndView();
 		try {
-			//int totalCnt = NoticeDAO.getTotalCnt();
-			noticeList = NoticeDAO.getNoticeList();  //groupList =>DAO 에서 리턴값
-			
-//			int searchNo = 10;
-//			int searchCntPerPage = 10;
-//			int searchUnitPage = 10;
-//			
-//			if(totalCnt > 0) {
-//				PagingUtil.setPageInfo(reqParam, defaultCountPerPage)
-//			}
+			noticeList = NoticeDAO.getNoticeList(pagingUtil);
 		} catch (Exception e) {
 			mv.setViewName("fail");
 		}
+		modelMap.addAttribute("noticeList", noticeList);
+		modelMap.addAttribute("pagingUtil", pagingUtil);
 		mv.addObject("noticeList", noticeList);
 		mv.setViewName("board/notice");
 		return mv;
@@ -91,7 +87,7 @@ public class NoticeCtrl {
 	 * @return ModelAndView
 	 */
 	@RequestMapping(value="insertNotice.do", method=RequestMethod.POST)
-	public ModelAndView insertNotice(HttpServletRequest request, @ModelAttribute Notice notice) {
+	public ModelAndView insertNotice(HttpServletRequest request, @ModelAttribute Notice notice, PagingUtil pagingUtil, ModelMap modelMap) {
 		ModelAndView mv = new ModelAndView();
 		ArrayList<Notice> noticeList = new ArrayList<Notice>();
 		MultipartRequest multipartRequest = (MultipartRequest)request;
@@ -148,10 +144,14 @@ public class NoticeCtrl {
 				}
 			}
 			NoticeDAO.insertNotice(notice);  //select는 return값 담지만, insert update delete는 리턴값 필요X
-			noticeList = NoticeDAO.getNoticeList();
+			int total = NoticeDAO.getTotalCnt();
+			pagingUtil.pageCalculate(total);
+			noticeList = NoticeDAO.getNoticeList(pagingUtil);
 		} catch (Exception e) {
 			mv.setViewName("fail");
 		}
+		modelMap.addAttribute("noticeList", noticeList);
+		modelMap.addAttribute("pagingUtil", pagingUtil);
 		mv.addObject("noticeList",noticeList);
 		mv.setViewName("board/notice");
 		return mv;
@@ -254,15 +254,19 @@ public class NoticeCtrl {
 	 * @return ModelAndView
 	 */
 	@RequestMapping(value="deleteNotice.do", method=RequestMethod.GET)
-	public ModelAndView deleteNotice(HttpServletRequest request) {
+	public ModelAndView deleteNotice(HttpServletRequest request, PagingUtil pagingUtil, ModelMap modelMap) {
 		ArrayList<Notice> noticeList = new ArrayList<Notice>();
 		ModelAndView mv = new ModelAndView();
 		try {
 			NoticeDAO.deleteNotice(Integer.parseInt(request.getParameter("no")));
-			noticeList = NoticeDAO.getNoticeList();  //groupList =>DAO 에서 리턴값
+			int total = NoticeDAO.getTotalCnt();
+			pagingUtil.pageCalculate(total);
+			noticeList = NoticeDAO.getNoticeList(pagingUtil);
 		} catch (Exception e) {
 			mv.setViewName("fail");
 		}
+		modelMap.addAttribute("noticeList", noticeList);
+		modelMap.addAttribute("pagingUtil", pagingUtil);
 		mv.addObject("noticeList", noticeList);
 		mv.setViewName("board/notice");
 		return mv;

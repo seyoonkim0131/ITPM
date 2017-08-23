@@ -22,7 +22,6 @@ public class Notice {
 	
 	public Notice() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Notice(int no, String title, String body, int view, String point, MultipartFile file_1, MultipartFile file_2, MultipartFile file_3, String file1, String file2, String file3,
