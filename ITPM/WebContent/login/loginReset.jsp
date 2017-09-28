@@ -34,7 +34,7 @@
                 }
                 $('#cancel').click(function () { 
                 	if(confirm('취소하시겠습니까?') == true) {
-                		window.location = 'login/login.jsp'
+                		window.history.back();
                 	} else {
                 		return false;
                 	}
@@ -82,19 +82,20 @@
         <c:import url="../import/header.jsp"/>
         <div class="container" id="side_menu">
             <div style="height: 14px; width:100%; padding: 0 0 0 0; background-color: #b31b1b;"></div>
-            <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">로그인</div>
+            <div style="font-size: 15pt; padding-top:10%; padding-bottom:10%; padding-left: 15px;font-weight: 900;">비밀번호 수정</div>
         </div>
         <div class="content-div">
             <div class="small-title" style="margin: 80px 0 0 0;">
                 <p>
-                    <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">비밀번호 재설정</span>
+                    <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">비밀번호 수정</span>
                     <span style="float:right;">
-                        <small><a href="welcome.do">홈</a> > 비밀번호 재설정</small>
+                        <small><a href="welcome.do">홈</a> > 비밀번호 수정</small>
                     </span>
                 </p>
                </div>
                 <div class="content-board">
                 	<form action="updateNewPw.do" id="loginResetForm" name="loginResetForm" method="post">
+                	<br><br><br>
 					<span>※비밀번호는 4자리 이상 입력해주세요.</span>
 		                <table class="bbs-list" style="width: 100%; border-spacing: 0; margin-top: 5%; margin-bottom: 5%;"> 
 		                    <tbody>

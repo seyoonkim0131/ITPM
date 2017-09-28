@@ -25,8 +25,6 @@
 		      });
 			
 			$(document).ready(function() {
-				//window.location.reload();
-				console.log(window.localStorage);
 				if (getWidth() >= '767') {
 		              document.getElementById('side_menu').style.display = 'block';
 		              $('.content-div').css('padding-left', '250px');
@@ -47,10 +45,6 @@
 					} else {
 						return false;
 					}
-				});
-				$('#photo').click(function() {
-					alert('준비중입니다.');
-					return false;
 				});
 				if(window.localStorage) {
 					if(!localStorage.getItem('firstLoad')) {

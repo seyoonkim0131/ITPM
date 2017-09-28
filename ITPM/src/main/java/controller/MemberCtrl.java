@@ -92,7 +92,7 @@ public class MemberCtrl {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value="loginReset.do", method=RequestMethod.POST)
+	@RequestMapping(value="loginReset.do", method=RequestMethod.GET)
 	public ModelAndView loginReset(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		Member myInfo = new Member();

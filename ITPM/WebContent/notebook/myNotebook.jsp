@@ -33,6 +33,10 @@
 					$('.content-div').css('padding-left', '10px');
 					$('.content-div').css('padding-right', '10px');
 				}
+				$('#goChangePw').click(function() {
+					$('#cancelForm').attr('action', 'loginReset.do');
+					$('#cancelForm').submit();
+				});
 				$('#update').click(function() {
 					if(confirm('나의 정보를 수정하시겠습니까?') == true) {
 						$('#updateForm').submit();
@@ -42,6 +46,7 @@
 				});
 				$('#cancel').click(function() {
 					if(confirm('취소하시겠습니까?') == true) {
+						$('#cancelForm').attr('action', 'getAllMemberList.do');
 						$('#cancelForm').submit();
 					} else {
 						return false;
@@ -74,7 +79,7 @@
 				</p>
 			</div>
 			<div class="content-board">
-				<form id="cancelForm" name="cancelForm" action="getAllMemberList.do" method="get" style="display: none;">
+				<form id="cancelForm" name="cancelForm" action="" method="get" style="display: none;">
 					 <input type="text" id="studentId" name="studentId" value="${loginSession.studentId}" />
 				</form>
 				<form id="updateForm" name="updateForm" method="post" action="updateMyInfo.do" enctype="multipart/form-data">
@@ -134,6 +139,7 @@
 					<div class="button-list">
 						<ul class="right" style="border-color: #fff; border-style: solid;">
 							<li>
+								<input type="button" id="goChangePw" value="비밀번호 변경" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 								<input type="button" id="update" value="저장" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 								<input type="button" id="cancel" value="취소" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
 							</li>

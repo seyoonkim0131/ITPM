@@ -104,7 +104,8 @@
 		@media only screen and (min-width: 377px) and (max-width: 767px) { 
 			#line{display:block;}
 			#main_logo{display: none;}
-	 		#text{margin-top: 300px;}
+	 		/*#text{margin-top: 300px;}*/
+	 		#text{display: none;}
 			#main_content{padding-top: 550px; text-align:center;}
 			#main_img{display: none;}
 			#main_img1{display: block;}
@@ -165,10 +166,10 @@
 						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); location.href = 'goLogin.do';">원우수첩</span></li>
 					</c:when>
 					<c:otherwise>
-						<form name="goNotebook" id="goNotebook" method="get" style="display: none;">
+						<form name="goNotebook" id="goNotebook" action="getAllMemberList.do" method="get" style="display: none;">
 							<input type="hidden" id="studentId" name="studentId" value="${loginSession.studentId}">
 						</form>
-						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;">원우수첩</span></li>
+						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;" onclick="javascript:document.getElementById('goNoteBook').submit();">원우수첩</span></li>
 					</c:otherwise>
                </c:choose>
                <li id="hideUl1" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="color:#fff; font-size: 13px;">대학원소개</span><span class="caret" style="color: #fff;"></span>
@@ -237,7 +238,7 @@
 		<img id="main_img3" src="image/1920img.png" style="z-index:5; position:absolute; margin-top:0px; width:100%; height:550px;"/>		
 	</div>
 	<a href="#" style="position:absolute; float:left; z-index:6; margin-top:90px; margin-left:6%; left:0;"><img id="main_logo" class="main-logo" style="width:120%;" src="image/main_logo.png"/></a>
-	<div id="text" class="text" style="margin-left:5%; margin-top:350px;">
+	<div id="text" class="text" style="margin-left:5%; margin-top:380px;">
 		<p style="letter-spacing:1pt; font-size:20pt; margin-top:0%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;<strong>IT정책경영학과</strong></p>
 		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:3%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Graduate School of IT Policy and Management</p>
 	</div>

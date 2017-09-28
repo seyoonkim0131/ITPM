@@ -121,10 +121,10 @@
 								<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobGoLogin" style="color:#fff; font-size: 13px; cursor:pointer;" onclick="javascript:alert('로그인 후 이용하세요.'); return false;">원우수첩</span></li>
 							</c:when>
 							<c:otherwise>
-								<form name="goNotebook" id="goNotebook" method="get" style="display: none;">
-									<input type="hidden" id="studentId" name="studentId" value="${loginSession.studentId}">
-								</form>
-								<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;">원우수첩</span></li>
+								<form name="goNotebook" id="goNotebook" action="getAllMemberList.do" method="get" style="display: none;">
+							<input type="hidden" id="studentId" name="studentId" value="${loginSession.studentId}">
+						</form>
+						<li class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span id="mobNotebook" style="color:#fff; cursor:pointer; font-size: 13px;" onclick="javascript:document.getElementById('goNoteBook').submit();">원우수첩</span></li>
 							</c:otherwise>
 						</c:choose>
 						<li id="hideUl1" class="mob" style="display: none; padding: 10px 15px 10px 15px;"><span style="color:#fff; font-size: 13px;">대학원소개</span><span class="caret" style="color: #fff;"></span>

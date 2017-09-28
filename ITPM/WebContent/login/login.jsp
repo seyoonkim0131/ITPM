@@ -104,7 +104,7 @@
 			        					dataType: "json",
 			        					success: function(data){
 			        						if(data.message == 'success') {
-			        							alert('비밀번호가 학번으로 초기화되었습니다.\n비밀번호를 변경해주세요.');
+			        							alert('비밀번호가 초기화되었습니다.');
 			        						}
 			        					}
 			        				});
