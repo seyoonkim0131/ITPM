@@ -106,6 +106,11 @@ public class MemberCtrl {
 		return mv;
 	}
 	
+	/**
+	 * 비밀번호를 변경한다.
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="updateNewPw.do", method=RequestMethod.POST)
 	public ModelAndView updateNewPw(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
@@ -114,7 +119,7 @@ public class MemberCtrl {
 		} catch (Exception e) {
 			mv.setViewName("fail");
 		}
-		mv.setViewName("index");
+		mv.setViewName("login/login");
 		return mv;
 	}
 	
@@ -128,13 +133,20 @@ public class MemberCtrl {
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response){
 		Member loginUser = null;
 		Member myInfo = null;
+		int check = 0;
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
 		ArrayList<Member> professorList = new ArrayList<Member>();
 		ArrayList<Member> studentList = new ArrayList<Member>();
 		ModelAndView mv = new ModelAndView();
 		try {
-			loginUser = MemberDAO.login(new Member(request.getParameter("pw"), request.getParameter("studentId")));
+			check = MemberDAO.checkPw(request.getParameter("studentId"));
+			if(check == 0) {
+				MemberDAO.updatePw(request.getParameter("studentId"));
+				loginUser = MemberDAO.login(new Member(request.getParameter("studentId"), request.getParameter("studentId")));
+			} else {
+				loginUser = MemberDAO.login(new Member(request.getParameter("pw"), request.getParameter("studentId")));
+			}
 			groupList = MemberDAO.getGroupList();
 			HttpSession session = request.getSession();
 			session.setAttribute("loginSession", loginUser);
@@ -176,7 +188,7 @@ public class MemberCtrl {
 		HttpSession session = request.getSession();
 		ModelAndView mv = new ModelAndView();
 		session.invalidate();
-		mv.setViewName("index");
+		mv.setViewName("welcome");
 		return mv;
 	}
 	

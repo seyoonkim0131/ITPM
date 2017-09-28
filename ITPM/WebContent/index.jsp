@@ -239,8 +239,7 @@
 	<a href="#" style="position:absolute; float:left; z-index:6; margin-top:90px; margin-left:6%; left:0;"><img id="main_logo" class="main-logo" style="width:120%;" src="image/main_logo.png"/></a>
 	<div id="text" class="text" style="margin-left:5%; margin-top:350px;">
 		<p style="letter-spacing:1pt; font-size:20pt; margin-top:0%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;<strong>IT정책경영학과</strong></p>
-		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:3%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Graduate School of</p>
-		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:1%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Information Technology Policy and Management</p>
+		<p style="letter-spacing:0.5pt; font-size:17pt; margin-top:3%; margin-bottom:0%; font-style: bold;">&nbsp;&nbsp;&nbsp;Graduate School of IT Policy and Management</p>
 	</div>
 	<div id="main_content" class="main-content" style="z-index:4; margin-bottom:250px; width:100%; height:auto;">
 		<div id="main_notice" class="col-sm-4" style="background-color:white; padding-top:50px;">

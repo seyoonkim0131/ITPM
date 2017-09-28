@@ -56,7 +56,7 @@
                 			$('#checkPw').focus();
                 			return false;
                 		}
-                		if($('#checkPw') != $('#pw')) {
+                		if($('#checkPw').val() != $('#pw').val()) {
                 			alert('비밀번호가 일치하지 않습니다.');
                 			$('#checkPw').focus();
                 			return false;
@@ -112,7 +112,7 @@
 		                        </tr>
 		                        <tr>
 		                            <td style="white-space: nowrap; text-align: center;">비밀번호 확인</td>
-		                            <td><input type="password" class="form-control" name="checkPw" id="checkpw" tabindex="2"style="width: 100%;" value=""/></td>
+		                            <td><input type="password" class="form-control" name="checkPw" id="checkPw" tabindex="2" style="width: 100%;" value=""/></td>
 		                        </tr>
 		                    </tbody>
 		                </table>

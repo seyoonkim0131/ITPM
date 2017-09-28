@@ -32,6 +32,9 @@
                 $('.content-div').css('padding-left', '10px');
                 $('.content-div').css('padding-right', '10px');
             }
+            $('#back').click(function () {
+            	window.history.back();
+            });
         });
 		</script>
 		
@@ -47,12 +50,18 @@
 			<div class="small-title">
 				<p>
 					<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">로그인 실패</span>
-					<span class="small-title-right"><small><a href="welcome.do">홈</a> > 로그인실패</small></span>
 				</p>
 			</div>
 			<div class="content-board">
 				<img align="left" height="60px" src="image/fail_image.png" width="69px"><br/>
-				<strong>로그인에 실패했습니다.</strong><br>아이디와 비밀번호를 확인해주세요.
+				<strong>로그인에 실패했습니다.</strong><br>아이디와 비밀번호를 확인해주세요.<br>
+				<input type="button" id="back" value="뒤로가기" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
+			</div>
+			<div class="button-list">
+				<!-- <ul class="left">
+					<li> -->
+					<!-- </li>
+				</ul> -->
 			</div>
 		</div>
 		<c:import url="import/footer.jsp" />

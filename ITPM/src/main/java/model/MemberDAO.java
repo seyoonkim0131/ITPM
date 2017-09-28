@@ -91,6 +91,19 @@ public class MemberDAO {
 		return chk;
 	}
 	
+	public static int checkPw(String studentId) {
+		SqlSession session = DAOFactory.getSqlSession(true);
+		int chk = 0;
+		try {
+			chk = session.selectOne("member.checkPw", studentId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return chk;
+	}
+	
 	/**
 	 * 비밀번호를 학번으로 초기화한다.
 	 * @param studentId

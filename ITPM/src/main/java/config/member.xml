@@ -49,11 +49,17 @@
 		   AND PW = SHA(#{pw})
 	</select>
 	
+	<select id="checkPw" resultType="Integer" parameterType="String">
+		SELECT LENGTH(PW) AS CHK
+		  FROM MEMBER
+		 WHERE STUDENT_ID = #{studentId}
+	</select>
+	
 	<!-- 비밀번호 강제설정 -->
 	<update id="updatePw" parameterType="String">
 		UPDATE MEMBER
 		   SET PW = SHA(#{studentId}),
-		   	   NEW_PW = 'Y'
+		   	   NEW_PW = 'N'
 		 WHERE STUDENT_ID = #{studentId}
 	</update>
 	

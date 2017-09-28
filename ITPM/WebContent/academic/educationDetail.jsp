@@ -94,7 +94,7 @@
 				<p>
 					<span><img alt="menu main title bar" src="image/menu_main_titlebar.png">개설과정</span>
 					<span class="small-title-right">
-						<small><a href="welcome.do">홈</a> > 학사정보 > 개설과정</small>
+						<small>홈 > 학사정보 > 개설과정</small>
 					</span>
 				</p>
 			</div>
@@ -121,10 +121,10 @@
 							<tr>
 								<td colspan="2">
 									<c:choose>
-										<c:when test="${null ne loginSession}">	                          
+										<c:when test="${'itpm' eq loginSession.studentId}">	                          
 											<input type="button" value="수정" id="update" class="pull-right" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"/>
-											<input type="button" value="목록" class="pull-right" onclick="javascript:location.href='getAllEduList.do'" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"/>
 											<input type="button" id="delete" value="삭제" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;">
+											<input type="button" value="목록" class="pull-right" onclick="javascript:location.href='getAllEduList.do'" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"/>
 										</c:when>
 										<c:otherwise>
 											<input type="button" value="목록" class="pull-right" onclick="javascript:location.href='getAllEduList.do'" style="display: inline-block; float: right; height: 31px; padding: 0 20px; border: 1px solid #b31b1b; background: #b31b1b; line-height: 31px; font-weight: 400; font-size: 14px; color: #fff; text-align: center; white-space: nowrap;  margin-top: 10px; margin-right: 20px;"/>

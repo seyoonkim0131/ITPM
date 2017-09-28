@@ -47,7 +47,7 @@
                 		$('#pw').focus();
                 		return false;
                 	}
-                	if($('#studentId').val() != '' && $('#pw').val() != '') {
+                	/* if($('#studentId').val() != '' && $('#pw').val() != '') {
         				$.ajax({
         					url:"checkPw.do",
         					method: "GET",
@@ -70,6 +70,10 @@
         						}
         					}
         				});
+                	} */
+                	if($('#studentId').val() != '' && $('#pw').val() != '') {
+                		document.getElementById('loginForm').action = 'login.do';
+                		document.getElementById('loginForm').submit();
                 	}
                 });
                 $('#updatePw').click(function() {
