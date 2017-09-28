@@ -49,6 +49,7 @@
 				if(window.localStorage) {
 					if(!localStorage.getItem('firstLoad')) {
 						localStorage['firstLoad'] = true;
+						window.opener.location.href = window.opener.document.URL;
 						window.location.reload();
 					} else {
 						localStorage.removeItem('firstLoad');

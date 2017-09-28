@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes" />
 		<meta name="description" content="대학원소개, 학과소개, 입학안내, 학사일정 등 제공."/>
@@ -134,9 +135,10 @@
 									<th>첨부파일</th>
 									<td>
 										<ul class="file_list">
-											<li><a href="javascript:document.getElementById('downForm1').submit();" target="_blank">${requestScope.noticeDetail.file1}</a></li>
-											<li><a href="javascript:document.getElementById('downForm2').submit();" target="_blank">${requestScope.noticeDetail.file2}</a></li>
-											<li><a href="javascript:document.getElementById('downForm3').submit();" target="_blank">${requestScope.noticeDetail.file3}</a></li>
+											<%-- <li><a href="javascript:document.getElementById('downForm1').submit();" target="_blank">${requestScope.noticeDetail.file1}</a></li> --%>
+											<li><a href="../attach/${requestScope.noticeDetail.file1}" target="_blank">${requestScope.noticeDetail.file1}</a></li>
+											<li><a href="../attach/${requestScope.noticeDetail.file2}" target="_blank">${requestScope.noticeDetail.file2}</a></li>
+											<li><a href="../attach/${requestScope.noticeDetail.file3}" target="_blank">${requestScope.noticeDetail.file3}</a></li>
 										</ul>
 									</td>
 								</tr>

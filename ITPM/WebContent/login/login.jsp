@@ -78,7 +78,7 @@
                 });
                 $('#updatePw').click(function() {
                 	if($('#studentId').val() == '') {
-						alert("학번을 입력해주세요.");
+						alert("아이디를 입력해주세요.");
 						$('#studentId').focus();
 						return false;
 					}

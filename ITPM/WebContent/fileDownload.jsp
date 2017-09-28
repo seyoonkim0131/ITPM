@@ -4,7 +4,6 @@
 <%@ page import="java.lang.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.net.*" %>
-<%@ page import="org.apache.log4j.*" %>
 
 <%
     request.setCharacterEncoding("UTF-8");
@@ -13,8 +12,6 @@
     //String savePath = System.getProperty("user.home")+"/webapps/ITPM/attach"; //운영
     //String savePath = System.getProperty("user.dir")+"/webapps/ITPM/attach"; //운영
     //String savePath = System.getProperty("user.home")+"/git/ITPM/ITPM/WebContent/attach"; //개발
-    Logger.getLogger("경로안내: "+savePath);
-    //System.out.println("경로 안내: "+savePath);
     // 서버에 실제 저장된 파일명
     String filename = String.valueOf(request.getAttribute("fileName"));//${requestScope.fileName};
     // 실제 내보낼 파일명
