@@ -132,7 +132,8 @@
 		                           <th>첨부파일</th>
 		                           <td>
 		                              <ul class="file_list">
-		                                 <li><a href="javascript:document.getElementById('downForm').submit();" target="_blank">${requestScope.detail.file1}</a></li>
+		                                 <li><a href="../attach/${requestScope.detail.file1}" target="_blank">${requestScope.detail.file1}</a></li>
+		                                 <%-- <li><a href="javascript:document.getElementById('downForm').submit();" target="_blank">${requestScope.detail.file1}</a></li> --%>
 		                              </ul>
 		                           </td>
 		                        </tr>

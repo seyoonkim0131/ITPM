@@ -38,8 +38,10 @@
         response.setHeader("Content-Description", "JSP Generated Data");
         if(!skip){
             // IE
-            if(client.indexOf("MSIE") != -1){
-                response.setHeader ("Content-Disposition", "attachment; filename="+new String(orgfilename.getBytes("KSC5601"),"ISO8859_1"));
+            if(client.indexOf("MSIE") > -1|| client.indexOf("Trident") > -1){
+            	orgfilename = URLEncoder.encode(orgfilename, "utf-8").replaceAll("\\+", "%20");
+            	System.out.println("test+ " + orgfilename);
+                response.setHeader("Content-Disposition", "attachment; filename="+new String(orgfilename.getBytes("KSC5601"),"ISO8859_1"));
             }else{
                 // 한글 파일명 처리
                 orgfilename = new String(orgfilename.getBytes("utf-8"),"iso-8859-1");
