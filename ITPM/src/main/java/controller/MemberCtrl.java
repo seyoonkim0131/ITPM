@@ -274,7 +274,7 @@ public class MemberCtrl {
 				try {
 					if(!fileName.equals("")) {
 						//photoFile.transferTo(new File(System.getProperty("user.home") + "/git/ITPM/ITPM/WebContent/image/member/" + fileName)); //로컬
-						photoFile.transferTo(new File("/home/ubuntu/public_html/ITPM/image/member" + fileName)); //운영
+						photoFile.transferTo(new File("/home/ubuntu/public_html/ITPM/image/member/" + fileName)); //운영
 					} else {
 						fileName = request.getParameter("photo");
 					}
