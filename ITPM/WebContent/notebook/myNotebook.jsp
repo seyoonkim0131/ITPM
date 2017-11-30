@@ -68,7 +68,7 @@
 			<div class="menutitle">원우수첩</div>
 			<div class="grayline"></div>
 			<ul class="nav nav-pills nav-stacked">
-				<li class="inactive"><a href="javascript:document.getElementById('cancelForm').submit();">원우수첩</a></li>
+				<li class="inactive"><a href="getAllMemberList.do">원우수첩</a></li>
 				<li class="active1"><a href="#">내 정보</a></li>
 			</ul>
 		</div>

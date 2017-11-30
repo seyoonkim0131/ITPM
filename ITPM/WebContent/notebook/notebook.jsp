@@ -78,7 +78,7 @@
 			<div class="menutitle">원우수첩</div>
 			<div class="grayline"></div>
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active1"><a href="">원우수첩</a></li>
+				<li class="active1"><a href="#">원우수첩</a></li>
 				<li class="inactive"><a href="javascript:document.getElementById('goMyInfoForm').submit();">내 정보</a></li>
 			</ul>
         </div>
@@ -86,7 +86,7 @@
 			<div class="small-title">
 	            <p>
 	                <span><img alt="menu main title bar" src="image/menu_main_titlebar.png">원우수첩</span>
-	                <span class="small-title-right"><small><a href="welcome.do">홈</a> > 원우수첩 > 원우수첩</small></span>
+	                <span class="small-title-right"><small>홈 > 원우수첩 > 원우수첩</small></span>
 	            </p>
 			</div>
 			<div class="content-board">
