@@ -136,8 +136,8 @@ public class MemberCtrl {
 		int check = 0;
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
-		ArrayList<Member> professorList = new ArrayList<Member>();
-		ArrayList<Member> studentList = new ArrayList<Member>();
+//		ArrayList<Member> professorList = new ArrayList<Member>();
+//		ArrayList<Member> studentList = new ArrayList<Member>();
 		ModelAndView mv = new ModelAndView();
 		try {
 			check = MemberDAO.checkPw(request.getParameter("studentId"));
@@ -156,10 +156,11 @@ public class MemberCtrl {
 				getAllMemberList(request, loginUser.getsGroup(), loginUser.getStudentId());
 				myInfo = MemberDAO.getMyInfo(request.getParameter("studentId"));
 				if(loginUser.getsGroup() == null || loginUser.getsGroup().equals("")) {
-					professorList = MemberDAO.getProfessorList();
-					studentList = MemberDAO.getStudentList();
-					allMemberList.addAll(professorList);
-					allMemberList.addAll(studentList);
+//					professorList = MemberDAO.getProfessorList();
+//					studentList = MemberDAO.getStudentList();
+//					allMemberList.addAll(professorList);
+//					allMemberList.addAll(studentList);
+					allMemberList = MemberDAO.getAllMemberList();
 					mv.addObject("groupList", groupList);
 				} else {
 					allMemberList = MemberDAO.getGroupMemberList(loginUser.getsGroup());
@@ -200,18 +201,19 @@ public class MemberCtrl {
 	public ModelAndView getAllMemberList(HttpServletRequest request, String sGroup, String studentId) {
 		ArrayList<Member> allMemberList = new ArrayList<Member>();
 		ArrayList<Member> groupList = new ArrayList<Member>();
-		ArrayList<Member> professorList = new ArrayList<Member>();
-		ArrayList<Member> studentList = new ArrayList<Member>();
+//		ArrayList<Member> professorList = new ArrayList<Member>();
+//		ArrayList<Member> studentList = new ArrayList<Member>();
 		Member myInfo = null;
 		ModelAndView mv = new ModelAndView();
 		try {
 			groupList = MemberDAO.getGroupList();
 			myInfo = MemberDAO.getMyInfo(studentId);
 			if(sGroup == null || sGroup.equals("")) {
-				professorList = MemberDAO.getProfessorList();
-				studentList = MemberDAO.getStudentList();
-				allMemberList.addAll(professorList);
-				allMemberList.addAll(studentList);
+//				professorList = MemberDAO.getProfessorList();
+//				studentList = MemberDAO.getStudentList();
+//				allMemberList.addAll(professorList);
+//				allMemberList.addAll(studentList);
+				allMemberList = MemberDAO.getAllMemberList();
 				mv.addObject("groupList", groupList);
 			} else {
 				allMemberList = MemberDAO.getGroupMemberList(sGroup);

@@ -170,21 +170,22 @@ public class MemberDAO {
 	}
 	
 	/**
+	 * 2017.12.12
 	 * 전체 원우 조회(관리자 제외)
 	 * @return
 	 */
-//	public static ArrayList<Member> getAllMemberList() {
-//		SqlSession session = DAOFactory.getSqlSession(false);
-//		ArrayList<Member> allMemberList = new ArrayList<Member>();
-//		try {
-//			allMemberList = (ArrayList)session.selectList("member.getAllMemberList");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			session.close();
-//		}
-//		return allMemberList;
-//	}
+	public static ArrayList<Member> getAllMemberList() {
+		SqlSession session = DAOFactory.getSqlSession(false);
+		ArrayList<Member> allMemberList = new ArrayList<Member>();
+		try {
+			allMemberList = (ArrayList)session.selectList("member.getAllMemberList");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return allMemberList;
+	}
 	
 	public static ArrayList<Member> getProfessorList() {
 		SqlSession session = DAOFactory.getSqlSession(false);

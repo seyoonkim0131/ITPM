@@ -24,12 +24,13 @@ public class Member {
 	private MultipartFile photoFile;
 	private String photo;
 	private String newPw;
+	private String profOrder;
 	
 	public Member() {
 		super();
 	}
 
-	public Member(String phoneNumber, String name, String studentId, String pw, String mailId, String mailDomain, String job, String auth, String sGroup, String jobPosition, String jobPhone, MultipartFile photoFile, String photo, String newPw) {
+	public Member(String phoneNumber, String name, String studentId, String pw, String mailId, String mailDomain, String job, String auth, String sGroup, String jobPosition, String jobPhone, MultipartFile photoFile, String photo, String newPw, String profOrder) {
 		super();
 		this.phoneNumber = phoneNumber;
 		this.name = name;
@@ -45,6 +46,7 @@ public class Member {
 		this.photoFile = photoFile;
 		this.photo = photo;
 		this.newPw = newPw;
+		this.profOrder = profOrder;
 	}
 	
 	public Member(String phoneNumber, String mailId, String mailDomain, String job, String jobPosition, String photo, String studentId) {
@@ -191,6 +193,14 @@ public class Member {
 		this.newPw = newPw;
 	}
 
+	public String getProfOrder() {
+		return profOrder;
+	}
+
+	public void setProfOrder(String profOrder) {
+		this.profOrder = profOrder;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -222,6 +232,8 @@ public class Member {
 		builder.append(photo);
 		builder.append(", newPw=");
 		builder.append(newPw);
+		builder.append(", profOrder=");
+		builder.append(profOrder);
 		builder.append("]");
 		return builder.toString();
 	}

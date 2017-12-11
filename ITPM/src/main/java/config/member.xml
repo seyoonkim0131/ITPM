@@ -16,6 +16,7 @@
 		<result property="jobPhone" column="job_phone"/>
 		<result property="newPw" column="new_pw"/>
 		<result property="photo" column="photo"/>
+		<result property="profOrder" column="prof_order"/>
 	</resultMap>
 	
 	<select id="checkImg" parameterType="String" resultType="String">
@@ -100,6 +101,23 @@
 	
 	</select>
 
+	<!-- 전체조회 -->
+	<select id="getAllMemberList" resultMap="memberMap">
+		SELECT PHONE_NUMBER,
+			   NAME,
+			   STUDENT_ID,
+			   MAIL_ID,
+			   MAIL_DOMAIN,
+			   JOB,
+			   S_GROUP,
+			   JOB_POSITION,
+			   JOB_PHONE,
+			   PHOTO
+		  FROM MEMBER
+		 WHERE STUDENT_ID != 'itpm'
+		 ORDER BY ABS(S_GROUP), ABS(PROF_ORDER), NAME
+	</select>
+
 	<!-- 기수별 원우 리스트 조회 -->
 	<select id="getGroupMemberList" parameterType="String" resultMap="memberMap">
 		SELECT PHONE_NUMBER,
@@ -115,7 +133,7 @@
 		  FROM MEMBER
 		 WHERE S_GROUP = #{sGroup}
 		   AND STUDENT_ID != 'itpm'
-		 ORDER BY NAME
+		 ORDER BY ABS(PROF_ORDER), NAME
 	</select>
 	
 	<!-- 기수 리스트 조회 -->

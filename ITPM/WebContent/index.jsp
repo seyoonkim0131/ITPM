@@ -258,7 +258,7 @@
 					</thead>
 					<c:forEach items="${requestScope.mainNoticeList}" var="result">
 						<tr>
-							<td><a class="list" href="getNoticeDetail.do?no=${result.no}" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
+							<td><a class="list" href="getNoticeDetail.do?no=${result.no}" style="float: left; padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
 							<td class="date" style="float:right; font-size:7pt;">${result.updateDate}</td>
 						</tr>
 					</c:forEach>
@@ -281,7 +281,7 @@
 					</thead>
 					<c:forEach items="${requestScope.mainScheduleList}" var="result">
 						<tr>
-							<td><a class="list" href="scheduleDetail.do?no=${result.no}" style="padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
+							<td><a class="list" href="scheduleDetail.do?no=${result.no}" style="float: left; padding-right:3%; color:black; white-space:nowrap; text-decoration: none;">${result.title}</a></td>
 							<td class="date" style="float:right; font-size:7pt;">${result.updateDate}</td>
 						</tr>
 					</c:forEach>

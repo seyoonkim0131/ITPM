@@ -94,7 +94,7 @@
 	</update>
 
 	<select id="getScheduleMainList" resultMap="scheduleMap">
-		SELECT TITLE, DATE_FORMAT(UPDATE_DATE,'%m.%d') AS UPDATE_DATE,
+		SELECT LEFT(TITLE, 25) AS TITLE, DATE_FORMAT(UPDATE_DATE,'%m.%d') AS UPDATE_DATE,
 		NO FROM SCHEDULE ORDER BY NO DESC LIMIT 6
 	</select>
 	

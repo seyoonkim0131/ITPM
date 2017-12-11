@@ -19,7 +19,7 @@
 	
 	<!-- 메인에 불러오기 -->
 	<select id="getMainList" resultMap="noticeMap">
-		SELECT TITLE,
+		SELECT LEFT(TITLE, 25) AS TITLE,
 			   DATE_FORMAT(UPDATE_DATE,'%m.%d') AS UPDATE_DATE,
 			   NO 
 		  FROM NOTICE
