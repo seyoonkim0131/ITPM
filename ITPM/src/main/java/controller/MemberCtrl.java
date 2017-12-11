@@ -288,10 +288,11 @@ public class MemberCtrl {
 			groupList = MemberDAO.getGroupList();
 			myInfo = MemberDAO.getMyInfo(studentId);
 			if(group == null || group.equals("")) {
-				professorList = MemberDAO.getProfessorList();
-				studentList = MemberDAO.getStudentList();
-				allMemberList.addAll(professorList);
-				allMemberList.addAll(studentList);
+//				professorList = MemberDAO.getProfessorList();
+//				studentList = MemberDAO.getStudentList();
+//				allMemberList.addAll(professorList);
+//				allMemberList.addAll(studentList);
+				allMemberList = MemberDAO.getAllMemberList();
 				mv.addObject("groupList", groupList);
 			} else {
 				allMemberList = MemberDAO.getGroupMemberList(group);
