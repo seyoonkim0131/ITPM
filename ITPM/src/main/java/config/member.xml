@@ -188,7 +188,7 @@
 						   PHONE_NUMBER,
 						   S_GROUP)
 					VALUES(#{studentId},
-						   #{studentId},
+						   SHA(#{studentId}),
 						   #{name},
 						   #{phoneNumber},
 						   #{sGroup})
