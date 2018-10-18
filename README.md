@@ -4,5 +4,12 @@ http://itpm.ssu.ac.kr
 ## Front
 
 * JSP, HTML5, CSS
-* JQuery, EL
-* Bootstrap3
+* JQuery 3.1.1, EL
+* Bootstrap 3
+
+## Back
+
+* JAVA, Spring Framework
+* MySql
+* Apache Tomcat
+* Maven
