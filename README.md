@@ -10,6 +10,7 @@ http://itpm.ssu.ac.kr
 ## Back
 
 * JAVA, Spring Framework
+* AWS
 * MySql
 * Apache Tomcat
 * Maven
