@@ -12,5 +12,5 @@ http://itpm.ssu.ac.kr
 * JAVA(jdk 1.8.0_101), Spring Framework(4.2.1)
 * AWS
 * MySql
-* Apache Tomcat
+* Apache Tomcat 8.0.37
 * Maven
